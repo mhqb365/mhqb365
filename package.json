@@ -1,0 +1,11 @@
+{
+  "name": "mhqb365",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mhqb365/mhqb365.git",
+  "author": "mhqb365 <mhqb365@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "push": "git add . && git commit -m :rocket: && git push"
+  }
+}
