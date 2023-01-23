@@ -1,1 +1,5 @@
-!Nothing here -> mhqb365.com
+<div align="center">
+  <img
+    src="./preloader.gif"
+  />
+</div>
