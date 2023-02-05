@@ -37,6 +37,11 @@ Loại BH 12 tháng 1 đổi 1
 - BH 12 tháng 1 đổi 1
 - Đổi liền tại chổ
 
+## Sạc
+
+- BH 6 tháng hoặc 12 tháng 1 đổi 1 tùy loại
+- Từ chối bảo hành vô nước, cháy nổ, v.v..
+
 ## Các linh kiện thay thế, sửa chữa khác
 
 - BH 3 tháng hoặc hoàn tiền nếu trong thời gian BH mà hư lại nhiều lần
