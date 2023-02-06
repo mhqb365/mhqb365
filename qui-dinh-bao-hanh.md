@@ -48,5 +48,4 @@ Loại BH 12 tháng 1 đổi 1
 
 - BH 3 tháng hoặc hoàn tiền nếu trong thời gian BH mà hư lại nhiều lần
 
-
-> Đi bảo hành vui lòng đi sau 12h trưa, chân thành cảm ơn ❤️
+> Đến bảo hành vui lòng đến sau 12h trưa, chân thành cảm ơn ❤️
