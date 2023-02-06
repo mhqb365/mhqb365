@@ -42,10 +42,11 @@ Loại BH 12 tháng 1 đổi 1
 
 - BH 6 tháng hoặc 12 tháng 1 đổi 1 tùy loại
 - Đổi liền tại chổ hoặc nhận lại nếu hết hàng
-- Từ chối bảo hành vô nước, cháy nổ, gãy, đứt dây v.v..
+- Từ chối bảo hành vô nước, cháy nổ, gãy dây, đứt dây v.v..
 
 ## Các linh kiện thay thế, sửa chữa khác
 
 - BH 3 tháng hoặc hoàn tiền nếu trong thời gian BH mà hư lại nhiều lần
+
 
 > Đi bảo hành vui lòng đi sau 12h trưa, chân thành cảm ơn ❤️
