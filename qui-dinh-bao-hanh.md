@@ -19,13 +19,13 @@ Loại BH 12 tháng 1 đổi 1
 ## Bàn phím
 
 - BH 6 tháng 1 đổi 1
-- Từ chối BH hao mòn, tróc sơn, gãy phím/xương phím, cảm giác gõ phím, vào nước, v.v..
+- Từ chối BH hao mòn, tróc sơn, gãy phím/xương phím, cảm giác gõ phím, vào nước, cát, bụi bẩn v.v..
 
 ## Màn hình
 
 - BH 6 tháng 1 đổi 1
 - Đổi liền tại chổ
-- Từ chối BH khi nứt vỡ, chảy mực, vào nước, v.v..
+- Từ chối BH khi nứt vỡ, chảy mực, vào nước, cát, bụi bẩn v.v..
 
 ## SSD
 
@@ -40,7 +40,7 @@ Loại BH 12 tháng 1 đổi 1
 ## Sạc
 
 - BH 6 tháng hoặc 12 tháng 1 đổi 1 tùy loại
-- Từ chối bảo hành vô nước, cháy nổ, v.v..
+- Từ chối bảo hành vô nước, cháy nổ, gãy, đứt dây v.v..
 
 ## Các linh kiện thay thế, sửa chữa khác
 
