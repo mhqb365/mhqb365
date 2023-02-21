@@ -51,5 +51,3 @@ Lúc laptop hoạt động thì nguồn đã có đủ
 Lúc laptop hông hoạt động mà hông đo, hông sửa thử thì phán bằng niềm tin 🤣
 
 From mhqb365.com with ♥
-
-https://tiktok.com/@mhqb365/video/7175376304798240027
