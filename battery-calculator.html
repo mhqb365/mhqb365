@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hướng dẫn kiểm tra độ chai pin của Laptop</title>
+    <title>Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,19 +9,19 @@
     <meta name="author" content="mhqb365@gmail.com" />
     <meta
       name="description"
-      content="Hướng dẫn kiểm tra độ chai pin của Laptop chính xác mà không cần dùng app bên thứ 3"
+      content="Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook chính xác nhất"
     />
     <meta
       name="keywords"
-      content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface"
+      content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, doctor laptop, drlaptop"
     />
     <meta
       property="og:title"
-      content="Hướng dẫn kiểm tra độ chai pin của Laptop"
+      content="Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook"
     />
     <meta
       property="og:description"
-      content="Hướng dẫn kiểm tra độ chai pin của Laptop chính xác mà không cần dùng app bên thứ 3"
+      content="Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook chính xác nhất"
     />
     <meta
       property="og:url"
@@ -39,29 +39,27 @@
   </head>
   <body>
     <div class="jumbotron text-center">
-      <h1>Hướng dẫn kiểm tra độ chai pin Laptop</h1>
-      <p>
-        Lưu ý: đây là cách dùng công cụ mặt định của Windows và cách này chỉ
-        chính xác trên 90% vì còn chịu ảnh hưởng bởi yếu tố phần cứng (BIOS, IO,
-        v.v..)
-      </p>
+      <h1 class="text-primary">
+        Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook
+      </h1>
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col-12 mb-3">
           <p>
-            Để kiểm tra độ chai pin của laptop bạn sẽ dùng công cụ Command
-            Prompt có sẵn trên Windows 10 & 11<br />
-            Để mở công cụ này lên bạn nhấn tổ hợp phím Windows + R và nhập vào:
+            Để kiểm tra độ chai pin của Laptop Windows bạn sẽ dùng công cụ
+            Command Prompt có sẵn trên Windows 10 & 11<br />
+            Để mở công cụ này, bạn nhấn tổ hợp phím Windows + R và nhập vào:
             <code>cmd</code> rồi nhấn Enter
           </p>
           <img class="w-50" src="./img/battery-calculator/1.png" />
         </div>
         <div class="col-12 mb-3">
           <p>
-            Sau khi mở thành công Command Prompt thì bạn nhập vào:
-            <code>powercfg /batteryreport && start .</code> và nhấn Enter
+            Sau khi mở Command Prompt thì bạn nhập vào:<br />
+            <code>powercfg /batteryreport && start .</code><br />
+            rồi nhấn Enter
           </p>
           <img class="w-50" src="./img/battery-calculator/2.png" />
         </div>
@@ -76,9 +74,10 @@
         </div>
         <div class="col-12 mb-3">
           <p>
-            Lúc này bạn chỉ cần quan tâm 2 thông số: Design Capacity (dung lượng
-            ban đầu từ nhà sản xuất) và Full Charge Capacity (dung lượng khi sạc
-            đầy hiện tại)<br />
+            Lúc này bạn chỉ cần quan tâm 2 thông số:<br />
+            <code>Design Capacity</code> (dung lượng ban đầu từ nhà sản xuất)<br />
+            <code>Full Charge Capacity</code> (dung lượng khi sạc đầy hiện
+            tại)<br />
             Điền 2 thông số trên vào công cụ bên dưới để tính độ chai pin
           </p>
           <img class="w-50" src="./img/battery-calculator/4.png" />
@@ -113,15 +112,49 @@
         <div class="col-md-6 mb-3">
           Dung lượng tối đa
           <h4><span id="batteryMax">0</span>%</h4>
+          <br />
           Độ chai pin
           <h4><span id="batteryFair">0</span>%</h4>
         </div>
 
         <div class="col-md-12 mb-3">
-          <p>Tất nhiên bạn cũng có thể tự tính theo công thức:</p>
-          <pre>
-Độ chai pin = ((Design Capacity - Full Charge Capacity) / Full Charge Capacity) * 100</pre
-          >
+          <p>Tất nhiên bạn cũng có thể tự tính theo công thức sau đây</p>
+          <code>
+            Độ chai pin = ((Design Capacity - Full Charge Capacity) / Full
+            Charge Capacity) * 100
+          </code>
+        </div>
+        <div class="col-md-12 mb-3">
+          <p>Vậy trên MacBook thì kiểm tra độ chai pin bằng cách nào?</p>
+          <p>
+            Trên MacBook có ứng dụng System Information (Thông tin Hệ thống)
+            nhưng chỉ hiển thị Full Charge Capacity mà không hiển thị Design
+            Capacity<br />
+            Để xem được cả 2 thông số này thì bạn hãy tải ứng dụng bên thứ 3 này
+            về
+            <a
+              href="https://coconut-flavour.com/coconutbattery/index.html"
+              target="_blank"
+            >
+              coconutBattery
+            </a>
+            (miễn phí)
+          </p>
+        </div>
+        <div class="col-md-12 mb-3">
+          <p>
+            <strong>LƯU Ý:</strong><br />
+            Các thông số hiển thị chịu ảnh hưởng bởi các yếu tố phần cứng
+            (Mainboard, ROM pin, v.v..)<br />
+            Cho nên thay vì nhìn vào thông số mà đánh giá pin còn tốt hay không
+            thì hãy dựa vào thời lượng pin sử dụng thực tế có phù hợp với nhu
+            cầu của bản thân hay không mà đánh giá<br />
+          </p>
+        </div>
+        <div class="col-md-12 mb-3 text-right">
+          From
+          <a href="https://mhqb365.com">mhqb365.com</a>
+          with ❤️
         </div>
       </div>
     </div>
