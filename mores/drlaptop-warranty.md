@@ -28,7 +28,7 @@
 
 ### Từ chối bảo hành pin bị cháy nổ, vô nước hoặc hư hại do tác động khác (chạm chập mainboard, tác động vật lý, v.v..)
 
-### <a href="https://mhqb365.com/battery-calculator.html" target="_blank">Hướng dẫn kiểm tra độ chai pin trên Laptop</a>
+### <a href="https://mhqb365.com/battery-calculator.html" target="_blank">Hướng dẫn kiểm tra độ chai pin Laptop</a>
 
 ### Cảnh báo
 ```
