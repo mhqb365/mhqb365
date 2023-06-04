@@ -50,4 +50,4 @@ Lúc laptop hoạt động thì nguồn đã có đủ
 
 Lúc laptop hông hoạt động mà hông đo, hông sửa thử thì phán bằng niềm tin 🤣
 
-From mhqb365.com with ♥
+From [mhqb365.com](https://mhqb365.com) with ♥
