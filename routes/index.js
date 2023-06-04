@@ -2,17 +2,21 @@ const express = require("express");
 const batteryRouter = express.Router();
 
 batteryRouter.get("/", async (req, res, next) => {
-  res.send(`<pre>Simple way to check your laptop battery\n
-If you use Windows, put this code to PowerShell: irm mhqb365.com/battery/win | iex\n
-If you use MacOS, coming soon\n
-If you use Linux, coming soon\n
-
+  res.send(`<p>Chào mừng đến với b-Battery, cách đơn giản để kiểm tra tình trạng pin laptop<br />
+<br />
+Nếu bạn dùng Windows, bấm tổ hợp phím Windows + X và chọn Windows PowerShell rồi dán dòng lệnh này vào: <br />
+<br />
+<code>irm mhqb365.com/battery/win | iex</code><br />
+<br />
+Nếu bạn dùng MacOS, đang phát triển<br />
+Nếu bạn dùng Linux, đang phát triển<br/ >
+<br/ >
 ----------
-Change log:
-4/6/2023: Release for Windows
-
-
-From mhqb365.com with ❤️</pre>`);
+<br />
+Nhật ký:<br />
+4/6/2023: Phiên bản cho Windows, hiện tại chỉ xem được 4 thông số (dung lượng thiết kế, dung lượng hiện tại, % dung lượng tối đa, % độ chai pin)
+<br /><br />
+From mhqb365.com with ❤️</p>`);
 });
 
 batteryRouter.get("/win", async (req, res, next) => {
