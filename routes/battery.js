@@ -14,6 +14,7 @@ Nếu bạn dùng Linux, đang phát triển<br/ >
 ----------
 <br />
 Nhật ký:<br />
+5/6/2023: Hiển thị thêm các thông số khác về pin, cở bản hoàn thiện cho Windows
 4/6/2023: Phiên bản cho Windows, hiện tại chỉ xem được 4 thông số (dung lượng thiết kế, dung lượng hiện tại, % dung lượng tối đa, % độ chai pin)
 <br /><br />
 From mhqb365.com with ❤️</p>`);
@@ -42,10 +43,10 @@ batteryRouter.get("/win", async (req, res, next) => {
   Write-Host "Ngay san xuat: $($health.ManufactureDate)"
   Write-Host "So serial: $($health.SerialNumber)"
   Write-Host "Dung luong thiet ke ban dau: $($health.DesignCapacity) mWh"
-  Write-Host "Dung luong khi duoc sac day: $($health.FullChargeCapacity) mWh"
+  Write-Host "Dung luong hien tai: $($health.FullChargeCapacity) mWh"
+  Write-Host "So lan sac: $($health.CycleCount)"
   Write-Host "% dung luong toi da: $($health.MaxCapacity)%"
-  Write-Host "% do chai pin: $($health.FailureCapacity)%"
-  Write-Host "So lan sac: $($health.CycleCount)"`;
+  Write-Host "% do chai pin: $($health.FailureCapacity)%"`;
   const stringBuf = Buffer.from(script);
   res.send(stringBuf);
 });
