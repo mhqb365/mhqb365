@@ -1,4 +1,4 @@
-<img src="img/mhqb365.png" />
+<img src="img/header.png" />
 
 <div style="display: inline-block; text-align: center;">
     <a href="https://mhqb365.com" target="_blank">
