@@ -7,26 +7,14 @@
 
     <meta name="robots" content="all" />
     <meta name="author" content="mhqb365@gmail.com" />
-    <meta
-      name="description"
-      content="Công cụ tính cầu phân áp"
-    />
+    <meta name="description" content="Công cụ tính cầu phân áp" />
     <meta
       name="keywords"
       content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, doctor laptop, drlaptop"
     />
-    <meta
-      property="og:title"
-      content="CẦU PHÂN ÁP"
-    />
-    <meta
-      property="og:description"
-      content="Công cụ tính cầu phân áp"
-    />
-    <meta
-      property="og:url"
-      content="https://mhqb365.com/cau-phan-ap/"
-    />
+    <meta property="og:title" content="CẦU PHÂN ÁP" />
+    <meta property="og:description" content="Công cụ tính cầu phân áp" />
+    <meta property="og:url" content="https://mhqb365.com/cau-phan-ap/" />
 
     <link rel="icon" type="image/x-icon" href="./../favicon.ico" />
     <link
@@ -43,11 +31,16 @@
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-12 mb-3">
-          <div class="form-group">
-            <label>Vin</label>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-3">
+          <label>Vin</label>
+          <div class="input-group mb-3">
             <input type="number" class="form-control" id="vin" />
+            <div class="input-group-append">
+              <button class="btn btn-warning" onclick="calculatorVin()">
+                Cal Vin
+              </button>
+            </div>
           </div>
           <div class="form-group">
             <label>R1</label>
@@ -57,16 +50,16 @@
             <label>R2</label>
             <input type="number" class="form-control" id="r2" />
           </div>
-          <div class="form-group">
-            <label>Vout</label>
+
+          <label>Vout</label>
+          <div class="input-group mb-3">
             <input type="number" class="form-control" id="vout" />
+            <div class="input-group-append">
+              <button class="btn btn-success" onclick="calculatorVout()">
+                Cal Vout
+              </button>
+            </div>
           </div>
-          <button class="btn btn-primary" onclick="calculatorVout()">
-            Cal Vout
-          </button>
-          <button class="btn btn-primary" onclick="calculatorVin()">
-            Cal Vin
-          </button>
         </div>
 
         <div class="col-md-12 mb-3">
@@ -75,13 +68,6 @@
       </div>
     </div>
     <script>
-      function calculatorVout() {
-        const vin = Number($("#vin").val());
-        const r1 = Number($("#r1").val());
-        const r2 = Number($("#r2").val());
-        const vout = (vin * r2) / (r1 + r2);
-        $("#vout").val(vout);
-      }
       function calculatorVin() {
         const r1 = Number($("#r1").val());
         const r2 = Number($("#r2").val());
@@ -89,17 +75,13 @@
         const vin = (vout / r2) * (r1 + r2);
         $("#vin").val(vin);
       }
-      function calculatorR1() {
-        const r2 = Number($("#r2").val());
-        const vin = $("#vin").val(vin);
-        const vout = Number($("#vout").val());
-        const r1 = "";
-      }
-      function calculatorR2() {
+
+      function calculatorVout() {
+        const vin = Number($("#vin").val());
         const r1 = Number($("#r1").val());
-        const vout = Number($("#vout").val());
-        const vin = $("#vin").val(vin);
-        const r2 = "";
+        const r2 = Number($("#r2").val());
+        const vout = (vin * r2) / (r1 + r2);
+        $("#vout").val(vout);
       }
     </script>
   </body>
