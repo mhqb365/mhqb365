@@ -9,6 +9,4 @@ curl mhqb365.com/kms -o kms.cmd
 start kms.cmd
 ```
 
-> Xem video hướng dẫn tại đây:
-
 From [mhqb365.com](https://mhqb365.com) with Love
