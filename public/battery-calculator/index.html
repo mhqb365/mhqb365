@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="all" />
+    <meta name="author" content="mhqb365@gmail.com" />
+    <meta
+      name="description"
+      content="Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook chính xác nhất"
+    />
+    <meta
+      name="keywords"
+      content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, doctor laptop, drlaptop"
+    />
+    <meta
+      property="og:title"
+      content="Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook"
+    />
+    <meta
+      property="og:description"
+      content="Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook chính xác nhất"
+    />
+    <meta property="og:url" content="https://mhqb365.com/battery-calculator/" />
+
+    <link rel="icon" type="image/x-icon" href="./../favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1 class="text-primary">
+        Hướng dẫn kiểm tra độ chai pin của Laptop Windows / MacBook
+      </h1>
+    </div>
+
+    <div class="container">
+      <div class="mb-3">
+        <a href="/">
+          <button type="button" class="btn btn-secondary">Quay lại</button>
+        </a>
+      </div>
+
+      <div class="row">
+        <div class="col-12 mb-3">
+          <p>
+            Bạn có thể kiểm tra độ chai pin bằng thao tác đơn giản với công cụ
+            này:
+            <a href="https://battery.mhqb365.com" target="_blank"> bBattery </a>
+            <br />
+            Hoặc rườm rà hơn bằng công cụ Command Prompt có sẵn trên Windows 8,
+            10 & 11<br />
+            Để mở công cụ này, bạn nhấn tổ hợp phím Windows + R và nhập vào:
+            <code>cmd</code> rồi nhấn Enter
+          </p>
+          <img class="w-50" src="./1.png" />
+        </div>
+        <div class="col-12 mb-3">
+          <p>
+            Sau khi mở Command Prompt thì bạn nhập vào:<br />
+            <code>powercfg /batteryreport && start .</code><br />
+            rồi nhấn Enter
+          </p>
+          <img class="w-50" src="./2.png" />
+        </div>
+        <div class="col-12 mb-3">
+          <p>
+            Sau khi công cụ tạo file trích xuất thông tin pin thành công cũng là
+            lúc Windows Explorer mở cửa sổ chứa file trích xuất lên<br />
+            Hãy mở file trích xuất có tên <code>battery-report.html</code> với
+            trình duyệt bất kỳ
+          </p>
+          <img class="w-50" src="./3.png" />
+        </div>
+        <div class="col-12 mb-3">
+          <p>
+            Lúc này bạn chỉ cần quan tâm 2 thông số:<br />
+            <code>Design Capacity</code> (dung lượng ban đầu từ nhà sản xuất)<br />
+            <code>Full Charge Capacity</code> (dung lượng khi sạc đầy hiện
+            tại)<br />
+            Điền 2 thông số trên vào công cụ bên dưới để tính độ chai pin
+          </p>
+          <img class="w-50" src="./4.png" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label>Design Capacity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="designCapacity"
+              value="0"
+            />
+          </div>
+          <div class="form-group">
+            <label>Full Charge Capacity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="fullChargeCapacity"
+              value="0"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary mb-3"
+            onclick="batteryCalculate()"
+          >
+            Tính độ chai pin
+          </button>
+        </div>
+        <div class="col-md-6 mb-3">
+          Dung lượng tối đa
+          <h4><span id="batteryMax">0</span>%</h4>
+          <br />
+          Độ chai pin
+          <h4><span id="batteryFair">0</span>%</h4>
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <p>Tất nhiên bạn cũng có thể tự tính theo công thức sau đây</p>
+          <code>
+            Độ chai pin = ((Design Capacity - Full Charge Capacity) / Design
+            Capacity) * 100
+          </code>
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <p>Vậy trên MacBook thì kiểm tra độ chai pin bằng cách nào?</p>
+          <p>
+            Trên MacBook có ứng dụng System Information (Thông tin Hệ thống)
+            nhưng chỉ hiển thị Full Charge Capacity mà không hiển thị Design
+            Capacity<br />
+            Để xem được cả 2 thông số này thì bạn hãy tải ứng dụng bên thứ 3 này
+            về
+            <a
+              href="https://coconut-flavour.com/coconutbattery/index.html"
+              target="_blank"
+            >
+              coconutBattery
+            </a>
+            (miễn phí)
+          </p>
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <p>
+            <strong>LƯU Ý:</strong><br />
+            Các thông số hiển thị chịu ảnh hưởng bởi các yếu tố phần cứng
+            (Mainboard, ROM pin, v.v..)<br />
+            Cho nên thay vì nhìn vào thông số mà đánh giá pin còn tốt hay không
+            thì hãy dựa vào thời lượng pin sử dụng thực tế có phù hợp với nhu
+            cầu của bản thân hay không mà đánh giá<br />
+          </p>
+        </div>
+        <div class="col-md-12 mb-3">
+          From <a href="/">mhqb365.com</a> with Love
+        </div>
+      </div>
+    </div>
+    <script>
+      function batteryCalculate() {
+        let designCapacity = Number($("#designCapacity").val());
+        let fullChargeCapacity = Number($("#fullChargeCapacity").val());
+        let fair = designCapacity - fullChargeCapacity;
+        let batteryFair = (fair / designCapacity) * 100;
+        batteryFair = batteryFair.toFixed(0);
+        $("#batteryFair").text(`≈${batteryFair}`);
+        $("#batteryMax").text(`≈${100 - Number(batteryFair)}`);
+      }
+    </script>
+  </body>
+</html>
