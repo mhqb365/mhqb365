@@ -30,4 +30,4 @@ function format() {
 })();
 ```
 
-B3. Refresh trang Bán hàng và nhập bình thường
+B3. Refresh trang Bán hàng và sử dụng
