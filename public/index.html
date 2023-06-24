@@ -52,6 +52,10 @@
         font-family: "Montserrat", sans-serif;
       }
 
+      a:link {
+        text-decoration: none;
+      }
+
       .bgimg {
         background-image: url("./bg.jpg");
         height: 100%;
@@ -121,26 +125,59 @@
     </div>
 
     <div class="container p-4">
-      <a
-        class="link"
-        href="https://github.com/mhqb365/mhqb365/blob/master/storage/KiemTraDoChaiPin.md"
-        target="_blank"
-      >
-        Hướng dẫn kiểm tra độ chai pin Laptop / MacBook
-      </a>
-      <hr />
-      <a
-        class="link"
-        href="https://github.com/mhqb365/mhqb365/blob/master/storage/ActiveWindowsOffice.md"
-        target="_blank"
-      >
-        Hướng dẫn active Windows / Office miễn phí
-      </a>
-      <hr />
-      <a class="link" href="https://tinyurl.com/quydinhbaohanh" target="_blank">
-        Quy định bảo hành tại Doctor Laptop
-      </a>
-      <hr />
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              Kiểm tra độ chai pin laptop Windows
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              <p>
+                Copy và dán dòng lệnh bên dưới vào PowerShell hoặc Terminal
+                (Windows + X)
+              </p>
+              <code>irm https://battery.mhqb365.com/win | iex</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a
+              class="collapsed card-link"
+              data-toggle="collapse"
+              href="#collapseTwo"
+            >
+              Active Windows / Office miễn phí
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              <p>
+                Copy và dán dòng lệnh bên dưới vào PowerShell hoặc Terminal
+                (Windows + X)
+              </p>
+              <code>irm https://massgrave.dev/get | iex</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse">
+              <a
+                class="link"
+                href="https://tinyurl.com/quydinhbaohanh"
+                target="_blank"
+              >
+                Quy định bảo hành tại Doctor Laptop
+              </a>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="container p-4 footer">
@@ -159,6 +196,11 @@
         </div>
 
         <div class="col-sm-4">
+          <li>
+            <a class="link" href="https://zalo.me/0987718868" target="_blank">
+              Zalo
+            </a>
+          </li>
           <li>
             <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
               Tik Tok
