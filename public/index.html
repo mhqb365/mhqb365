@@ -81,7 +81,6 @@
         transform: translate(-50%, -50%);
         text-align: center;
         line-height: 2;
-        text-shadow: 1px 1px #000;
       }
 
       .middle a {
@@ -106,47 +105,108 @@
         background: url("./loading.png") center no-repeat #000;
         background-size: 200px;
       }
+
+      .typing span::after {
+        content: "|";
+        animation-name: blinking;
+        animation-duration: 0.71s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes blinking {
+        from {
+          color: transparent;
+        }
+        to {
+          color: lightgrey;
+        }
+      }
+
+      .box {
+        align-self: flex-end;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        margin: 0 auto 0 auto;
+        transform-origin: bottom;
+        width: 200px;
+      }
+
+      .bounce-2 {
+        animation-name: bounce-2;
+        animation-timing-function: ease;
+      }
+
+      @keyframes bounce-2 {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-100px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     </style>
 
     <title>Mai Hoàng Quốc Bảo</title>
   </head>
 
   <body>
-    <div id="preloader"></div>
+    <div class="box bounce-2" id="preloader"></div>
 
     <div class="bgimg">
       <div class="middle">
         <h1>Mai Hoàng Quốc Bảo</h1>
-        <p>
-          Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Surface
-          <br />
-          Sản phẩm & dịch vụ cung cấp bởi Doctor Laptop
-          <br />
-          179 CMT8 P5 Q3 TP. HCM
-          <br />
-          8:30 - 18:00 từ T2 - T7, CN nghỉ
-        </p>
-        <p>
-          <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
-            <i class="fa-brands fa-tiktok fa-lg"></i>
-          </a>
-          &nbsp;
-          <a
-            class="link"
-            href="https://facebook.com/profile.php?id=100088442898371&sk=reels_tab"
-            target="_blank"
-          >
-            <i class="fa-brands fa-facebook fa-lg"></i>
-          </a>
-          &nbsp;
-          <a class="link" href="https://t.me/mhqb365" target="_blank">
-            <i class="fa-brands fa-telegram fa-lg"></i>
-          </a>
-          &nbsp;
-          <a class="link" href="https://github.com/mhqb365" target="_blank"
-            ><i class="fa-brands fa-github fa-lg"></i>
-          </a>
-        </p>
+        <h5 class="typing">
+          Sửa chữa & thay thế linh kiện
+          <span
+            class="text-warning"
+            typing-speed="68"
+            typing-delay="680"
+            words="Laptop, MacBook, iMac, Surface"
+          ></span>
+        </h5>
+        Sản phẩm & dịch vụ cung cấp bởi
+        <span
+          style="
+            background-color: white;
+            padding-left: 2px;
+            padding-right: 2px;
+            border-radius: 3px;
+          "
+        >
+          <span style="color: red">Doctor</span>
+          <span style="color: blue">Laptop</span>
+        </span>
+        <br />
+        179 CMT8 P5 Q3 TP. HCM
+        <br />
+        8:30 - 18:00 từ T2 - T7
+        <br />
+        <a class="link" href="tel:+84987718868" target="_blank">
+          <i class="fa-solid fa-phone fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
+          <i class="fa-brands fa-tiktok fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a
+          class="link"
+          href="https://facebook.com/profile.php?id=100088442898371&sk=reels_tab"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://t.me/mhqb365" target="_blank">
+          <i class="fa-brands fa-telegram fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://github.com/mhqb365" target="_blank">
+          <i class="fa-brands fa-github fa-lg"></i>
+        </a>
       </div>
     </div>
 
@@ -185,12 +245,13 @@
       <p>
         <b>3. THAY THẾ LINH KIỆN:</b> màn hình, bàn phím, pin, v.v.. nói chung
         đa số linh kiện đều có hàng<br />
-        Chi phí tùy theo model máy, liên hệ Zalo: 098 771 8868 hoặc Telegram:
-        mhqb365 để báo giá chính xác<br />
+        Chi phí tùy theo model máy, liên hệ Zalo:
+        <a href="https://zalo.me/0987718868">098 771 8868</a> hoặc Telegram:
+        <a href="https://t.me/mhqb365">mhqb365</a> để báo giá chính xác<br />
       </p>
 
       <p>
-        <b>4. CÀI ĐẶT SOFT / OS:</b> Windows: 120 cá; Windows cho Surface: 240
+        <b>4. CÀI ĐẶT OS / SOFT:</b> Windows: 120 cá; Windows cho Surface: 240
         cá; Mac OS: 250 cá; phần mềm crack: tùy ứng dụng
       </p>
 
@@ -205,7 +266,7 @@
         <div class="col-sm-4">
           <li>
             <a class="link" href="https://drlaptop.vn" target="_blank">
-              DrLaptop.vn
+              drlaptop.vn
             </a>
           </li>
         </div>
@@ -213,7 +274,7 @@
         <div class="col-sm-4">
           <li>
             <a class="link" href="https://doctorlaptop.vn" target="_blank">
-              DoctorLaptop.vn
+              doctorlaptop.vn
             </a>
           </li>
         </div>
@@ -221,7 +282,7 @@
         <div class="col-sm-4">
           <li>
             <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
-              HuyHoangTech.com.vn
+              huyhoangtech.com.vn
             </a>
           </li>
         </div>
@@ -229,9 +290,42 @@
     </div>
 
     <script>
+      var wordsToType = document
+          .querySelector("span[words]")
+          .getAttribute("words")
+          .split(","),
+        typer = document.querySelector("span[words]"),
+        typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
+        typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680;
+
+      var currentWordIndex = 0,
+        currentCharacterIndex = 0;
+
+      function type() {
+        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+
+        if (currentCharacterIndex < wordToType.length) {
+          typer.innerHTML += wordToType[currentCharacterIndex++];
+          setTimeout(type, typingSpeed);
+        } else {
+          setTimeout(erase, typingDelay);
+        }
+      }
+      function erase() {
+        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+        if (currentCharacterIndex > 0) {
+          typer.innerHTML = wordToType.substr(0, --currentCharacterIndex - 1);
+          setTimeout(erase, typingSpeed);
+        } else {
+          currentWordIndex++;
+          setTimeout(type, typingDelay);
+        }
+      }
+
       window.onload = async () => {
         setTimeout(() => {
           $("#preloader").fadeOut("slow");
+          setTimeout(type, 500);
         }, 1e3);
       };
     </script>
