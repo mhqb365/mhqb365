@@ -5,15 +5,15 @@
   "repository": "https://github.com/mhqb365/mhqb365.git",
   "author": "mhqb365 <mhqb365@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "push": "git add . && git commit -m :rocket: && git push"
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
+  "scripts": {
+    "dev": "nodemon index.js",
+    "push": "git add . && git commit -m :rocket: && git push"
   }
 }
