@@ -1,386 +1,207 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="robots" content="all" />
-    <meta name="author" content="mhqb365@gmail.com" />
-    <meta
-      name="description"
-      content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface"
-    />
-    <meta
-      name="keywords"
-      content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, webdicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, doctor laptop, drlaptop"
-    />
-    <meta property="og:title" content="Mai Hoàng Quốc Bảo | mhqb365" />
-    <meta
-      property="og:description"
-      content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface"
-    />
-    <meta property="og:url" content="https://mhqb365.com" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <meta name="robots" content="all" />
+  <meta name="author" content="mhqb365@gmail.com" />
+  <meta name="description" content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface" />
+  <meta name="keywords"
+    content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, webdicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, doctor laptop, drlaptop" />
+  <meta property="og:title" content="Mai Hoàng Quốc Bảo | mhqb365" />
+  <meta property="og:description" content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface" />
+  <meta property="og:url" content="https://mhqb365.com" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
-      integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
+    integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      html,
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+    html,
+    body {
+      font-family: "Nunito", sans-serif;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background-color: #2a2a2a;
+      color: #f8f9fa;
+    }
+
+    @media screen and (prefers-color-scheme: light) {
       body {
-        font-family: "Nunito", sans-serif;
-        height: 100%;
-        margin: 0;
+        background-color: #f8f9fa;
+        color: #2a2a2a;
+      }
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .bgimg {
+      background-image: url("./bg.jpg");
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      color: #f8f9fa;
+    }
+
+    .link {
+      text-decoration: none;
+    }
+
+    .middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      line-height: 2;
+    }
+
+    .middle a {
+      color: #f8f9fa;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .logo-app {
+      width: 64px;
+      height: 64px;
+      padding: 3px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+    }
+
+    .logo-app:hover {
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .footer {
+      line-height: 2;
+    }
+
+    #preloader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url("./loading.png") center no-repeat #000;
+      background-size: 200px;
+    }
+
+    .typing span::after {
+      content: "|";
+      animation-name: blinking;
+      animation-duration: 0.71s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes blinking {
+      from {
+        color: transparent;
       }
 
-      body {
-        background-color: #2a2a2a;
-        color: #f8f9fa;
+      to {
+        color: lightgrey;
       }
-      @media screen and (prefers-color-scheme: light) {
-        body {
-          background-color: #f8f9fa;
-          color: #2a2a2a;
-        }
-      }
+    }
 
-      a:link {
-        text-decoration: none;
-      }
+    .box {
+      align-self: flex-end;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      margin: 0 auto 0 auto;
+      transform-origin: bottom;
+      width: 200px;
+    }
 
-      .bgimg {
-        background-image: url("./bg.jpg");
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        color: #f8f9fa;
-      }
+    .bounce-2 {
+      animation-name: bounce-2;
+      animation-timing-function: ease;
+    }
 
-      .link {
-        text-decoration: none;
+    @keyframes bounce-2 {
+      0% {
+        transform: translateY(0);
       }
 
-      .middle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        line-height: 2;
+      50% {
+        transform: translateY(-100px);
       }
 
-      .middle a {
-        color: #f8f9fa;
+      100% {
+        transform: translateY(0);
       }
+    }
 
-      li {
-        list-style: none;
-      }
+    .scroll-down {
+      position: absolute;
+      left: 50%;
+      bottom: 5px;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+    }
+  </style>
 
-      .logo-app {
-        width: 64px;
-        height: 64px;
-        padding: 3px;
-        margin-bottom: 16px;
-        border-radius: 12px;
-      }
+  <title>Mai Hoàng Quốc Bảo | mhqb365</title>
+</head>
 
-      .logo-app:hover {
-        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
-      }
+<body>
+  <div class="box bounce-2" id="preloader"></div>
 
-      .footer {
-        line-height: 2;
-      }
+  <div class="bgimg">
+    <div class="middle">
+      <h1>Mai Hoàng Quốc Bảo</h1>
 
-      #preloader {
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        background: url("./loading.png") center no-repeat #000;
-        background-size: 200px;
-      }
+      <h5 class="typing">
+        Sửa chữa & thay thế linh kiện
+        <span class="text-warning" typing-speed="68" typing-delay="680" words="Laptop, MacBook, iMac, Surface"></span>
+      </h5>
 
-      .typing span::after {
-        content: "|";
-        animation-name: blinking;
-        animation-duration: 0.71s;
-        animation-iteration-count: infinite;
-      }
-
-      @keyframes blinking {
-        from {
-          color: transparent;
-        }
-        to {
-          color: lightgrey;
-        }
-      }
-
-      .box {
-        align-self: flex-end;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        margin: 0 auto 0 auto;
-        transform-origin: bottom;
-        width: 200px;
-      }
-
-      .bounce-2 {
-        animation-name: bounce-2;
-        animation-timing-function: ease;
-      }
-
-      @keyframes bounce-2 {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-100px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      .scroll-down {
-        position: absolute;
-        left: 50%;
-        bottom: 5px;
-        transform: translate(-50%, -50%);
-        margin: 0 auto;
-      }
-    </style>
-
-    <title>Mai Hoàng Quốc Bảo | mhqb365</title>
-  </head>
-
-  <body>
-    <div class="box bounce-2" id="preloader"></div>
-
-    <div class="bgimg">
-      <div class="middle">
-        <h1>Mai Hoàng Quốc Bảo</h1>
-
-        <h5 class="typing">
-          Sửa chữa & thay thế linh kiện
-          <span
-            class="text-warning"
-            typing-speed="68"
-            typing-delay="680"
-            words="Laptop, MacBook, iMac, Surface"
-          ></span>
-        </h5>
-
-        Sản phẩm & dịch vụ cung cấp bởi
-        <a href="https://doctorlaptop.vn" target="_blank">
-          <span
-            style="
+      Sản phẩm & dịch vụ cung cấp bởi
+      <a href="https://doctorlaptop.vn" target="_blank">
+        <span style="
               background-color: white;
               padding-left: 2px;
               padding-right: 2px;
               border-radius: 3px;
-            "
-          >
-            <span style="color: red">Doctor</span>
-            <span style="color: blue">Laptop</span>
-          </span>
-        </a>
-
-        <p>
-          179 CMT8 P5 Q3<br />
-          91A 3 THÁNG 2 P11 Q10
-          <br />
-          08:30 - 18:00 từ T2 - T7
-        </p>
-
-        <p style="font-size: larger">
-          <a class="link" href="tel:+84987718868" target="_blank">
-            <i class="fa-solid fa-phone fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://t.me/mhqb365" target="_blank">
-            <i class="fa-brands fa-telegram fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
-            <i class="fa-brands fa-tiktok fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a
-            class="link"
-            href="https://facebook.com/mhqb365.doctorlaptop/reels/"
-            target="_blank"
-          >
-            <i class="fa-brands fa-facebook fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://youtube.com/@mhqb365" target="_blank">
-            <i class="fa-brands fa-youtube fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://github.com/mhqb365" target="_blank">
-            <i class="fa-brands fa-github fa-lg"></i>
-          </a>
-        </p>
-      </div>
-
-      <div class="scroll-down text-center">
-        Kéo xuống<br />
-        <i class="fa-solid fa-arrow-down bounce-2"></i>
-      </div>
-    </div>
-
-    <div class="container p-4">
-      <h4 class="mb-3"><u>Tiện ích</u></h4>
-
-      <div class="row text-center">
-        <div class="col-3 mb-2">
-          <a class="link" href="https://battery.mhqb365.com" target="_blank">
-            <img
-              src="https://battery.mhqb365.com/favicon.ico"
-              class="logo-app"
-            />
-            <br />
-            Kiểm tra độ chai pin laptop
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a
-            class="link"
-            href="https://keyboardtest.mhqb365.com"
-            target="_blank"
-          >
-            <img
-              src="https://keyboardtest.mhqb365.com/favicon.ico"
-              class="logo-app"
-            />
-            <br />
-            Kiểm tra bàn phím online
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a class="link" href="https://active.mhqb365.com" target="_blank">
-            <img
-              src="https://active.mhqb365.com/favicon.ico"
-              class="logo-app"
-            />
-            <br />
-            Active Windows & Office miễn phí
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a class="link" href="https://hwinfo.com/download" target="_blank">
-            <img src="https://hwinfo.com/favicon.ico" class="logo-app" />
-            <br />
-            Thông tin máy tính | HWiNFO
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a
-            class="link"
-            href="https://drive.google.com/file/d/1fQbz4YZTfnR-DJCSchxJWtZXYzpwcJvv/view?usp=sharing"
-            target="_blank"
-          >
-            <img src="./icare.png" class="logo-app" />
-            <br />
-            Cứu dữ liệu | iCare Data
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a class="link" href="https://anhdvboot.com" target="_blank">
-            <img src="./anhdv-boot.png" class="logo-app" />
-            <br />
-            Anhdv Boot | USB cứu hộ
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container p-4">
-      <h4 class="mb-3"><u>Dịch vụ</u></h4>
+            ">
+          <span style="color: red">Doctor</span>
+          <span style="color: blue">Laptop</span>
+        </span>
+      </a>
 
       <p>
-        <a
-          class="link"
-          href="https://tinyurl.com/quydinhbaohanh"
-          target="_blank"
-        >
-          👉
-          <b> Quy định bảo hành tại Doctor Laptop </b>
-        </a>
+        179 CMT8 P5 Q3<br />
+        91A 3 THÁNG 2 P11 Q10
+        <br />
+        08:30 - 18:00 từ T2 - T7
       </p>
 
-      <p>
-        <b>1. SỬA BẢN LỀ</b><br />
-        Làm lại chân ốc vít, làm lại lổ bắt vít trên thân máy, hàn bản lề nếu
-        gãy, nói chung là xử lý các tình trạng liên quan đến bản lề khiến cho
-        laptop gập mở khó<br />
-        Chi phí thì tùy theo model máy, từ 480 cá 🐟 đổ lên<br />
-        Sẽ có rủi ro về màn hình, cảm ứng hoặc thân vỏ đối với 1 số dòng máy<br />
-      </p>
-
-      <p>
-        <b>2. SỬA MAINBOARD</b><br />
-        Máy bật hông lên, chập cháy, đổ nước, v.v.. nói chung là xử lý các vấn
-        đề trên bo mạch chủ của laptop<br />
-        Chi phí cũng tùy theo model máy, từ 480 cá 🐟 đổ lên<br />
-      </p>
-
-      <p>
-        <b>3. THAY THẾ LINH KIỆN</b><br />
-        Thay thế màn hình, bàn phím, pin, v.v.. nói chung đa số linh kiện đều có
-        hàng<br />
-        Chi phí tùy theo model máy, liên hệ Zalo
-        <a href="https://zalo.me/0987718868">098 771 8868</a> hoặc Telegram
-        <a href="https://t.me/mhqb365">mhqb365</a> để báo giá chính xác<br />
-      </p>
-
-      <p>
-        <b>4. CÀI ĐẶT</b><br />
-        Windows cho Laptop: 120 cá 🐟<br />
-        Windows cho Surface: 240 cá 🐟<br />
-        macOS cho MacBook: 250 cá 🐟
-      </p>
-    </div>
-
-    <div class="container text-center p-4">
       <p style="font-size: larger">
         <a class="link" href="tel:+84987718868" target="_blank">
           <i class="fa-solid fa-phone fa-lg"></i>
@@ -394,83 +215,212 @@
           <i class="fa-brands fa-tiktok fa-lg"></i>
         </a>
         &nbsp; &nbsp;
-        <a
-          class="link"
-          href="https://facebook.com/mhqb365.doctorlaptop/reels/"
-          target="_blank"
-        >
+        <a class="link" href="https://facebook.com/mhqb365.doctorlaptop/reels/" target="_blank">
           <i class="fa-brands fa-facebook fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://youtube.com/@mhqb365" target="_blank">
+          <i class="fa-brands fa-youtube fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://github.com/mhqb365" target="_blank">
+          <i class="fa-brands fa-github fa-lg"></i>
         </a>
       </p>
     </div>
 
-    <div class="container p-4 footer">
-      <div class="row">
-        <div class="col-sm-4">
-          <li>
-            <a class="link" href="https://drlaptop.vn" target="_blank">
-              DrLaptop.vn
-            </a>
-          </li>
-        </div>
+    <div class="scroll-down text-center">
+      Kéo xuống<br />
+      <i class="fa-solid fa-arrow-down bounce-2"></i>
+    </div>
+  </div>
 
-        <div class="col-sm-4">
-          <li>
-            <a class="link" href="https://doctorlaptop.vn" target="_blank">
-              DoctorLaptop.vn
-            </a>
-          </li>
-        </div>
+  <div class="container p-4">
+    <h4 class="mb-3"><u>Tiện ích</u></h4>
 
-        <div class="col-sm-4">
-          <li>
-            <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
-              HuyHoangTech.com.vn
-            </a>
-          </li>
-        </div>
+    <div class="row text-center">
+      <div class="col-3 mb-2">
+        <a class="link" href="https://battery.mhqb365.com" target="_blank">
+          <img src="https://battery.mhqb365.com/favicon.ico" class="logo-app" />
+          <br />
+          Kiểm tra độ chai pin laptop
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://keyboardtest.mhqb365.com" target="_blank">
+          <img src="https://keyboardtest.mhqb365.com/favicon.ico" class="logo-app" />
+          <br />
+          Kiểm tra bàn phím online
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://active.mhqb365.com" target="_blank">
+          <img src="https://active.mhqb365.com/favicon.ico" class="logo-app" />
+          <br />
+          Active Windows & Office miễn phí
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://hwinfo.com/download" target="_blank">
+          <img src="https://hwinfo.com/favicon.ico" class="logo-app" />
+          <br />
+          Thông tin máy tính | HWiNFO
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://drive.google.com/file/d/1fQbz4YZTfnR-DJCSchxJWtZXYzpwcJvv/view?usp=sharing"
+          target="_blank">
+          <img src="./icare.png" class="logo-app" />
+          <br />
+          Cứu dữ liệu | iCare Data
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://anhdvboot.com" target="_blank">
+          <img src="./anhdv-boot.png" class="logo-app" />
+          <br />
+          Anhdv Boot | USB cứu hộ
+        </a>
       </div>
     </div>
+  </div>
 
-    <script>
-      var wordsToType = document
-          .querySelector("span[words]")
-          .getAttribute("words")
-          .split(","),
-        typer = document.querySelector("span[words]"),
-        typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
-        typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680;
+  <div class="container p-4">
+    <h4 class="mb-3"><u>Dịch vụ</u></h4>
 
-      var currentWordIndex = 0,
-        currentCharacterIndex = 0;
+    <p>
+      <a class="link" href="https://j2c.cc/quydinhbaohanh" target="_blank">
+        👉
+        <b> Quy định bảo hành tại Doctor Laptop </b>
+      </a>
+    </p>
 
-      function type() {
-        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+    <p>
+      <b>1. SỬA BẢN LỀ</b><br />
+      Làm lại chân ốc vít, làm lại lổ bắt vít trên thân máy, hàn bản lề nếu
+      gãy, nói chung là xử lý các tình trạng liên quan đến bản lề khiến cho
+      laptop gập mở khó<br />
+      Chi phí thì tùy theo model máy, từ 480 cá 🐟 đổ lên<br />
+      Sẽ có rủi ro về màn hình, cảm ứng hoặc thân vỏ đối với 1 số dòng máy<br />
+    </p>
 
-        if (currentCharacterIndex < wordToType.length) {
-          typer.innerHTML += wordToType[currentCharacterIndex++];
-          setTimeout(type, typingSpeed);
-        } else {
-          setTimeout(erase, typingDelay);
-        }
+    <p>
+      <b>2. SỬA MAINBOARD</b><br />
+      Máy bật hông lên, chập cháy, đổ nước, v.v.. nói chung là xử lý các vấn
+      đề trên bo mạch chủ của laptop<br />
+      Chi phí cũng tùy theo model máy, từ 480 cá 🐟 đổ lên<br />
+    </p>
+
+    <p>
+      <b>3. THAY THẾ LINH KIỆN</b><br />
+      Thay thế màn hình, bàn phím, pin, v.v.. nói chung đa số linh kiện đều có
+      hàng<br />
+      Chi phí tùy theo model máy, liên hệ Zalo
+      <a href="https://zalo.me/0987718868">098 771 8868</a> hoặc Telegram
+      <a href="https://t.me/mhqb365">mhqb365</a> để báo giá chính xác<br />
+    </p>
+
+    <p>
+      <b>4. CÀI ĐẶT</b><br />
+      Windows cho Laptop: 120 cá 🐟<br />
+      Windows cho Surface: 240 cá 🐟<br />
+      macOS cho MacBook: 250 cá 🐟
+    </p>
+  </div>
+
+  <div class="container text-center p-4">
+    <p style="font-size: larger">
+      <a class="link" href="tel:+84987718868" target="_blank">
+        <i class="fa-solid fa-phone fa-lg"></i>
+      </a>
+      &nbsp; &nbsp;
+      <a class="link" href="https://t.me/mhqb365" target="_blank">
+        <i class="fa-brands fa-telegram fa-lg"></i>
+      </a>
+      &nbsp; &nbsp;
+      <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
+        <i class="fa-brands fa-tiktok fa-lg"></i>
+      </a>
+      &nbsp; &nbsp;
+      <a class="link" href="https://facebook.com/mhqb365.doctorlaptop/reels/" target="_blank">
+        <i class="fa-brands fa-facebook fa-lg"></i>
+      </a>
+    </p>
+  </div>
+
+  <div class="container p-4 footer">
+    <div class="row">
+      <div class="col-sm-4">
+        <li>
+          <a class="link" href="https://drlaptop.vn" target="_blank">
+            DrLaptop.vn
+          </a>
+        </li>
+      </div>
+
+      <div class="col-sm-4">
+        <li>
+          <a class="link" href="https://doctorlaptop.vn" target="_blank">
+            DoctorLaptop.vn
+          </a>
+        </li>
+      </div>
+
+      <div class="col-sm-4">
+        <li>
+          <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
+            HuyHoangTech.com.vn
+          </a>
+        </li>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var wordsToType = document
+      .querySelector("span[words]")
+      .getAttribute("words")
+      .split(","),
+      typer = document.querySelector("span[words]"),
+      typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
+      typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680;
+
+    var currentWordIndex = 0,
+      currentCharacterIndex = 0;
+
+    function type() {
+      var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+
+      if (currentCharacterIndex < wordToType.length) {
+        typer.innerHTML += wordToType[currentCharacterIndex++];
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(erase, typingDelay);
       }
-      function erase() {
-        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
-        if (currentCharacterIndex > 0) {
-          typer.innerHTML = wordToType.substr(0, --currentCharacterIndex - 1);
-          setTimeout(erase, typingSpeed);
-        } else {
-          currentWordIndex++;
-          setTimeout(type, typingDelay);
-        }
+    }
+    function erase() {
+      var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+      if (currentCharacterIndex > 0) {
+        typer.innerHTML = wordToType.substr(0, --currentCharacterIndex - 1);
+        setTimeout(erase, typingSpeed);
+      } else {
+        currentWordIndex++;
+        setTimeout(type, typingDelay);
       }
+    }
 
-      window.onload = async () => {
-        setTimeout(() => {
-          $("#preloader").fadeOut("slow");
-          setTimeout(type, 500);
-        }, 1e3);
-      };
-    </script>
-  </body>
+    window.onload = async () => {
+      setTimeout(() => {
+        $("#preloader").fadeOut("slow");
+        setTimeout(type, 500);
+      }, 1e3);
+    };
+  </script>
+</body>
+
 </html>
