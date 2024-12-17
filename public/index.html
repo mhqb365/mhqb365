@@ -458,6 +458,14 @@
         }
       }
 
+      var d = new Date();
+      let month = d.getMonth();
+
+      if (month === 11) {
+        window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+        window.addEventListener("resize", setResetFlag, false);
+      }
+
       window.onload = async () => {
         setTimeout(() => {
           $("#preloader").fadeOut("slow");
@@ -484,16 +492,6 @@
       var browserHeight;
       var numberOfSnowflakes = 50;
       var resetPosition = false;
-
-      function setup() {
-        window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
-        window.addEventListener("resize", setResetFlag, false);
-      }
-
-      var d = new Date();
-      let month = d.getMonth();
-
-      if (month === 11) setup();
 
       function getSupportedPropertyName(b) {
         for (var a = 0; a < b.length; a++) {
