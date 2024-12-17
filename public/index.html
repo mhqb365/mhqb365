@@ -464,9 +464,7 @@
           setTimeout(type, 500);
         }, 1e3);
       };
-    </script>
 
-    <script>
       var requestAnimationFrame =
         window.requestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -486,12 +484,13 @@
       var browserHeight;
       var numberOfSnowflakes = 50;
       var resetPosition = false;
+
       function setup() {
         window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
         window.addEventListener("resize", setResetFlag, false);
       }
 
-      const d = new Date();
+      var d = new Date();
       let month = d.getMonth();
 
       if (month === 11) setup();
