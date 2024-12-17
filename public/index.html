@@ -458,18 +458,16 @@
         }
       }
 
-      var d = new Date();
-      let month = d.getMonth();
-
-      if (month === 11) {
-        window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
-        window.addEventListener("resize", setResetFlag, false);
-      }
-
       window.onload = async () => {
         setTimeout(() => {
           $("#preloader").fadeOut("slow");
           setTimeout(type, 500);
+
+          var month = new Date().getMonth();
+          if (month === 11) {
+            generateSnowflakes();
+            window.addEventListener("resize", setResetFlag, false);
+          }
         }, 1e3);
       };
 
