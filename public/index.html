@@ -1,580 +1,543 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="robots" content="all" />
-    <meta name="author" content="mhqb365@gmail.com" />
-    <meta
-      name="description"
-      content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC"
-    />
-    <meta
-      name="keywords"
-      content="mai hoang quoc bao, mhqb, mhqb365, web dicebot, webdicebot, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, máy đào asic, iceriver, ks0 pro ultra, doctor laptop, drlaptop"
-    />
-    <meta property="og:title" content="Mai Hoàng Quốc Bảo" />
-    <meta
-      property="og:description"
-      content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC"
-    />
-    <meta property="og:url" content="https://mhqb365.com" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <meta name="robots" content="all" />
+  <meta name="author" content="mhqb365@gmail.com" />
+  <meta name="description" content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta property="og:url" content="https://mhqb365.com" />
+  <meta name="keywords"
+    content="mai hoang quoc bao, mhqb, mhqb365, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, máy đào asic, iceriver, goldshell, ks0 pro ultra, ks3 ks3m ks3l, ks5 ks5m, doctor laptop, drlaptop" />
+  <meta property="og:title" content="Mai Hoàng Quốc Bảo" />
+  <meta property="og:description"
+    content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC" />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
-      integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
+    integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-      html,
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+    html,
+    body {
+      font-family: "Nunito", sans-serif;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background-color: #2a2a2a;
+      color: #f8f9fa;
+    }
+
+    @media screen and (prefers-color-scheme: light) {
       body {
-        font-family: "Nunito", sans-serif;
-        height: 100%;
-        margin: 0;
+        background-color: #f8f9fa;
+        color: #2a2a2a;
+      }
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .bgimg {
+      background-image: url(https://sothuchi.misa.vn/wp-content/uploads/2024/11/background.png);
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      color: #f8f9fa;
+    }
+
+    .middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      line-height: 2;
+    }
+
+    .middle a {
+      color: #f8f9fa;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .logo-app {
+      width: 64px;
+      height: 64px;
+      padding: 3px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+    }
+
+    .logo-app:hover {
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .footer {
+      line-height: 2;
+    }
+
+    #preloader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url("./loading.png") center no-repeat #000;
+      background-size: 200px;
+    }
+
+    .typing span::after {
+      content: "|";
+      animation-name: blinking;
+      animation-duration: 0.71s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes blinking {
+      from {
+        color: transparent;
       }
 
-      body {
-        background-color: #2a2a2a;
-        color: #f8f9fa;
+      to {
+        color: lightgrey;
+      }
+    }
+
+    .box {
+      align-self: flex-end;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      margin: 0 auto 0 auto;
+      transform-origin: bottom;
+      width: 200px;
+    }
+
+    .bounce-2 {
+      animation-name: bounce-2;
+      animation-timing-function: ease;
+    }
+
+    @keyframes bounce-2 {
+      0% {
+        transform: translateY(0);
       }
 
-      @media screen and (prefers-color-scheme: light) {
-        body {
-          background-color: #f8f9fa;
-          color: #2a2a2a;
-        }
+      50% {
+        transform: translateY(-100px);
       }
 
-      a:link {
-        text-decoration: none;
+      100% {
+        transform: translateY(0);
       }
+    }
 
-      .bgimg {
-        background-image: url(https://sothuchi.misa.vn/wp-content/uploads/2024/11/background.png);
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        color: #f8f9fa;
-      }
+    .scroll-down {
+      position: absolute;
+      left: 50%;
+      bottom: 5px;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+    }
+  </style>
 
-      .middle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        line-height: 2;
-      }
+  <title>Mai Hoàng Quốc Bảo</title>
 
-      .middle a {
-        color: #f8f9fa;
-      }
+  <style>
+    #snowflakeContainer {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
 
-      li {
-        list-style: none;
-      }
+    .snowflake {
+      padding-left: 15px;
+      font-size: 14px;
+      line-height: 24px;
+      position: fixed;
+      color: #ebebeb;
+      user-select: none;
+      z-index: 1000;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
 
-      .logo-app {
-        width: 64px;
-        height: 64px;
-        padding: 3px;
-        margin-bottom: 16px;
-        border-radius: 12px;
-      }
+    .snowflake:hover {
+      cursor: default;
+    }
+  </style>
+</head>
 
-      .logo-app:hover {
-        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
-      }
+<body>
+  <div class="box bounce-2" id="preloader"></div>
 
-      .footer {
-        line-height: 2;
-      }
-
-      #preloader {
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        background: url("./loading.png") center no-repeat #000;
-        background-size: 200px;
-      }
-
-      .typing span::after {
-        content: "|";
-        animation-name: blinking;
-        animation-duration: 0.71s;
-        animation-iteration-count: infinite;
-      }
-
-      @keyframes blinking {
-        from {
-          color: transparent;
-        }
-
-        to {
-          color: lightgrey;
-        }
-      }
-
-      .box {
-        align-self: flex-end;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        margin: 0 auto 0 auto;
-        transform-origin: bottom;
-        width: 200px;
-      }
-
-      .bounce-2 {
-        animation-name: bounce-2;
-        animation-timing-function: ease;
-      }
-
-      @keyframes bounce-2 {
-        0% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-100px);
-        }
-
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      .scroll-down {
-        position: absolute;
-        left: 50%;
-        bottom: 5px;
-        transform: translate(-50%, -50%);
-        margin: 0 auto;
-      }
-    </style>
-
-    <title>Mai Hoàng Quốc Bảo</title>
-
-    <style>
-      #snowflakeContainer {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-      }
-      .snowflake {
-        padding-left: 15px;
-        font-size: 14px;
-        line-height: 24px;
-        position: fixed;
-        color: #ebebeb;
-        user-select: none;
-        z-index: 1000;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-      }
-      .snowflake:hover {
-        cursor: default;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="box bounce-2" id="preloader"></div>
-
-    <div class="bgimg">
-      <div class="middle">
-        <h3 class="typing">
-          Sửa chữa & thay thế linh kiện
-          <span
-            class="text-warning"
-            typing-speed="68"
-            typing-delay="680"
-            words="Laptop, MacBook, iMac, Surface, Máy đào ASIC"
-          ></span>
-        </h3>
-
-        <p>
-          Làm công ăn lương ở
-          <span style="color: red">Doctor</span
-          ><span style="color: blue">Laptop</span>.VN<br />
-          179 CMT8 P5 Q3 TP. HCM<br />
-          08:30 - 18:00 từ T2 - T7
-        </p>
-
-        <p style="font-size: larger">
-          <a class="link" href="tel:0987718868" target="_blank">
-            <i class="fa-solid fa-phone-volume"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://t.me/mhqb365" target="_blank">
-            <i class="fa-brands fa-telegram fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a
-            class="link"
-            href="https://facebook.com/mhqb365.doctorlaptop"
-            target="_blank"
-          >
-            <i class="fa-brands fa-facebook fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
-            <i class="fa-brands fa-tiktok fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://youtube.com/@mhqb365" target="_blank">
-            <i class="fa-brands fa-youtube fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://github.com/mhqb365" target="_blank">
-            <i class="fa-brands fa-github fa-lg"></i>
-          </a>
-        </p>
-      </div>
-
-      <div class="scroll-down text-center">
-        Kéo xuống<br />
-        <i class="fa-solid fa-arrow-down bounce-2"></i>
-      </div>
-    </div>
-
-    <div class="container p-4">
-      <h4 class="mb-3">TIỆN ÍCH</h4>
-
-      <div class="row text-center">
-        <div class="col-3 mb-2">
-          <a class="link" href="https://battery.mhqb365.com" target="_blank">
-            <img
-              src="https://battery.mhqb365.com/favicon.ico"
-              class="logo-app"
-            />
-            <br />
-            Kiểm tra độ chai pin laptop
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a
-            class="link"
-            href="https://keyboardtest.mhqb365.com"
-            target="_blank"
-          >
-            <img
-              src="https://keyboardtest.mhqb365.com/favicon.ico"
-              class="logo-app"
-            />
-            <br />
-            Kiểm tra bàn phím online
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a class="link" href="https://active.mhqb365.com" target="_blank">
-            <img
-              src="https://active.mhqb365.com/favicon.ico"
-              class="logo-app"
-            />
-            <br />
-            Active Windows & Office miễn phí
-          </a>
-        </div>
-
-        <div class="col-3 mb-2">
-          <a class="link" href="https://mdm.mhqb365.com" target="_blank">
-            <img src="./mdm.png" class="logo-app" />
-            <br />
-            Bypass MDM MacBook
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container p-4">
-      <h4 class="mb-3">
-        DỊCH VỤ TẠI <span style="color: red">DOCTOR</span>
-        <span style="color: blue">LAPTOP</span>
-      </h4>
+  <div class="bgimg">
+    <div class="middle">
+      <h3 class="typing">
+        Sửa chữa & thay thế linh kiện
+        <span class="text-warning" typing-speed="68" typing-delay="680"
+          words="Laptop, MacBook, iMac, Surface, Máy đào ASIC"></span>
+      </h3>
 
       <p>
-        <b>SỬA BẢN LỀ</b><br />
-        - Sửa lại chân ốc vít, lổ bắt vít trên thân máy, hàn bản lề nếu gãy, nói
-        chung là xử lý các tình trạng liên quan đến bản lề khiến cho laptop gập
-        mở khó khăn<br />
-        - Sẽ có rủi ro về màn hình / kính / cảm ứng hoặc thân vỏ đối với 1 số
-        dòng máy<br />
-        - Chi phí tùy model máy, từ 480 cá 🐟 bảo hành 3 tháng
+        Làm công ăn lương ở
+        <span style="color: red">Doctor</span><span style="color: blue">Laptop</span>.VN<br />
+        179 CMT8 P5 Q3 TP. HCM<br />
+        08:30 - 18:00 từ T2 - T7
       </p>
 
-      <p>
-        <b>SỬA MAINBOARD</b><br />
-        - Máy bật hông lên, chập cháy, vào nước, v.v.. nói chung là xử lý các
-        vấn đề trên bo mạch chủ của laptop<br />
-        - Chi phí cũng tùy model máy, từ 480 cá 🐟 bảo hành 3 tháng
-      </p>
-
-      <p>
-        <b>THAY THẾ LINH KIỆN</b><br />
-        - Thay thế màn hình, bàn phím, pin, v.v.. nhìn chung thì đa số linh kiện
-        đều có<br />
-        - Chi phí tùy loại linh kiện và model máy, bảo hành từ 1 - 12 tháng tùy
-        loại linh kiện<br />
-        - Liên hệ Telegram
-        <a href="https://t.me/mhqb365" target="_blank">mhqb365</a>
-        hoặc Zalo
-        <a href="https://zalo.me/0987718868" target="_blank">098 771 8868</a>
-        để được báo giá chính cụ thể
-      </p>
-
-      <p>
-        <b>CÀI ĐẶT</b><br />
-        - Windows cho Laptop 120 cá 🐟<br />
-        - Windows cho Surface 240 cá 🐟<br />
-        - MacOS cho MacBook 250 cá 🐟
-      </p>
-
-      <p>
-        <b>BẢO HÀNH</b><br />
-        👉
-        <a class="link" href="https://j2c.cc/quydinhbaohanh" target="_blank">
-          Quy định bảo hành tại <span style="color: red">Doctor</span>
-          <span style="color: blue">Laptop</span>
+      <p style="font-size: larger">
+        <a class="link" href="tel:0987718868" target="_blank">
+          <i class="fa-solid fa-phone-volume"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://t.me/mhqb365" target="_blank">
+          <i class="fa-brands fa-telegram fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://facebook.com/mhqb365.doctorlaptop" target="_blank">
+          <i class="fa-brands fa-facebook fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
+          <i class="fa-brands fa-tiktok fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://youtube.com/@mhqb365" target="_blank">
+          <i class="fa-brands fa-youtube fa-lg"></i>
+        </a>
+        &nbsp; &nbsp;
+        <a class="link" href="https://github.com/mhqb365" target="_blank">
+          <i class="fa-brands fa-github fa-lg"></i>
         </a>
       </p>
     </div>
 
-    <div class="container p-4">
-      <h4 class="mb-3">SỬA CHỮA MÁY ĐÀO ASIC</h4>
-
-      <p>
-        - Làm ngoài giờ - làm vì đam mê<br />
-        - Chi phí thì tùy model máy, từ 380 cá 🐟 bảo hành 6 tháng
-      </p>
+    <div class="scroll-down text-center">
+      Kéo xuống<br />
+      <i class="fa-solid fa-arrow-down bounce-2"></i>
     </div>
+  </div>
 
-    <div class="container p-4 footer">
-      <hr />
-      <div class="row">
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://mhqb365.com" target="_blank">
-              mhqb365.com
-            </a>
-          </li>
-        </div>
+  <div class="container p-4">
+    <h4 class="mb-3">TIỆN ÍCH</h4>
 
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://drlaptop.vn" target="_blank">
-              drlaptop.vn
-            </a>
-          </li>
-        </div>
-
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://doctorlaptop.vn" target="_blank">
-              doctorlaptop.vn
-            </a>
-          </li>
-        </div>
-
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
-              huyhoangtech.com.vn
-            </a>
-          </li>
-        </div>
+    <div class="row text-center">
+      <div class="col-3 mb-2">
+        <a class="link" href="https://battery.mhqb365.com" target="_blank">
+          <img src="https://battery.mhqb365.com/favicon.ico" class="logo-app" />
+          <br />
+          Kiểm tra độ chai pin laptop
+        </a>
       </div>
 
-      <div id="snowflakeContainer">
-        <p class="snowflake">❄</p>
+      <div class="col-3 mb-2">
+        <a class="link" href="https://keyboardtest.mhqb365.com" target="_blank">
+          <img src="https://keyboardtest.mhqb365.com/favicon.ico" class="logo-app" />
+          <br />
+          Kiểm tra bàn phím online
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://active.mhqb365.com" target="_blank">
+          <img src="https://active.mhqb365.com/favicon.ico" class="logo-app" />
+          <br />
+          Active Windows & Office miễn phí
+        </a>
+      </div>
+
+      <div class="col-3 mb-2">
+        <a class="link" href="https://mdm.mhqb365.com" target="_blank">
+          <img src="./mdm.png" class="logo-app" />
+          <br />
+          Bypass MDM MacBook
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container p-4">
+    <h4 class="mb-3">
+      DỊCH VỤ TẠI <span style="color: red">DOCTOR</span>
+      <span style="color: blue">LAPTOP</span>
+    </h4>
+
+    <p>
+      <b>SỬA BẢN LỀ</b><br />
+      - Sửa lại chân ốc vít, lổ bắt vít trên thân máy, hàn bản lề nếu gãy, nói
+      chung là xử lý các tình trạng liên quan đến bản lề khiến cho laptop gập
+      mở khó khăn<br />
+      - Sẽ có rủi ro về màn hình / kính / cảm ứng hoặc thân vỏ đối với 1 số
+      dòng máy<br />
+      - Chi phí tùy model máy, từ 480 cá 🐟 bảo hành 3 tháng
+    </p>
+
+    <p>
+      <b>SỬA MAINBOARD</b><br />
+      - Máy bật hông lên, chập cháy, vào nước, v.v.. nói chung là xử lý các
+      vấn đề trên bo mạch chủ của laptop<br />
+      - Chi phí cũng tùy model máy, từ 480 cá 🐟 bảo hành 3 tháng
+    </p>
+
+    <p>
+      <b>THAY THẾ LINH KIỆN</b><br />
+      - Thay thế màn hình, bàn phím, pin, v.v.. nhìn chung thì đa số linh kiện
+      đều có<br />
+      - Chi phí tùy loại linh kiện và model máy, bảo hành từ 1 - 12 tháng tùy
+      loại linh kiện<br />
+      - Liên hệ Telegram
+      <a href="https://t.me/mhqb365" target="_blank">mhqb365</a>
+      hoặc Zalo
+      <a href="https://zalo.me/0987718868" target="_blank">098 771 8868</a>
+      để được báo giá chính cụ thể
+    </p>
+
+    <p>
+      <b>CÀI ĐẶT</b><br />
+      - Windows cho Laptop 120 cá 🐟<br />
+      - Windows cho Surface 240 cá 🐟<br />
+      - MacOS cho MacBook 250 cá 🐟
+    </p>
+
+    <p>
+      <b>BẢO HÀNH</b><br />
+      👉
+      <a class="link" href="https://j2c.cc/quydinhbaohanh" target="_blank">
+        Quy định bảo hành tại <span style="color: red">Doctor</span>
+        <span style="color: blue">Laptop</span>
+      </a>
+    </p>
+  </div>
+
+  <div class="container p-4">
+    <h4 class="mb-3">SỬA CHỮA MÁY ĐÀO ASIC</h4>
+
+    <p>
+      - Làm ngoài giờ - làm vì đam mê<br />
+      - Chi phí thì tùy model máy, từ 380 cá 🐟 bảo hành 6 tháng
+    </p>
+  </div>
+
+  <div class="container p-4 footer">
+    <hr />
+    <div class="row">
+      <div class="col-sm-3">
+        <li>
+          <a class="link" href="https://mhqb365.com" target="_blank">
+            mhqb365.com
+          </a>
+        </li>
+      </div>
+
+      <div class="col-sm-3">
+        <li>
+          <a class="link" href="https://drlaptop.vn" target="_blank">
+            drlaptop.vn
+          </a>
+        </li>
+      </div>
+
+      <div class="col-sm-3">
+        <li>
+          <a class="link" href="https://doctorlaptop.vn" target="_blank">
+            doctorlaptop.vn
+          </a>
+        </li>
+      </div>
+
+      <div class="col-sm-3">
+        <li>
+          <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
+            huyhoangtech.com.vn
+          </a>
+        </li>
       </div>
     </div>
 
-    <script>
-      var wordsToType = document
-          .querySelector("span[words]")
-          .getAttribute("words")
-          .split(","),
-        typer = document.querySelector("span[words]"),
-        typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
-        typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680;
+    <div id="snowflakeContainer">
+      <p class="snowflake">❄</p>
+    </div>
+  </div>
 
-      var currentWordIndex = 0,
-        currentCharacterIndex = 0;
+  <script>
+    var wordsToType = document
+      .querySelector("span[words]")
+      .getAttribute("words")
+      .split(","),
+      typer = document.querySelector("span[words]"),
+      typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
+      typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680;
 
-      function type() {
-        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+    var currentWordIndex = 0,
+      currentCharacterIndex = 0;
 
-        if (currentCharacterIndex < wordToType.length) {
-          typer.innerHTML += wordToType[currentCharacterIndex++];
-          setTimeout(type, typingSpeed);
-        } else {
-          setTimeout(erase, typingDelay);
+    function type() {
+      var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+
+      if (currentCharacterIndex < wordToType.length) {
+        typer.innerHTML += wordToType[currentCharacterIndex++];
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(erase, typingDelay);
+      }
+    }
+    function erase() {
+      var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+      if (currentCharacterIndex > 0) {
+        typer.innerHTML = wordToType.substr(0, --currentCharacterIndex - 1);
+        setTimeout(erase, typingSpeed);
+      } else {
+        currentWordIndex++;
+        setTimeout(type, typingDelay);
+      }
+    }
+
+    window.onload = async () => {
+      setTimeout(() => {
+        $("#preloader").fadeOut("slow");
+        setTimeout(type, 500);
+
+        var month = new Date().getMonth();
+        if (month === 11) {
+          generateSnowflakes();
+          window.addEventListener("resize", setResetFlag, false);
+        }
+      }, 1e3);
+    };
+
+    var requestAnimationFrame =
+      window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.msRequestAnimationFrame;
+    var transforms = [
+      "transform",
+      "msTransform",
+      "webkitTransform",
+      "mozTransform",
+      "oTransform",
+    ];
+
+    var transformProperty = getSupportedPropertyName(transforms);
+    var snowflakes = [];
+    var browserWidth;
+    var browserHeight;
+    var numberOfSnowflakes = 50;
+    var resetPosition = false;
+
+    function getSupportedPropertyName(b) {
+      for (var a = 0; a < b.length; a++) {
+        if (typeof document.body.style[b[a]] != "undefined") {
+          return b[a];
         }
       }
-      function erase() {
-        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
-        if (currentCharacterIndex > 0) {
-          typer.innerHTML = wordToType.substr(0, --currentCharacterIndex - 1);
-          setTimeout(erase, typingSpeed);
-        } else {
-          currentWordIndex++;
-          setTimeout(type, typingDelay);
-        }
+      return null;
+    }
+
+    function Snowflake(b, a, d, e, c) {
+      this.element = b;
+      this.radius = a;
+      this.speed = d;
+      this.xPos = e;
+      this.yPos = c;
+      this.counter = 0;
+      this.sign = Math.random() < 0.5 ? 1 : -1;
+      this.element.style.opacity = 0.5 + Math.random();
+      this.element.style.fontSize = 4 + Math.random() * 30 + "px";
+    }
+
+    Snowflake.prototype.update = function () {
+      this.counter += this.speed / 5000;
+      this.xPos += (this.sign * this.speed * Math.cos(this.counter)) / 40;
+      this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
+      setTranslate3DTransform(
+        this.element,
+        Math.round(this.xPos),
+        Math.round(this.yPos)
+      );
+      if (this.yPos > browserHeight) {
+        this.yPos = -50;
       }
+    };
 
-      window.onload = async () => {
-        setTimeout(() => {
-          $("#preloader").fadeOut("slow");
-          setTimeout(type, 500);
+    function setTranslate3DTransform(a, c, b) {
+      var d = "translate3d(" + c + "px, " + b + "px, 0)";
+      a.style[transformProperty] = d;
+    }
 
-          var month = new Date().getMonth();
-          if (month === 11) {
-            generateSnowflakes();
-            window.addEventListener("resize", setResetFlag, false);
-          }
-        }, 1e3);
-      };
-
-      var requestAnimationFrame =
-        window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame;
-      var transforms = [
-        "transform",
-        "msTransform",
-        "webkitTransform",
-        "mozTransform",
-        "oTransform",
-      ];
-
-      var transformProperty = getSupportedPropertyName(transforms);
-      var snowflakes = [];
-      var browserWidth;
-      var browserHeight;
-      var numberOfSnowflakes = 50;
-      var resetPosition = false;
-
-      function getSupportedPropertyName(b) {
-        for (var a = 0; a < b.length; a++) {
-          if (typeof document.body.style[b[a]] != "undefined") {
-            return b[a];
-          }
-        }
-        return null;
+    function generateSnowflakes() {
+      var b = document.querySelector(".snowflake");
+      var h = b.parentNode;
+      browserWidth = document.documentElement.clientWidth;
+      browserHeight = document.documentElement.clientHeight;
+      for (var d = 0; d < numberOfSnowflakes; d++) {
+        var j = b.cloneNode(true);
+        h.appendChild(j);
+        var e = getPosition(50, browserWidth);
+        var a = getPosition(50, browserHeight);
+        var c = 5 + Math.random() * 40;
+        var g = 4 + Math.random() * 10;
+        var f = new Snowflake(j, g, c, e, a);
+        snowflakes.push(f);
       }
+      h.removeChild(b);
+      moveSnowflakes();
+    }
 
-      function Snowflake(b, a, d, e, c) {
-        this.element = b;
-        this.radius = a;
-        this.speed = d;
-        this.xPos = e;
-        this.yPos = c;
-        this.counter = 0;
-        this.sign = Math.random() < 0.5 ? 1 : -1;
-        this.element.style.opacity = 0.5 + Math.random();
-        this.element.style.fontSize = 4 + Math.random() * 30 + "px";
+    function moveSnowflakes() {
+      for (var b = 0; b < snowflakes.length; b++) {
+        var a = snowflakes[b];
+        a.update();
       }
-
-      Snowflake.prototype.update = function () {
-        this.counter += this.speed / 5000;
-        this.xPos += (this.sign * this.speed * Math.cos(this.counter)) / 40;
-        this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
-        setTranslate3DTransform(
-          this.element,
-          Math.round(this.xPos),
-          Math.round(this.yPos)
-        );
-        if (this.yPos > browserHeight) {
-          this.yPos = -50;
-        }
-      };
-
-      function setTranslate3DTransform(a, c, b) {
-        var d = "translate3d(" + c + "px, " + b + "px, 0)";
-        a.style[transformProperty] = d;
-      }
-
-      function generateSnowflakes() {
-        var b = document.querySelector(".snowflake");
-        var h = b.parentNode;
+      if (resetPosition) {
         browserWidth = document.documentElement.clientWidth;
         browserHeight = document.documentElement.clientHeight;
-        for (var d = 0; d < numberOfSnowflakes; d++) {
-          var j = b.cloneNode(true);
-          h.appendChild(j);
-          var e = getPosition(50, browserWidth);
-          var a = getPosition(50, browserHeight);
-          var c = 5 + Math.random() * 40;
-          var g = 4 + Math.random() * 10;
-          var f = new Snowflake(j, g, c, e, a);
-          snowflakes.push(f);
-        }
-        h.removeChild(b);
-        moveSnowflakes();
-      }
-
-      function moveSnowflakes() {
         for (var b = 0; b < snowflakes.length; b++) {
           var a = snowflakes[b];
-          a.update();
+          a.xPos = getPosition(50, browserWidth);
+          a.yPos = getPosition(50, browserHeight);
         }
-        if (resetPosition) {
-          browserWidth = document.documentElement.clientWidth;
-          browserHeight = document.documentElement.clientHeight;
-          for (var b = 0; b < snowflakes.length; b++) {
-            var a = snowflakes[b];
-            a.xPos = getPosition(50, browserWidth);
-            a.yPos = getPosition(50, browserHeight);
-          }
-          resetPosition = false;
-        }
-        requestAnimationFrame(moveSnowflakes);
+        resetPosition = false;
       }
+      requestAnimationFrame(moveSnowflakes);
+    }
 
-      function getPosition(b, a) {
-        return Math.round(-1 * b + Math.random() * (a + 2 * b));
-      }
+    function getPosition(b, a) {
+      return Math.round(-1 * b + Math.random() * (a + 2 * b));
+    }
 
-      function setResetFlag(a) {
-        resetPosition = true;
-      }
-    </script>
-  </body>
+    function setResetFlag(a) {
+      resetPosition = true;
+    }
+  </script>
+</body>
+
 </html>

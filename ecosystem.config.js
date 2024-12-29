@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "mhqb365",
+      name: "hello",
       script: "index.js",
     },
   ],
