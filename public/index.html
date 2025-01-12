@@ -33,38 +33,35 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
-
     html,
     body {
-      font-family: "Nunito", sans-serif;
-      height: 100%;
+      min-width: 0;
+      min-height: 0;
       margin: 0;
+      padding: 0;
+      color: #000;
+      scroll-behavior: smooth;
+      font-family: Inter Variable, Inter, ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    body {
-      background-color: #2a2a2a;
-      color: #f8f9fa;
-    }
-
-    @media screen and (prefers-color-scheme: light) {
-      body {
-        background-color: #f8f9fa;
-        color: #2a2a2a;
-      }
-    }
 
     a:link {
       text-decoration: none;
     }
 
     .bgimg {
-      background-image: url(https://sothuchi.misa.vn/wp-content/uploads/2024/11/background.png);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
       height: 100%;
-      background-position: center;
+      min-height: 100vh;
+      background: url(bg.svg) no-repeat center center;
       background-size: cover;
       position: relative;
-      color: #f8f9fa;
     }
 
     .middle {
@@ -77,7 +74,7 @@
     }
 
     .middle a {
-      color: #f8f9fa;
+      color: #000;
     }
 
     li {
@@ -128,33 +125,7 @@
       }
     }
 
-    .box {
-      align-self: flex-end;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      margin: 0 auto 0 auto;
-      transform-origin: bottom;
-      width: 200px;
-    }
 
-    .bounce-2 {
-      animation-name: bounce-2;
-      animation-timing-function: ease;
-    }
-
-    @keyframes bounce-2 {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-100px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
 
     .scroll-down {
       position: absolute;
@@ -167,36 +138,9 @@
 
   <title>Mai Hoàng Quốc Bảo</title>
 
-  <style>
-    #snowflakeContainer {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-    }
-
-    .snowflake {
-      padding-left: 15px;
-      font-size: 14px;
-      line-height: 24px;
-      position: fixed;
-      color: #ebebeb;
-      user-select: none;
-      z-index: 1000;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      -webkit-touch-callout: none;
-    }
-
-    .snowflake:hover {
-      cursor: default;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="box bounce-2" id="preloader"></div>
 
   <div class="bgimg">
     <div class="middle">
@@ -208,7 +152,7 @@
 
       <p>
         Làm công ăn lương ở
-        <span style="color: red">Doctor</span><span style="color: blue">Laptop</span>.VN<br />
+        <span style="color: red">Doctor</span> <span style="color: blue">Laptop</span><br />
         179 CMT8 P5 Q3 TP. HCM<br />
         08:30 - 18:00 từ T2 - T7
       </p>
@@ -242,7 +186,7 @@
 
     <div class="scroll-down text-center">
       Kéo xuống<br />
-      <i class="fa-solid fa-arrow-down bounce-2"></i>
+      <i class="fa-solid fa-arrow-down"></i>
     </div>
   </div>
 
@@ -250,7 +194,7 @@
     <h4 class="mb-3">TIỆN ÍCH</h4>
 
     <div class="row text-center">
-      <div class="col-3 mb-2">
+      <div class="col-3 mb-3">
         <a class="link" href="https://battery.mhqb365.com" target="_blank">
           <img src="https://battery.mhqb365.com/favicon.ico" class="logo-app" />
           <br />
@@ -258,7 +202,7 @@
         </a>
       </div>
 
-      <div class="col-3 mb-2">
+      <div class="col-3 mb-3">
         <a class="link" href="https://keyboardtest.mhqb365.com" target="_blank">
           <img src="https://keyboardtest.mhqb365.com/favicon.ico" class="logo-app" />
           <br />
@@ -266,7 +210,7 @@
         </a>
       </div>
 
-      <div class="col-3 mb-2">
+      <div class="col-3 mb-3">
         <a class="link" href="https://active.mhqb365.com" target="_blank">
           <img src="https://active.mhqb365.com/favicon.ico" class="logo-app" />
           <br />
@@ -274,13 +218,24 @@
         </a>
       </div>
 
-      <div class="col-3 mb-2">
+      <div class="col-3 mb-3">
         <a class="link" href="https://mdm.mhqb365.com" target="_blank">
           <img src="./mdm.png" class="logo-app" />
           <br />
           Bypass MDM MacBook
         </a>
       </div>
+
+      <div class="col-3 mb-3">
+        <a class="link" href="https://tranphu.gitbook.io/setup" target="_blank">
+          <img
+            src="https://365422565-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FpvyTPcwHwfN09QEvxFpb%2Ficon%2FLUoX0MGBDMqT7yuxjFSd%2Fico.png?alt=media&token=45f12dec-d130-46ec-9421-fb52f74ce97d"
+            class="logo-app" />
+          <br />
+          Hướng dẫn tự cài lại Windows<br />(sưu tầm)
+        </a>
+      </div>
+
     </div>
   </div>
 
@@ -291,58 +246,46 @@
     </h4>
 
     <p>
-      <b>SỬA BẢN LỀ</b><br />
-      - Sửa lại chân ốc vít, lổ bắt vít trên thân máy, hàn bản lề nếu gãy, nói
-      chung là xử lý các tình trạng liên quan đến bản lề khiến cho laptop gập
-      mở khó khăn<br />
-      - Sẽ có rủi ro về màn hình / kính / cảm ứng hoặc thân vỏ đối với 1 số
-      dòng máy<br />
-      - Chi phí tùy model máy, từ 480 cá 🐟 bảo hành 3 tháng
-    </p>
-
-    <p>
-      <b>SỬA MAINBOARD</b><br />
-      - Máy bật hông lên, chập cháy, vào nước, v.v.. nói chung là xử lý các
-      vấn đề trên bo mạch chủ của laptop<br />
-      - Chi phí cũng tùy model máy, từ 480 cá 🐟 bảo hành 3 tháng
-    </p>
-
-    <p>
-      <b>THAY THẾ LINH KIỆN</b><br />
-      - Thay thế màn hình, bàn phím, pin, v.v.. nhìn chung thì đa số linh kiện
-      đều có<br />
-      - Chi phí tùy loại linh kiện và model máy, bảo hành từ 1 - 12 tháng tùy
-      loại linh kiện<br />
-      - Liên hệ Telegram
-      <a href="https://t.me/mhqb365" target="_blank">mhqb365</a>
-      hoặc Zalo
-      <a href="https://zalo.me/0987718868" target="_blank">098 771 8868</a>
-      để được báo giá chính cụ thể
-    </p>
-
-    <p>
-      <b>CÀI ĐẶT</b><br />
-      - Windows cho Laptop 120 cá 🐟<br />
-      - Windows cho Surface 240 cá 🐟<br />
-      - MacOS cho MacBook 250 cá 🐟
-    </p>
-
-    <p>
-      <b>BẢO HÀNH</b><br />
-      👉
       <a class="link" href="https://j2c.cc/quydinhbaohanh" target="_blank">
         Quy định bảo hành tại <span style="color: red">Doctor</span>
         <span style="color: blue">Laptop</span>
       </a>
     </p>
+
+    <h5>SỬA BẢN LỀ</h5>
+    <p>
+      Sửa chân ốc vít trên thân vỏ máy, hàn trục bản lề nếu gãy,
+      nói chung là sửa chữa các tình trạng liên quan đến bản lề khiến cho laptop gập mở khó khăn<br />
+      Có rủi ro về màn hình, kính, cảm ứng, thân vỏ đối với 1 số dòng máy
+    </p>
+
+    <h5>SỬA MAINBOARD</h5>
+    <p>
+      Sửa chữa laptop bật không lên, chập cháy, vô nước, các vấn đề trên bo mạch chủ của laptop
+    </p>
+
+    <h5>THAY THẾ LINH KIỆN</h5>
+    <p>
+      Thay thế màn hình, bàn phím, pin, v.v.. đa số các loại linh kiện đều có<br />
+      Liên hệ Zalo
+      <a href="https://zalo.me/0987718868" target="_blank">098 771 8868</a>
+      để được báo giá cụ thể
+    </p>
+
+    <h5>CÀI ĐẶT</h5>
+    <p>
+      Windows cho Laptop 120 cá<br />
+      Windows cho Surface 240 cá<br />
+      MacOS cho MacBook 250 cá
+    </p>
   </div>
 
   <div class="container p-4">
-    <h4 class="mb-3">SỬA CHỮA MÁY ĐÀO ASIC</h4>
+    <h4 class="mb-3">SỬA CHỮA <span class="text-warning">MÁY ĐÀO ASIC</span></h4>
 
     <p>
-      - Làm ngoài giờ - làm vì đam mê<br />
-      - Chi phí thì tùy model máy, từ 380 cá 🐟 bảo hành 6 tháng
+      Sửa máy đào không lên nguồn, không lên hash, các vấn đề trên các dòng máy đào IceRiver, GoldShell, v.v..<br />
+      Làm ngoài giờ & làm vì đam mê
     </p>
   </div>
 
@@ -380,10 +323,6 @@
           </a>
         </li>
       </div>
-    </div>
-
-    <div id="snowflakeContainer">
-      <p class="snowflake">❄</p>
     </div>
   </div>
 
@@ -424,119 +363,8 @@
       setTimeout(() => {
         $("#preloader").fadeOut("slow");
         setTimeout(type, 500);
-
-        var month = new Date().getMonth();
-        if (month === 11) {
-          generateSnowflakes();
-          window.addEventListener("resize", setResetFlag, false);
-        }
       }, 1e3);
     };
-
-    var requestAnimationFrame =
-      window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.msRequestAnimationFrame;
-    var transforms = [
-      "transform",
-      "msTransform",
-      "webkitTransform",
-      "mozTransform",
-      "oTransform",
-    ];
-
-    var transformProperty = getSupportedPropertyName(transforms);
-    var snowflakes = [];
-    var browserWidth;
-    var browserHeight;
-    var numberOfSnowflakes = 50;
-    var resetPosition = false;
-
-    function getSupportedPropertyName(b) {
-      for (var a = 0; a < b.length; a++) {
-        if (typeof document.body.style[b[a]] != "undefined") {
-          return b[a];
-        }
-      }
-      return null;
-    }
-
-    function Snowflake(b, a, d, e, c) {
-      this.element = b;
-      this.radius = a;
-      this.speed = d;
-      this.xPos = e;
-      this.yPos = c;
-      this.counter = 0;
-      this.sign = Math.random() < 0.5 ? 1 : -1;
-      this.element.style.opacity = 0.5 + Math.random();
-      this.element.style.fontSize = 4 + Math.random() * 30 + "px";
-    }
-
-    Snowflake.prototype.update = function () {
-      this.counter += this.speed / 5000;
-      this.xPos += (this.sign * this.speed * Math.cos(this.counter)) / 40;
-      this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
-      setTranslate3DTransform(
-        this.element,
-        Math.round(this.xPos),
-        Math.round(this.yPos)
-      );
-      if (this.yPos > browserHeight) {
-        this.yPos = -50;
-      }
-    };
-
-    function setTranslate3DTransform(a, c, b) {
-      var d = "translate3d(" + c + "px, " + b + "px, 0)";
-      a.style[transformProperty] = d;
-    }
-
-    function generateSnowflakes() {
-      var b = document.querySelector(".snowflake");
-      var h = b.parentNode;
-      browserWidth = document.documentElement.clientWidth;
-      browserHeight = document.documentElement.clientHeight;
-      for (var d = 0; d < numberOfSnowflakes; d++) {
-        var j = b.cloneNode(true);
-        h.appendChild(j);
-        var e = getPosition(50, browserWidth);
-        var a = getPosition(50, browserHeight);
-        var c = 5 + Math.random() * 40;
-        var g = 4 + Math.random() * 10;
-        var f = new Snowflake(j, g, c, e, a);
-        snowflakes.push(f);
-      }
-      h.removeChild(b);
-      moveSnowflakes();
-    }
-
-    function moveSnowflakes() {
-      for (var b = 0; b < snowflakes.length; b++) {
-        var a = snowflakes[b];
-        a.update();
-      }
-      if (resetPosition) {
-        browserWidth = document.documentElement.clientWidth;
-        browserHeight = document.documentElement.clientHeight;
-        for (var b = 0; b < snowflakes.length; b++) {
-          var a = snowflakes[b];
-          a.xPos = getPosition(50, browserWidth);
-          a.yPos = getPosition(50, browserHeight);
-        }
-        resetPosition = false;
-      }
-      requestAnimationFrame(moveSnowflakes);
-    }
-
-    function getPosition(b, a) {
-      return Math.round(-1 * b + Math.random() * (a + 2 * b));
-    }
-
-    function setResetFlag(a) {
-      resetPosition = true;
-    }
   </script>
 </body>
 
