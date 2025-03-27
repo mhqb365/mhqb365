@@ -1,392 +1,507 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="mhqb365@gmail.com" />
+    <meta
+      name="description"
+      content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC"
+    />
 
-  <meta name="robots" content="all" />
-  <meta name="author" content="mhqb365@gmail.com" />
-  <meta name="description" content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC" />
+    <meta property="og:url" content="https://mhqb365.com" />
+    <meta
+      name="keywords"
+      content="mai hoang quoc bao, mhqb, mhqb365, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, máy đào asic, iceriver, goldshell, ks0 pro ultra, ks3 ks3m ks3l, ks5 ks5m, doctor laptop, drlaptop"
+    />
+    <meta property="og:title" content="Mai Hoàng Quốc Bảo" />
+    <meta
+      property="og:description"
+      content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC"
+    />
 
-  <meta property="og:url" content="https://mhqb365.com" />
-  <meta name="keywords"
-    content="mai hoang quoc bao, mhqb, mhqb365, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, máy đào asic, iceriver, goldshell, ks0 pro ultra, ks3 ks3m ks3l, ks5 ks5m, doctor laptop, drlaptop" />
-  <meta property="og:title" content="Mai Hoàng Quốc Bảo" />
-  <meta property="og:description"
-    content="Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
-  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
-  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
-    integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
+      integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-  <style>
-    html,
-    body {
-      min-width: 0;
-      min-height: 0;
-      margin: 0;
-      padding: 0;
-      color: #000;
-      scroll-behavior: smooth;
-      font-family: Inter Variable, Inter, ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 
-
-    a:link {
-      text-decoration: none;
-    }
-
-    .bgimg {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      min-height: 100vh;
-      background: url("./bg.svg") no-repeat center center;
-      background-size: cover;
-      position: relative;
-    }
-
-    .middle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      line-height: 2;
-    }
-
-    .middle a {
-      color: #000;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    .logo-app {
-      width: 64px;
-      height: 64px;
-      padding: 3px;
-      margin-bottom: 16px;
-      border-radius: 12px;
-    }
-
-    .logo-app:hover {
-      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
-    }
-
-    .footer {
-      line-height: 2;
-    }
-
-    .typing span::after {
-      content: "|";
-      animation-name: blinking;
-      animation-duration: 0.71s;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes blinking {
-      from {
-        color: transparent;
+    <style>
+      html,
+      body {
+        min-width: 0;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        color: #000;
+        scroll-behavior: smooth;
+        font-family: Inter Variable, Inter, ui-sans-serif, system-ui, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
-      to {
-        color: lightgrey;
-      }
-    }
-
-    .scroll-down {
-      position: absolute;
-      left: 50%;
-      bottom: 5px;
-      transform: translate(-50%, -50%);
-      margin: 0 auto;
-    }
-
-    .bounce {
-      animation: bounce 2s infinite;
-      font-size: 1.5rem;
-    }
-
-    @keyframes bounce {
-
-      0%,
-      20%,
-      50%,
-      80%,
-      100% {
-        transform: translateY(0);
+      a:link {
+        text-decoration: none;
       }
 
-      40% {
-        transform: translateY(-20px);
+      .bgimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        background: url("./bg.svg") no-repeat center center;
+        background-size: cover;
+        position: relative;
       }
 
-      60% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .loading-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 5px solid rgba(0, 0, 0, 0.1);
-      border-top: 5px solid #3498db;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: 2;
       }
 
-      100% {
-        transform: rotate(360deg);
+      .middle a {
+        color: #000;
       }
-    }
 
-    .app {
-      display: none;
-    }
-  </style>
+      li {
+        list-style: none;
+      }
 
-  <title>Mai Hoàng Quốc Bảo</title>
+      .logo-app {
+        width: 64px;
+        height: 64px;
+        padding: 3px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+      }
 
-</head>
+      .logo-app:hover {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+      }
 
-<body>
+      .footer {
+        line-height: 2;
+      }
 
-  <div class="loading-container">
-    <div class="spinner"></div>
-  </div>
+      .typing span::after {
+        content: "|";
+        animation-name: blinking;
+        animation-duration: 0.71s;
+        animation-iteration-count: infinite;
+      }
 
-  <div class="app">
-    <div class="bgimg">
-      <div class="middle">
-        <h3 class="typing">
-          Sửa chữa & thay thế linh kiện
-          <span class="text-primary" typing-speed="68" typing-delay="680"
-            words="Laptop, MacBook, iMac, Surface, Máy đào ASIC"></span>
-        </h3>
+      @keyframes blinking {
+        from {
+          color: transparent;
+        }
 
-        <p>
-          Đang làm ở
-          <span class="text-danger">Doctor</span> <span class="text-primary">Laptop</span><br />
-          179 CMT8 P5 Q3 TP. HCM<br />
-          08:30 - 18:00 từ T2 - T7
-        </p>
+        to {
+          color: lightgrey;
+        }
+      }
 
-        <p style="font-size: larger">
-          <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
-            <i class="fa-brands fa-tiktok fa-lg"></i>
-          </a>
-          &nbsp; &nbsp;
-          <a class="link" href="https://github.com/mhqb365" target="_blank">
-            <i class="fa-brands fa-github fa-lg"></i>
-          </a>
-        </p>
+      .scroll-down {
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+      }
+
+      .bounce {
+        animation: bounce 2s infinite;
+        font-size: 1.5rem;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(-20px);
+        }
+
+        60% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .loading-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .app {
+        display: none;
+      }
+    </style>
+
+    <title>Mai Hoàng Quốc Bảo</title>
+  </head>
+
+  <body>
+    <div class="loading-container">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="app">
+      <div class="bgimg">
+        <div class="middle">
+          <h3 class="typing">
+            Sửa chữa & thay thế linh kiện
+            <span
+              class="text-primary"
+              typing-speed="68"
+              typing-delay="680"
+              words="Laptop, MacBook, iMac, Surface, Máy đào ASIC"
+            ></span>
+          </h3>
+
+          <p>
+            Đang làm ở
+            <span class="text-danger">Doctor</span>
+            <span class="text-primary">Laptop</span><br />
+            179 CMT8 P5 Q3 TP. HCM<br />
+            08:30 - 18:00 từ T2 - T7
+          </p>
+
+          <p style="font-size: larger">
+            <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
+              <i class="fa-brands fa-tiktok fa-lg"></i>
+            </a>
+            &nbsp; &nbsp;
+            <a class="link" href="https://github.com/mhqb365" target="_blank">
+              <i class="fa-brands fa-github fa-lg"></i>
+            </a>
+          </p>
+        </div>
+
+        <div class="scroll-down text-center">
+          <i class="bounce fa-solid fa-arrow-down"></i>
+        </div>
       </div>
 
-      <div class="scroll-down text-center">
-        <i class="bounce fa-solid fa-arrow-down"></i>
+      <div class="container my-5">
+        <h5 class="mb-3 text-primary">TUI BIẾT</h5>
+
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <b>Sửa bản lề laptop</b>
+            <p>
+              Sửa chữa các vấn đề liên quan đến bản lề khiến cho laptop gập mở
+              khó khăn
+            </p>
+          </div>
+          <div class="col-md-3 mb-3">
+            <b>Sửa mainboard laptop</b>
+            <p>
+              Sửa chữa laptop bật không lên, chập cháy, vô nước, v.v.. sửa chữa
+              trên bo mạch của laptop
+            </p>
+          </div>
+          <div class="col-md-3 mb-3">
+            <b>Thay thế linh kiện laptop</b>
+            <p>
+              Thay thế màn hình, bàn phím, pin, v.v.. đa số các loại linh kiện
+              đều làm được
+            </p>
+          </div>
+          <div class="col-md-3 mb-3">
+            <b>Sửa máy đào ASIC</b>
+            <p>
+              Sửa máy đào không lên nguồn, không lên hash, v.v.. trên các dòng
+              máy đào IceRiver, GoldShell
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-5">
+        <div class="row text-center">
+          <div class="col-md-4 mb-3">
+            <a class="link" href="https://zalo.me/0909960290" target="_blank">
+              <img
+                src="https://drlaptop.vn/trung-tam-sua-chua-laptop-tai-tphcm-drlaptop.png"
+                class="logo-app"
+              />
+              <br />
+              Liên hệ sửa laptop<br />
+              <small class="text-secondary">(Zalo: Trần Hoàng)</small>
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a class="link" href="https://t.me/mhqb365" target="_blank">
+              <img src="./avt.jpg" class="logo-app" />
+              <br />
+              Liên hệ sửa máy đào<br />
+              <small class="text-secondary">(Telegram: MHQB)</small>
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a
+              class="link"
+              href="https://tranphu.gitbook.io/setup"
+              target="_blank"
+            >
+              <img
+                src="https://365422565-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FpvyTPcwHwfN09QEvxFpb%2Ficon%2FLUoX0MGBDMqT7yuxjFSd%2Fico.png?alt=media&token=45f12dec-d130-46ec-9421-fb52f74ce97d"
+                class="logo-app"
+              />
+              <br />
+              Hướng dẫn tự cài Windows<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a class="link" href="https://j2c.cc/mdm" target="_blank">
+              <img
+                src="https://raw.githubusercontent.com/mhqb365/bypassmdm/refs/heads/main/img/mdm.png"
+                class="logo-app"
+              />
+              <br />
+              Bypass MDM MacBook<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a
+              class="link"
+              href="https://github.com/mhqb365/bbattery"
+              target="_blank"
+            >
+              <img
+                src="https://raw.githubusercontent.com/mhqb365/bbattery/refs/heads/master/bBattery.ico"
+                class="logo-app"
+              />
+              <br />
+              Kiểm tra nhanh độ chai pin<br />
+              <small class="text-secondary">(Tự làm)</small>
+            </a>
+            <p>
+              <small>
+                Copy đoạn code dưới đây dán vào PowerShell hoặc Termial của
+                Windows
+              </small>
+              <br />
+              <code> irm j2c.cc/batterycheck | iex </code>
+              <br />
+              <button
+                class="btn btn-sm btn-secondary mt-2"
+                data-clipboard-text="irm j2c.cc/batterycheck | iex"
+              >
+                Copy
+              </button>
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <a class="link" href="https://massgrave.dev" target="_blank">
+              <img
+                src="https://massgrave.dev/img/logo.png"
+                class="logo-app bg-dark"
+              />
+              <br />
+              Active Windows & Office<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+            <p>
+              <small>
+                Copy đoạn code dưới đây dán vào PowerShell hoặc Termial của
+                Windows
+              </small>
+              <br />
+              <code> irm j2c.cc/active | iex </code>
+              <br />
+              <button
+                class="btn btn-sm btn-secondary mt-2"
+                data-clipboard-text="irm j2c.cc/active | iex"
+              >
+                Copy
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-4 footer text-center">
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <li>
+              <a class="link" href="https://mhqb365.com" target="_blank">
+                mhqb365.com
+              </a>
+            </li>
+          </div>
+
+          <div class="col-sm-3">
+            <li>
+              <a class="link" href="https://drlaptop.vn" target="_blank">
+                drlaptop.vn
+              </a>
+            </li>
+          </div>
+
+          <div class="col-sm-3">
+            <li>
+              <a class="link" href="https://doctorlaptop.vn" target="_blank">
+                doctorlaptop.vn
+              </a>
+            </li>
+          </div>
+
+          <div class="col-sm-3">
+            <li>
+              <a
+                class="link"
+                href="https://huyhoangtech.com.vn"
+                target="_blank"
+              >
+                huyhoangtech.com.vn
+              </a>
+            </li>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="container my-5">
-      <h5 class="mb-3 text-primary">TUI BIẾT</h5>
+    <div class="jumbotron bg-white p-5"></div>
+    <div class="jumbotron bg-white p-5"></div>
+    <div class="jumbotron bg-white p-5"></div>
+    <div class="jumbotron bg-white p-5"></div>
 
-      <div class="row">
-        <div class="col-md-3 mb-3">
-          <b>Sửa bản lề laptop</b>
-          <p>
-            Sửa chữa các vấn đề liên quan đến bản lề khiến cho laptop gập mở khó khăn
-          </p>
-        </div>
-        <div class="col-md-3 mb-3">
-          <b>Sửa mainboard laptop</b>
-          <p>
-            Sửa chữa laptop bật không lên, chập cháy, vô nước, v.v.. sửa chữa trên bo mạch của laptop
-          </p>
-        </div>
-        <div class="col-md-3 mb-3">
-          <b>Thay thế linh kiện laptop</b>
-          <p>
-            Thay thế màn hình, bàn phím, pin, v.v.. đa số các loại linh kiện đều làm được
-          </p>
-        </div>
-        <div class="col-md-3 mb-3">
-          <b>Sửa máy đào ASIC</b>
-          <p>
-            Sửa máy đào không lên nguồn, không lên hash, v.v.. trên các dòng máy đào IceRiver, GoldShell
-          </p>
-        </div>
-      </div>
+    <div class="p-4 text-center">
+      <a href="https://mhqb365.gitbook.io/airdrop" target="_blank">
+        <img src="./btc.gif" width="20px" />
+      </a>
     </div>
 
-    <div class="container my-5">
-      <div class="row text-center">
-        <div class="col-md-6 mb-3">
-          <a class="link" href="https://zalo.me/0909960290" target="_blank">
-            <img src="https://drlaptop.vn/trung-tam-sua-chua-laptop-tai-tphcm-drlaptop.png" class="logo-app" />
-            <br />
-            Liên hệ sửa laptop<br />
-            <small class="text-secondary">(Zalo: Trần Hoàng)</small>
-          </a>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <a class="link" href="https://t.me/mhqb365" target="_blank">
-            <img src="./avt.jpg" class="logo-app" />
-            <br />
-            Liên hệ sửa máy đào<br />
-            <small class="text-secondary">(Telegram: MHQB)</small>
-          </a>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <a class="link" href="https://github.com/mhqb365/bbattery" target="_blank">
-            <img src="https://raw.githubusercontent.com/mhqb365/bbattery/refs/heads/master/bBattery.ico"
-              class="logo-app" />
-            <br />
-            Kiểm tra nhanh độ chai pin<br />
-            <small class="text-secondary">(Tự làm)</small>
-          </a>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <a class="link" href="https://j2c.cc/mdm" target="_blank">
-            <img src="https://raw.githubusercontent.com/mhqb365/bypassmdm/refs/heads/main/img/mdm.png"
-              class="logo-app" />
-            <br />
-            Bypass MDM MacBook<br />
-            <small class="text-secondary">(Sưu tầm)</small>
-          </a>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <a class="link" href="https://tranphu.gitbook.io/setup" target="_blank">
-            <img
-              src="https://365422565-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FpvyTPcwHwfN09QEvxFpb%2Ficon%2FLUoX0MGBDMqT7yuxjFSd%2Fico.png?alt=media&token=45f12dec-d130-46ec-9421-fb52f74ce97d"
-              class="logo-app" />
-            <br />
-            Hướng dẫn tự cài lại Windows<br />
-            <small class="text-secondary">(Sưu tầm)</small>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mb-4 footer text-center">
-      <hr />
-      <div class="row">
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://mhqb365.com" target="_blank">
-              mhqb365.com
-            </a>
-          </li>
-        </div>
-
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://drlaptop.vn" target="_blank">
-              drlaptop.vn
-            </a>
-          </li>
-        </div>
-
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://doctorlaptop.vn" target="_blank">
-              doctorlaptop.vn
-            </a>
-          </li>
-        </div>
-
-        <div class="col-sm-3">
-          <li>
-            <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
-              huyhoangtech.com.vn
-            </a>
-          </li>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="jumbotron bg-white p-5"></div>
-  <div class="jumbotron bg-white p-5"></div>
-  <div class="jumbotron bg-white p-5"></div>
-  <div class="jumbotron bg-white p-5"></div>
-
-  <div class="p-4 text-center">
-    <a href="https://mhqb365.gitbook.io/airdrop" target="_blank">
-      <img src="./btc.gif" width="20px" />
-    </a>
-  </div>
-
-  <script>
-    var wordsToType = document
-      .querySelector(" span[words]").getAttribute("words").split(","), typer = document.querySelector("span[words]"),
-      typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
-      typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680; var currentWordIndex = 0, currentCharacterIndex = 0;
-    function type() {
-      var wordToType = wordsToType[currentWordIndex % wordsToType.length]; if (currentCharacterIndex <
-        wordToType.length) { typer.innerHTML += wordToType[currentCharacterIndex++]; setTimeout(type, typingSpeed); } else {
-        setTimeout(erase, typingDelay);
+    <script>
+      var wordsToType = document
+          .querySelector(" span[words]")
+          .getAttribute("words")
+          .split(","),
+        typer = document.querySelector("span[words]"),
+        typingSpeed = parseInt(typer.getAttribute("typing-speed")) || 68,
+        typingDelay = parseInt(typer.getAttribute("typing-delay")) || 680;
+      var currentWordIndex = 0,
+        currentCharacterIndex = 0;
+      function type() {
+        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+        if (currentCharacterIndex < wordToType.length) {
+          typer.innerHTML += wordToType[currentCharacterIndex++];
+          setTimeout(type, typingSpeed);
+        } else {
+          setTimeout(erase, typingDelay);
+        }
       }
-    } function erase() {
-      var wordToType = wordsToType[currentWordIndex %
-        wordsToType.length]; if (currentCharacterIndex > 0) {
+      function erase() {
+        var wordToType = wordsToType[currentWordIndex % wordsToType.length];
+        if (currentCharacterIndex > 0) {
           typer.innerHTML = wordToType.substr(0, --currentCharacterIndex - 1);
           setTimeout(erase, typingSpeed);
         } else {
-        currentWordIndex++;
-        setTimeout(type, typingDelay);
+          currentWordIndex++;
+          setTimeout(type, typingDelay);
+        }
       }
-    }
 
-    $(window).on('load', () => {
-      $('.loading-container').fadeOut('slow', () => {
-        $('.app').fadeIn('slow');
+      $(window).on("load", () => {
+        $(".loading-container").fadeOut("slow", () => {
+          $(".app").fadeIn("slow");
 
-        setTimeout(type, 500);
+          setTimeout(type, 500);
+        });
+
+        var clipboard = new ClipboardJS(".btn");
+
+        clipboard.on("success", function (e) {
+          // console.info("Action:", e.action);
+          // console.info("Text:", e.text);
+          // console.info("Trigger:", e.trigger);
+
+          alert("Đã copy");
+
+          e.clearSelection();
+        });
+
+        clipboard.on("error", function (e) {
+          console.error("Action:", e.action);
+          console.error("Trigger:", e.trigger);
+        });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
