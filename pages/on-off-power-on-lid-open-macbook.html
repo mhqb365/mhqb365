@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="robots" content="all" />
+    <meta name="author" content="mhqb365@gmail.com" />
+    <meta
+      name="description"
+      content="On/Off Power On Lid Open MacBook | Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC"
+    />
+
+    <meta property="og:url" content="https://mhqb365.com" />
+    <meta
+      name="keywords"
+      content="mai hoang quoc bao, mhqb, mhqb365, sửa chữa, thay thế, linh kiện, laptop, macbook, imac, sureface, máy đào asic, iceriver, goldshell, ks0 pro ultra, ks3 ks3m ks3l, ks5 ks5m, doctor laptop, drlaptop"
+    />
+    <meta property="og:title" content="Active Windows / Office miễn phí" />
+    <meta
+      property="og:description"
+      content="On/Off Power On Lid Open MacBook | Sửa chữa & thay thế linh kiện Laptop, Macbook, iMac, Sureface, Máy đào ASIC"
+    />
+
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"
+      integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <title>On/Off Power On Lid Open MacBook</title>
+  </head>
+
+  <body>
+    <div class="loading-container">
+      <div class="spinner"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <a class="navbar-brand" href="/">Trang chủ</a>
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+      </ul>
+    </nav>
+
+    <!-- Content -->
+
+    <div class="container my-5">
+      <img
+        src="https://communities.apple.com/en20241216/public/assets/favicon.ico"
+        class="logo-app"
+      />
+
+      <h4>On/Off Power On Lid Open MacBook</h4>
+      <p>Bật/tắt tính năng khởi động khi gập mở máy trên MacBook</p>
+      <p>
+        Copy đoạn code dưới đây rồi paste vào <b>Terminal</b> để <b>TẮT</b>
+        <br />
+        <code>sudo nvram AutoBoot=%00</code>
+        <button
+          class="btn btn-sm btn-secondary mt-2"
+          data-clipboard-text="sudo nvram AutoBoot=%00"
+        >
+          Copy
+        </button>
+      </p>
+      <p>
+        Copy đoạn code dưới đây rồi paste vào <b>Terminal</b> để <b>BẬT</b>
+        <br />
+        <code>sudo nvram AutoBoot=%03</code>
+        <button
+          class="btn btn-sm btn-secondary mt-2"
+          data-clipboard-text="sudo nvram AutoBoot=%03"
+        >
+          Copy
+        </button>
+      </p>
+      <hr />
+    </div>
+
+    <!-- Footer -->
+
+    <div class="container mb-4 footer text-center">
+      <div class="row">
+        <div class="col-sm-3">
+          <li>
+            <a class="link" href="https://mhqb365.com" target="_blank">
+              mhqb365.com
+            </a>
+          </li>
+        </div>
+
+        <div class="col-sm-3">
+          <li>
+            <a class="link" href="https://drlaptop.vn" target="_blank">
+              drlaptop.vn
+            </a>
+          </li>
+        </div>
+
+        <div class="col-sm-3">
+          <li>
+            <a class="link" href="https://doctorlaptop.vn" target="_blank">
+              doctorlaptop.vn
+            </a>
+          </li>
+        </div>
+
+        <div class="col-sm-3">
+          <li>
+            <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
+              huyhoangtech.com.vn
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+
+    <script src="../loading.js"></script>
+    <button
+      onclick="topFunction()"
+      id="goUpBtn"
+      class="btn btn-primary"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+      "
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <script src="../goup.js"></script>
+  </body>
+</html>

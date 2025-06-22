@@ -54,136 +54,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 
-    <style>
-      html,
-      body {
-        min-width: 0;
-        min-height: 0;
-        margin: 0;
-        padding: 0;
-        color: #000;
-        scroll-behavior: smooth;
-        font-family: Tahoma, "Trebuchet MS", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      a:link {
-        text-decoration: none;
-      }
-
-      .bgimg {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        min-height: 100vh;
-        background: url("./bg.svg") no-repeat center center;
-        background-size: cover;
-        position: relative;
-      }
-
-      .middle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        line-height: 2;
-      }
-
-      .middle a {
-        color: #000;
-      }
-
-      li {
-        list-style: none;
-      }
-
-      .logo-app {
-        width: 64px;
-        height: 64px;
-        padding: 3px;
-        margin-bottom: 16px;
-        border-radius: 12px;
-      }
-
-      .logo-app:hover {
-        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
-      }
-
-      .footer {
-        line-height: 2;
-      }
-
-      .scroll-down {
-        position: absolute;
-        left: 50%;
-        bottom: 5px;
-        transform: translate(-50%, -50%);
-        margin: 0 auto;
-      }
-
-      .bounce {
-        animation: bounce 2s infinite;
-        font-size: 1.5rem;
-      }
-
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0);
-        }
-
-        40% {
-          transform: translateY(-20px);
-        }
-
-        60% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .loading-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid rgba(0, 0, 0, 0.1);
-        border-top: 5px solid #3498db;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      .app {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Mai Hoàng Quốc Bảo aka mhqb365</title>
   </head>
@@ -199,7 +70,7 @@
           <h3 class="text-primary">
             Mai Hoàng Quốc Bảo
             <br />
-            aka mhqb365
+            aka <u>mhqb365</u>
           </h3>
 
           <p>
@@ -212,19 +83,19 @@
             <a class="link" href="tel:0987718868" target="_blank">
               <i class="fa-solid fa-phone fa-lg"></i>
             </a>
-            &nbsp; &nbsp;
+            &nbsp;
             <a class="link" href="https://t.me/mhqb365" target="_blank">
               <i class="fa-brands fa-telegram fa-lg"></i>
             </a>
-            &nbsp; &nbsp;
+            &nbsp;
             <a class="link" href="https://tiktok.com/@mhqb365" target="_blank">
               <i class="fa-brands fa-tiktok fa-lg"></i>
             </a>
-            &nbsp; &nbsp;
+            &nbsp;
             <a class="link" href="https://youtube.com/@mhqb365" target="_blank">
               <i class="fa-brands fa-youtube fa-lg"></i>
             </a>
-            &nbsp; &nbsp;
+            &nbsp;
             <a class="link" href="https://github.com/mhqb365" target="_blank">
               <i class="fa-brands fa-github fa-lg"></i>
             </a>
@@ -241,28 +112,28 @@
 
         <div class="row">
           <div class="col-md-3 mb-3">
-            <b>Sửa bản lề laptop</b>
+            <b><u>Sửa bản lề laptop</u></b>
             <p>
               Sửa chữa các vấn đề liên quan đến bản lề khiến cho laptop gập mở
               khó khăn
             </p>
           </div>
           <div class="col-md-3 mb-3">
-            <b>Sửa mainboard laptop</b>
+            <b><u>Sửa mainboard laptop</u></b>
             <p>
               Sửa chữa laptop bật không lên, chập cháy, vô nước, v.v.. sửa chữa
               trên bo mạch của laptop
             </p>
           </div>
           <div class="col-md-3 mb-3">
-            <b>Thay thế linh kiện laptop</b>
+            <b><u>Thay thế linh kiện laptop</u></b>
             <p>
               Thay thế màn hình, bàn phím, pin, v.v.. đa số các loại linh kiện
               đều làm được
             </p>
           </div>
           <div class="col-md-3 mb-3">
-            <b>Sửa máy đào ASIC</b>
+            <b><u>Sửa máy đào ASIC</u></b>
             <p>
               Sửa máy đào không lên nguồn, không lên hash, v.v.. trên các dòng
               máy đào IceRiver, GoldShell
@@ -272,8 +143,37 @@
       </div>
 
       <div class="container my-5">
+        <h5 class="mb-3 text-primary">TIỆN ÍCH</h5>
+        <p class="text-secondary">
+          <i> Nếu bạn thấy hữu ích thì hãy chia sẻ cho mọi người nhé! </i>
+        </p>
+
         <div class="row text-center">
-          <div class="col-md-6 mb-4">
+          <div class="col-md-3 mb-4">
+            <a class="link" href="https://collshp.com/mhqb365" target="_blank">
+              <img
+                src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_96.1ce0e05fc18a86e5.png"
+                class="logo-app"
+              />
+              <br />
+              Bộ sưu tập mua hàng Sộp pe<br />
+              <small class="text-secondary">(Hay dùng)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <a class="link" href="./pages/kiem-tra-nhanh-do-chai-pin.html">
+              <img
+                src="https://raw.githubusercontent.com/mhqb365/bbattery/refs/heads/master/bBattery.ico"
+                class="logo-app"
+              />
+              <br />
+              Kiểm tra nhanh độ chai pin<br />
+              <small class="text-secondary">(Tự làm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
             <a
               class="link"
               href="https://tranphu.gitbook.io/setup"
@@ -289,7 +189,67 @@
             </a>
           </div>
 
-          <div class="col-md-6 mb-4">
+          <div class="col-md-3 mb-4">
+            <a
+              class="link"
+              href="./pages/skip-login-microsoft-acount-windows-11.html"
+            >
+              <img src="./images/logos/win-11.png" class="logo-app" />
+              <br />
+              Bỏ qua đăng nhập khi cài Win 11<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <a class="link" href="./pages/active-office.html">
+              <img
+                src="https://massgrave.dev/img/logo.png"
+                class="logo-app bg-secondary"
+              />
+              <br />
+              Active Windows & Office miễn phí<br />
+              <small class="text-secondary">(Mod link)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <a class="link" href="./pages/bypass-mdm-macbook.html">
+              <img
+                src="https://raw.githubusercontent.com/mhqb365/bypassmdm/refs/heads/main/img/mdm.png"
+                class="logo-app"
+              />
+              <br />
+              Bypass MDM MacBook<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <a class="link" href="./pages/kiem-tra-thong-tin-laptop.html">
+              <img src="./images/logos/check.png" class="logo-app bg-light" />
+              <br />
+              Kiểm tra thông tin laptop<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <a
+              class="link"
+              href="./pages/on-off-power-on-lid-open-macbook.html"
+            >
+              <img
+                src="https://communities.apple.com/en20241216/public/assets/favicon.ico"
+                class="logo-app bg-light"
+              />
+              <br />
+              Power On Lid Open MacBook<br />
+              <small class="text-secondary">(Sưu tầm)</small>
+            </a>
+          </div>
+
+          <div class="col-md-3 mb-4">
             <a class="link" href="https://maclife.io" target="_blank">
               <img
                 src="https://maclife.io/wp-content/uploads/2021/06/cropped-favicon_new-1-192x192.png"
@@ -302,384 +262,49 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="container my-5">
-        <img
-          src="https://raw.githubusercontent.com/mhqb365/bbattery/refs/heads/master/bBattery.ico"
-          class="logo-app"
-        />
-        <br />
-        <h4>Kiểm tra nhanh độ chai pin của máy tính Windows</h4>
+    <div class="container">
+      <hr />
+    </div>
 
-        <p>
-          Nguồn:
-          <a
-            class="link"
-            href="https://github.com/mhqb365/bbattery"
-            target="_blank"
-          >
-            mhqb365
-          </a>
-        </p>
-
-        <p>
-          Copy đoạn code dưới đây rồi paste vào <b>PowerShell</b> hoặc
-          <b>Termial</b> của Windows
-          <br />
-          <code> irm j2c.cc/batterycheck | iex </code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="irm j2c.cc/batterycheck | iex"
-          >
-            Copy
-          </button>
-          <br />
-          hoặc copy đoạn code này rồi paste vào
-          <b>Command Prompt (CMD)</b>
-          <br />
-          <code>powershell iex (irm j2c.cc/batterycheck)</code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="powershell iex (irm j2c.cc/batterycheck)"
-          >
-            Copy
-          </button>
-        </p>
-
-        <img src="./images/bbattery.png" class="w-100" />
-
-        <p>
+    <div class="container mb-4 footer text-center">
+      <div class="row">
+        <div class="col-sm-3">
           <li>
-            <b>STT</b>: số thứ tự pin, vài trường hợp đặt biệt máy tính có từ 2
-            pin (Surface Book, Lenovo T480, v.v..)
-          </li>
-          <li><b>SoLanSac</b>: số lần sạc / chu kỳ sạc (Cycle Count)</li>
-          <li>
-            <b>DungLuongBanDau</b>: dung lượng ban đầu của pin (Design Capacity)
-          </li>
-          <li>
-            <b>DungLuongConLai</b>: dung lượng hiện tại mà pin lưu trữ được khi
-            sạc đầy (Full Charge Capacity)
-          </li>
-          <li><b>DoChaiPin</b>: độ chai của pin (Battery Wear Level)</li>
-        </p>
-        <hr />
-      </div>
-
-      <div class="container my-5">
-        <img
-          src="https://massgrave.dev/img/logo.png"
-          class="logo-app bg-dark"
-        />
-
-        <h4>Active Windows & Office miễn phí</h4>
-
-        <p>
-          Nguồn:
-          <a class="link" href="https://massgrave.dev" target="_blank">
-            massgrave.dev
-          </a>
-        </p>
-        <h5>Bước 1:</h5>
-        <b>Nếu bạn dùng Win8 hoặc mới hơn:</b>
-        <p>
-          Copy đoạn code dưới đây rồi paste vào <b>PowerShell</b> hoặc
-          <b>Termial</b>
-          của Windows
-          <br />
-          <code> irm j2c.cc/active | iex </code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="irm j2c.cc/active | iex"
-          >
-            Copy
-          </button>
-          <br />
-          hoặc copy đoạn code này rồi paste vào
-          <b>Command Prompt (CMD)</b>
-          <br />
-          <code>powershell iex (irm j2c.cc/active)</code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="powershell iex (irm j2c.cc/active)"
-          >
-            Copy
-          </button>
-        </p>
-
-        <b>Nếu bạn dùng Win7:</b>
-
-        <p>
-          <li>
-            Tải file này về rồi giải nén:
-            <a
-              href="https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip"
-            >
-              https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip
+            <a class="link" href="https://mhqb365.com" target="_blank">
+              mhqb365.com
             </a>
           </li>
-          <li>
-            Mở folder vừa giải nén được, mở tiếp folder
-            <b>All-In-One-Version</b> sẽ thấy file có tên <b>MAS_AIO.cmd</b>,
-            chuột phải vào nó và chọn <b>Run as Administrator</b>
-          </li>
-        </p>
-
-        <h5>Bước 2:</h5>
-
-        <p>
-          Sau làm xong bước 1 thì một bảng các tùy chọn sẽ hiện lên, sử dụng
-          bằng cách gõ vào số tương ứng với các tùy chọn
-        </p>
-
-        <img src="/images/active-windows-office.png" class="w-100" />
-
-        <p>
-          <li>Nhấn số <b>1</b> để active Windows</li>
-          <li>Nhấn số <b>2</b> để active Office</li>
-          <li>Bạn có thể thử các tùy chọn khác nếu cần và hiểu</li>
-        </p>
-        <hr />
-      </div>
-
-      <div class="container my-5">
-        <img src="./images/logo/check.png" class="logo-app bg-dark" />
-        <h4>Kiểm tra thông tin laptop các hãng bằng SN (Serial Number)</h4>
-
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a
-                  href="https://dell.com/support/contractservices/en-vn"
-                  target="_blank"
-                >
-                  DELL
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://support.hp.com/vn-en/check-warranty"
-                  target="_blank"
-                >
-                  HP
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://lg-dfs-warranty.com/warranty-lookup"
-                  target="_blank"
-                >
-                  LG
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://msivietnam.vn/tra-cuu-bao-hanh"
-                  target="_blank"
-                >
-                  MSI
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://acer.com/vn-vi/support/warranty"
-                  target="_blank"
-                >
-                  ACER
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-6 mb-4">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="https://checkcoverage.apple.com/" target="_blank">
-                  Apple
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://pcsupport.lenovo.com/vn/en/warranty-lookup"
-                  target="_blank"
-                >
-                  Lenovo
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://consumer.huawei.com/vn/support/warranty-query/"
-                  target="_blank"
-                >
-                  Huawei
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://mybusinessservice.surface.com/en-US"
-                  target="_blank"
-                >
-                  Microsoft Surface
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <div class="container my-5">
-        <img
-          src="https://raw.githubusercontent.com/mhqb365/bypassmdm/refs/heads/main/img/mdm.png"
-          class="logo-app"
-        />
-
-        <h4>Bypass MDM MacBook</h4>
-        <p>
-          Nguồn:
-          <a
-            class="link"
-            href="https://github.com/nghminh163/bypass-mdm"
-            target="_blank"
-          >
-            nghminh163
-          </a>
-        </p>
-        <p>
-          Xem hướng dẫn tại đây 👉
-          <a href="https://github.com/mhqb365/bypassmdm" target="_blank">
-            https://github.com/mhqb365/bypassmdm
-          </a>
-          <br />
-          hoặc video này 👉
-          <a
-            href="https://tiktok.com/@mhqb365/video/7463668881358425352"
-            target="_blank"
-          >
-            https://tiktok.com/@mhqb365/video/7463668881358425352
-          </a>
-        </p>
-
-        <h5>Kiểm tra MacBook có phải máy MDM hay không?</h5>
-
-        <p>
-          Copy đoạn code dưới đây rồi paste vào <b>Terminal</b>
-          <br />
-          <code>profiles status -type enrollment</code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="profiles status -type enrollment"
-          >
-            Copy
-          </button>
+        <div class="col-sm-3">
           <li>
-            Nếu kết quả trả về có chứa cụm từ <b>Enrolled via DEP</b> hoặc
-            <b>MDM enrollment</b> thì là máy MDM
+            <a class="link" href="https://drlaptop.vn" target="_blank">
+              drlaptop.vn
+            </a>
           </li>
+        </div>
+
+        <div class="col-sm-3">
           <li>
-            Đôi khi cách này cũng chưa chính xác, chính xác nhất là cứ cài lại
-            MacOS, nếu đúng máy MDM thì sau khi cài xong sẽ hiện cửa sổ đăng
-            nhập MDM ngay
+            <a class="link" href="https://doctorlaptop.vn" target="_blank">
+              doctorlaptop.vn
+            </a>
           </li>
-        </p>
-        <hr />
-      </div>
+        </div>
 
-      <div class="container my-5">
-        <img
-          src="https://communities.apple.com/en20241216/public/assets/favicon.ico"
-          class="logo-app"
-        />
-
-        <h4>Bật/tắt tự khởi động khi gập mở máy trên MacBook</h4>
-        <p>
-          Copy đoạn code dưới đây rồi paste vào <b>Terminal</b> để TẮT
-          <br />
-          <code>sudo nvram AutoBoot=%00</code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="sudo nvram AutoBoot=%00"
-          >
-            Copy
-          </button>
-        </p>
-        <p>
-          Copy đoạn code dưới đây rồi paste vào <b>Terminal</b> để BẬT
-          <br />
-          <code>sudo nvram AutoBoot=%03</code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="sudo nvram AutoBoot=%03"
-          >
-            Copy
-          </button>
-        </p>
-        <hr />
-      </div>
-
-      <div class="container my-5">
-        <img src="./images/logo/win-11.png" class="logo-app" />
-
-        <h4>Bỏ qua đăng nhập tài khoản Microsoft khi cài lại Win 11</h4>
-        <p>
-          Nhấn tổ hợp phím <b>Shift</b> + <b>F10</b> để mở
-          <b>Command Prompt (CMD)</b><br />
-          Gõ dòng lệnh dưới đây vào để tạo tài khoản local và tiếp tục active
-          vào Win 11
-          <br />
-          <code>start ms-cxh:localonly</code>
-          <button
-            class="btn btn-sm btn-secondary mt-2"
-            data-clipboard-text="start ms-cxh:localonly"
-          >
-            Copy
-          </button>
-        </p>
-        <img src="/images/skip-ms-account-win-11.png" class="w-100" />
-        <hr />
-      </div>
-
-      <div class="container mb-4 footer text-center">
-        <div class="row">
-          <div class="col-sm-3">
-            <li>
-              <a class="link" href="https://mhqb365.com" target="_blank">
-                mhqb365.com
-              </a>
-            </li>
-          </div>
-
-          <div class="col-sm-3">
-            <li>
-              <a class="link" href="https://drlaptop.vn" target="_blank">
-                drlaptop.vn
-              </a>
-            </li>
-          </div>
-
-          <div class="col-sm-3">
-            <li>
-              <a class="link" href="https://doctorlaptop.vn" target="_blank">
-                doctorlaptop.vn
-              </a>
-            </li>
-          </div>
-
-          <div class="col-sm-3">
-            <li>
-              <a
-                class="link"
-                href="https://huyhoangtech.com.vn"
-                target="_blank"
-              >
-                huyhoangtech.com.vn
-              </a>
-            </li>
-          </div>
+        <div class="col-sm-3">
+          <li>
+            <a class="link" href="https://huyhoangtech.com.vn" target="_blank">
+              huyhoangtech.com.vn
+            </a>
+          </li>
         </div>
       </div>
     </div>
 
+    <script src="./loading.js"></script>
     <button
       onclick="topFunction()"
       id="goUpBtn"
@@ -694,40 +319,6 @@
     >
       <i class="fa-solid fa-arrow-up"></i>
     </button>
-
-    <script>
-      $(window).on("load", () => {
-        $(".loading-container").fadeOut("slow", () => {
-          $(".app").fadeIn("slow");
-        });
-
-        var clipboard = new ClipboardJS(".btn");
-
-        clipboard.on("success", function (e) {
-          alert("Đã copy");
-          e.clearSelection();
-        });
-      });
-
-      let goUpBtn = document.getElementById("goUpBtn");
-
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
-          goUpBtn.style.display = "block";
-        } else {
-          goUpBtn.style.display = "none";
-        }
-      };
-
-      function topFunction() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-    </script>
+    <script src="./goup.js"></script>
   </body>
 </html>
