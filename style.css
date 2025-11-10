@@ -426,7 +426,7 @@ a {
   color: #ffffff;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  animation: fadeInUp 1s ease 0.2s both;
+  /* animation: fadeInUp 1s ease 0.2s both; */
 }
 
 .hero-subtitle {
