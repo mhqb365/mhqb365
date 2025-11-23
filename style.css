@@ -1158,18 +1158,6 @@ a {
   opacity: 0.8;
 }
 
-.buy-coffee-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 60px 20px;
-  text-align: center;
-  color: white;
-}
-
-.buy-coffee-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -1181,69 +1169,6 @@ a {
   font-size: 1.2rem;
   margin-bottom: 40px;
   opacity: 0.95;
-}
-
-.qr-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.qr-card {
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 300px;
-  width: 100%;
-}
-
-.qr-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.qr-icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.qr-card h3 {
-  color: #333;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.qr-code {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
-.qr-code img {
-  width: 200px;
-  height: 200px;
-  display: block;
-  border-radius: 10px;
-}
-
-.qr-label {
-  color: #666;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.thank-you {
-  font-size: 1.3rem;
-  margin-top: 20px;
-  font-weight: 500;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
