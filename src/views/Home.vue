@@ -7,23 +7,19 @@
           <div class="hero-text">
             <h1>
               Mai Hoàng Quốc Bảo aka mhqb365 -
-              <span class="text-accent">sửa Laptop</span> và
-              <span class="text-accent">Máy Đào công suất nhỏ</span>
+              <span class="text-accent">sửa laptop</span> và
+              <span class="text-accent">máy đào công suất nhỏ</span>
             </h1>
             <!-- <p>He crafts responsive websites where technologies meet creativity</p> -->
-            <a
-              href="#contacts"
-              class="btn"
-              @click.prevent="scrollToElement('contacts')"
-            >
+            <!-- <a href="#contacts" class="btn" @click.prevent="scrollToElement('contacts')">
               Liên hệ với tui
-            </a>
+            </a> -->
           </div>
           <div class="hero-image">
-            <img src="/avt.jpg" alt="Hero graphic" />
+            <img src="/Mai-Noel.png" alt="Hero graphic" />
             <div class="status-badge">
               <span class="status-dot"></span>
-              Đang làm ở <span class="text-accent">Doctor Laptop</span>
+              như 1 con mèo <span class="text-accent">LƯỜI</span>
             </div>
           </div>
         </div>
@@ -33,15 +29,9 @@
     <!-- Projects Section -->
     <section id="projects" class="projects section-padding">
       <div class="container">
-        <div class="section-header">
-          <SectionTitle title="dự án" />
-        </div>
+        <SectionTitle title="dự án" />
         <div class="projects-grid">
-          <ProjectCard
-            v-for="project in featuredProjects"
-            :key="project.id"
-            :project="project"
-          />
+          <ProjectCard v-for="project in featuredProjects" :key="project.id" :project="project" />
         </div>
       </div>
     </section>
@@ -51,12 +41,7 @@
       <div class="container">
         <SectionTitle title="kỹ năng" />
         <div class="skills-grid">
-          <SkillBox
-            v-for="skill in skills"
-            :key="skill.category"
-            :category="skill.category"
-            :skills="skill.items"
-          />
+          <SkillBox v-for="skill in skills" :key="skill.category" :category="skill.category" :skills="skill.items" />
         </div>
       </div>
     </section>
@@ -68,7 +53,7 @@
         <div class="about-content">
           <div class="about-text">
             <p>Làm ở Doctor Laptop (01/06/2020 - hiện tại)</p>
-            <p>Làm ở AZ Mobile (03/2019 - 04/2020)</p>
+            <p>Làm ở Azsoft Mobile Service (03/2019 - 04/2020)</p>
             <p>Làm ở Phồn Vinh Mobile (03/2017 - 12/2018)</p>
             <p>Làm ở Khách sạn Hoài Phú (03/2016 - 02/2017)</p>
           </div>
@@ -82,21 +67,22 @@
         <SectionTitle title="liên hệ" />
         <div class="contacts-content">
           <p>
-            Tui đang làm việc toàn thời gian ở Doctor Laptop, cần sửa chữa
-            laptop cứ lên Google tìm kiếm "Doctor Laptop" nhé. Còn nếu có nhu
-            cầu nghiên cứu sữa chữa máy đào hoặc những mạch điện nhỏ và không
-            quan trọng thời gian thì Gửi tin nhắn cho tui
+            Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa
+            laptop thì lên Google tìm "<a href="https://www.google.com/search?q=Doctor+Laptop" target="_blank"
+              style="color: white;">Doctor Laptop</a>" nhé.
+            Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch điện nhỏ mà không
+            quan trọng thời gian thì <span style="color: white;">Gửi tin nhắn cho tui</span>
           </p>
           <div class="contact-box">
             <h3>Gửi tin nhắn cho tui</h3>
             <div class="contact-links">
-              <a href="mailto:mhqb365@gmail.com">
-                <Mail :size="20" />
-                mhqb365@gmail.com
-              </a>
               <a href="https://t.me/mhqb365" target="_blank">
                 <MessageCircle :size="20" />
                 t.me/mhqb365
+              </a>
+              <a href="https://zalo.me/+84777180098" target="_blank">
+                <MessageCircle :size="20" />
+                zalo.me/+84777180098
               </a>
             </div>
           </div>
@@ -108,7 +94,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { Mail, MessageCircle } from "lucide-vue-next";
+import { MessageCircle } from "lucide-vue-next";
 import SectionTitle from "../components/SectionTitle.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 import SkillBox from "../components/SkillBox.vue";
@@ -123,55 +109,61 @@ const featuredProjects = ref([
   },
   {
     id: 2,
-    title: "bBattery",
-    description: "Kiểm tra độ chai pin laptop Windows",
-    tech: ["PowerShell"],
-    liveUrl: "https://github.com/mhqb365/bbattery",
-  },
-
-  {
-    id: 3,
     title: "Active Win & Office",
     description: "Active Windows & Office miễn phí (tin dùng)",
     tech: ["PowerShell"],
     liveUrl: "https://massgrave.dev",
   },
   {
-    id: 4,
-    title: "Multi BoardViewer",
-    description: "Xem nhiều sơ đồ mạch/nguyên lý trong cùng một ứng dụng",
-    tech: ["C#"],
-    liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
+    id: 3,
+    title: "bBattery",
+    description: "Kiểm tra độ chai pin laptop Windows",
+    tech: ["PowerShell"],
+    liveUrl: "https://github.com/mhqb365/bbattery",
   },
   {
     id: 4,
+    title: "Hướng dẫn cài Win",
+    description: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
+    tech: ["Gitbook"],
+    liveUrl: "https://tranphu.gitbook.io/setup",
+  },
+  {
+    id: 5,
+    title: "Multi BoardViewer",
+    description: "Xem nhiều boardview/schematic trong cùng một ứng dụng",
+    tech: ["Windows"],
+    liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
+  },
+  {
+    id: 6,
     title: "Bypass MDM Macbook",
     description: "Bypass Mobile Device Management trên Macbook",
     tech: ["Terminal"],
     liveUrl: "https://j2c.cc/mdm",
   },
   {
-    id: 5,
+    id: 7,
     title: "Tính số lượng gạch",
     description: "Tính toán số lượng gạch ốp tường ở Ecobig",
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech: ["Chrome Extension"],
     liveUrl:
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
   },
   {
-    id: 6,
+    id: 8,
     title: "Tra cứu hóa đơn",
     description: "Tra cứu hóa đơn ở Doctor Laptop",
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech: ["Chrome Extension"],
     liveUrl:
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
   },
   {
-    id: 7,
-    title: "Hướng dẫn cài Win",
-    description: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
-    tech: ["Windows"],
-    liveUrl: "https://tranphu.gitbook.io/setup",
+    id: 9,
+    title: "Tra cứu sửa cá nhân",
+    description: "Tra cứu đơn sửa chữa gửi qua cá nhân tui",
+    tech: ["Website"],
+    liveUrl: "https://repair.mhqb365.com",
   },
 ]);
 

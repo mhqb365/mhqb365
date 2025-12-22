@@ -13,7 +13,7 @@
 
       <div class="nav-links" :class="{ 'mobile-open': mobileMenuOpen }">
         <a href="/#home" class="nav-link" @click.prevent="scrollToSection('home')">
-          <span class="text-accent">#</span>home
+          <span class="text-accent">#</span>trang chủ
         </a>
         <a href="/#projects" class="nav-link" @click.prevent="scrollToSection('projects')">
           <span class="text-accent">#</span>dự án
