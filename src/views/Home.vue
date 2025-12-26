@@ -19,7 +19,7 @@
             <img src="/Mai-Noel.png" alt="Hero graphic" />
             <div class="status-badge">
               <span class="status-dot"></span>
-              như 1 con mèo <span class="text-accent">LƯỜI</span>
+              Như 1 con mèo <span class="text-accent">LƯỜI</span>
             </div>
           </div>
         </div>
@@ -69,9 +69,10 @@
           <p>
             Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa
             laptop thì lên Google tìm "<a href="https://www.google.com/search?q=Doctor+Laptop" target="_blank"
-              style="color: white;">Doctor Laptop</a>" nhé.
-            Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch điện nhỏ mà không
-            quan trọng thời gian thì <span style="color: white;">Gửi tin nhắn cho tui</span>
+              style="color: white">Doctor Laptop</a>" nhé. Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch
+            điện nhỏ mà không quan trọng thời gian thì
+            <span id="iconHand" class="icon-hand-md">👉</span>
+            <span id="iconHand" class="icon-hand-sm">👇</span>
           </p>
           <div class="contact-box">
             <h3>Gửi tin nhắn cho tui</h3>
@@ -125,7 +126,7 @@ const featuredProjects = ref([
     id: 4,
     title: "Hướng dẫn cài Win",
     description: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
-    tech: ["Gitbook"],
+    tech: ["Windows"],
     liveUrl: "https://tranphu.gitbook.io/setup",
   },
   {
@@ -160,8 +161,8 @@ const featuredProjects = ref([
   },
   {
     id: 9,
-    title: "Tra cứu sửa cá nhân",
-    description: "Tra cứu đơn sửa chữa gửi qua cá nhân tui",
+    title: "Tra cứu BH cá nhân",
+    description: "Tra cứu bảo hành khi gửi sửa cá nhân",
     tech: ["Website"],
     liveUrl: "https://repair.mhqb365.com",
   },
@@ -461,6 +462,20 @@ const scrollToElement = (id) => {
 
   .contact-links a {
     font-size: 14px;
+  }
+}
+
+.icon-hand-sm {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .icon-hand-md {
+    display: none;
+  }
+  
+  .icon-hand-sm {
+    display: inline;
   }
 }
 
