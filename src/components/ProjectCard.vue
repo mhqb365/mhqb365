@@ -1,16 +1,27 @@
 <template>
   <div class="project-card">
     <div class="project-tech">
-      {{ project.tech.join(' ') }}
+      {{ project.tech.join(" ") }}
     </div>
     <div class="project-content">
       <h3>{{ project.title }}</h3>
       <p>{{ project.description }}</p>
       <div class="project-links">
-        <a v-if="project.liveUrl" :href="project.liveUrl" target="_blank" class="btn">
+        <a
+          v-if="project.liveUrl && project.liveUrl.startsWith('http')"
+          :href="project.liveUrl"
+          target="_blank"
+          class="btn"
+        >
           Xem
         </a>
-
+        <router-link
+          v-else-if="project.liveUrl"
+          :to="project.liveUrl"
+          class="btn"
+        >
+          Xem
+        </router-link>
       </div>
     </div>
   </div>
@@ -20,9 +31,9 @@
 defineProps({
   project: {
     type: Object,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <style scoped>

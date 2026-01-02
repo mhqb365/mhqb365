@@ -5,28 +5,55 @@
         <span class="text-accent">mhqb365.com</span>
       </a>
 
-      <button class="mobile-menu-toggle" @click="toggleMenu" aria-label="Toggle menu">
+      <button
+        class="mobile-menu-toggle"
+        @click="toggleMenu"
+        aria-label="Toggle menu"
+      >
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
 
       <div class="nav-links" :class="{ 'mobile-open': mobileMenuOpen }">
-        <a href="/#home" class="nav-link" @click.prevent="scrollToSection('home')">
+        <a
+          href="/#home"
+          class="nav-link"
+          @click.prevent="scrollToSection('home')"
+        >
           <span class="text-accent">#</span>trang chủ
         </a>
-        <a href="/#projects" class="nav-link" @click.prevent="scrollToSection('projects')">
+        <a
+          href="/#projects"
+          class="nav-link"
+          @click.prevent="scrollToSection('projects')"
+        >
           <span class="text-accent">#</span>dự án
         </a>
-        <a href="/#skills" class="nav-link" @click.prevent="scrollToSection('skills')">
+        <a
+          href="/#skills"
+          class="nav-link"
+          @click.prevent="scrollToSection('skills')"
+        >
           <span class="text-accent">#</span>kỹ năng
         </a>
-        <a href="/#about-me" class="nav-link" @click.prevent="scrollToSection('about-me')">
+        <a
+          href="/#about-me"
+          class="nav-link"
+          @click.prevent="scrollToSection('about-me')"
+        >
           <span class="text-accent">#</span>thông tin
         </a>
-        <a href="/#contacts" class="nav-link" @click.prevent="scrollToSection('contacts')">
+        <a
+          href="/#contacts"
+          class="nav-link"
+          @click.prevent="scrollToSection('contacts')"
+        >
           <span class="text-accent">#</span>liên hệ
         </a>
+        <router-link to="/shopee" class="nav-link" @click="closeMenu">
+          <span class="text-accent">#</span>đồ nghề
+        </router-link>
 
         <!-- <div class="language-switcher">
           <span class="active">VI</span>
@@ -39,48 +66,48 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-const router = useRouter()
-const mobileMenuOpen = ref(false)
+const router = useRouter();
+const mobileMenuOpen = ref(false);
 
 const toggleMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value
-}
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+};
 
 const closeMenu = () => {
-  mobileMenuOpen.value = false
-}
+  mobileMenuOpen.value = false;
+};
 
 const scrollToSection = (sectionId) => {
-  closeMenu()
+  closeMenu();
 
   // Nếu không ở trang home, navigate về home trước
-  if (router.currentRoute.value.path !== '/') {
-    router.push('/').then(() => {
+  if (router.currentRoute.value.path !== "/") {
+    router.push("/").then(() => {
       setTimeout(() => {
-        scrollToElement(sectionId)
-      }, 100)
-    })
+        scrollToElement(sectionId);
+      }, 100);
+    });
   } else {
-    scrollToElement(sectionId)
+    scrollToElement(sectionId);
   }
-}
+};
 
 const scrollToElement = (sectionId) => {
-  const element = document.getElementById(sectionId)
+  const element = document.getElementById(sectionId);
   if (element) {
-    const navbarHeight = 57 // Chiều cao của navbar
-    const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+    const navbarHeight = 57; // Chiều cao của navbar
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
-    })
+      behavior: "smooth",
+    });
   }
-}
+};
 </script>
 
 <style scoped>

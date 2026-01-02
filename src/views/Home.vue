@@ -31,7 +31,11 @@
       <div class="container">
         <SectionTitle title="dự án" />
         <div class="projects-grid">
-          <ProjectCard v-for="project in featuredProjects" :key="project.id" :project="project" />
+          <ProjectCard
+            v-for="project in featuredProjects"
+            :key="project.id"
+            :project="project"
+          />
         </div>
       </div>
     </section>
@@ -41,7 +45,12 @@
       <div class="container">
         <SectionTitle title="kỹ năng" />
         <div class="skills-grid">
-          <SkillBox v-for="skill in skills" :key="skill.category" :category="skill.category" :skills="skill.items" />
+          <SkillBox
+            v-for="skill in skills"
+            :key="skill.category"
+            :category="skill.category"
+            :skills="skill.items"
+          />
         </div>
       </div>
     </section>
@@ -68,8 +77,15 @@
         <div class="contacts-content">
           <p>
             Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa
-            laptop thì lên Google tìm "<a href="https://www.google.com/search?q=Doctor+Laptop" target="_blank"
-              style="color: white">Doctor Laptop</a>" nhé. Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch
+            laptop thì lên Google tìm "
+            <a
+              href="https://www.google.com/search?q=Doctor+Laptop"
+              target="_blank"
+              style="color: white"
+            >
+              Doctor Laptop
+            </a>
+            " nhé. Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch
             điện nhỏ mà không quan trọng thời gian thì
             <span id="iconHand" class="icon-hand-md">👉</span>
             <span id="iconHand" class="icon-hand-sm">👇</span>
@@ -106,7 +122,7 @@ const featuredProjects = ref([
     title: "Link mua đồ nghề",
     description: "Tổng hợp các món đồ mà tôi hay dùng",
     tech: ["Shopee"],
-    liveUrl: "https://collshp.com/mhqb365",
+    liveUrl: "/shopee",
   },
   {
     id: 2,
@@ -473,7 +489,7 @@ const scrollToElement = (id) => {
   .icon-hand-md {
     display: none;
   }
-  
+
   .icon-hand-sm {
     display: inline;
   }
