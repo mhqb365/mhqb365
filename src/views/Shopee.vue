@@ -36,17 +36,28 @@
         </div>
       </div>
 
+      <div class="links-section">
+        <div class="links-grid">
+          <a
+            v-for="link in quickLinks"
+            :key="link.id"
+            :href="link.url"
+            target="_blank"
+            class="quick-link"
+          >
+            {{ link.name }}
+          </a>
+        </div>
+      </div>
+
       <div class="shopee-footer">
-        <p>
-          Nếu bạn muốn xem toàn bộ danh mục đồ nghề của mình thì hãy ghé thăm<br />
-          👇👇👇
-        </p>
+        <p>Nếu muốn xem toàn bộ danh mục đồ nghề tui xài thì ghé đây 👇</p>
         <a
           href="https://collshp.com/mhqb365"
           target="_blank"
           class="btn btn-large"
         >
-          Tất cả sản phẩm trên Shopee
+          collshp.com/mhqb365
         </a>
       </div>
     </div>
@@ -128,6 +139,49 @@ const products = ref([
       "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m2hms1rahcqcf5.webp",
   },
 ]);
+
+const quickLinks = ref([
+  {
+    id: 1,
+    name: "Loa kép chế loa laptop",
+    url: "https://s.shopee.vn/9zrABRPsF6",
+  },
+  {
+    id: 2,
+    name: "Mỏ hàn Deli 90W",
+    url: "https://s.shopee.vn/3qD0ICIWnv",
+  },
+  {
+    id: 3,
+    name: "Thiết hàn Sakura 0.8mm",
+    url: "https://s.shopee.vn/5pwxwDgLFC",
+  },
+  {
+    id: 4,
+    name: "Xilanh mỡ hàn Amtech",
+    url: "https://s.shopee.vn/3fx6f0AtAp",
+  },
+  {
+    id: 5,
+    name: "Dầu bôi trơn X5 Lube",
+    url: "https://s.shopee.vn/2VgihUOaBA",
+  },
+  {
+    id: 6,
+    name: "Máy nạp rom RT809F",
+    url: "https://s.shopee.vn/801yMCZ3R5",
+  },
+  {
+    id: 7,
+    name: "RAM Laptop chính hãng",
+    url: "https://s.shopee.vn/5VOkqDZztF",
+  },
+  {
+    id: 8,
+    name: "Nhíp gắp linh kiện",
+    url: "https://s.shopee.vn/20osgCLHyN",
+  },
+]);
 </script>
 
 <style scoped>
@@ -170,6 +224,34 @@ const products = ref([
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
+  margin-bottom: 48px;
+}
+
+.links-section {
+  margin-bottom: 48px;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.quick-link {
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid var(--gray);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s;
+  background: var(--background);
+}
+
+.quick-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateX(5px);
 }
 
 .product-card {
