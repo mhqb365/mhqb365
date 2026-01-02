@@ -7,21 +7,23 @@
       <router-view />
     </main>
     <Footer />
+    <BuyMeACoffee />
   </div>
 </template>
 
 <script setup>
-import SplashScreen from './components/SplashScreen.vue'
-import Navbar from './components/Navbar.vue'
-import SocialSidebar from './components/SocialSidebar.vue'
-import Footer from './components/Footer.vue'
-import { ref } from 'vue'
+import SplashScreen from "./components/SplashScreen.vue";
+import Navbar from "./components/Navbar.vue";
+import SocialSidebar from "./components/SocialSidebar.vue";
+import Footer from "./components/Footer.vue";
+import BuyMeACoffee from "./components/BuyMeACoffee.vue";
+import { ref } from "vue";
 
-const isLoading = ref(true)
+const isLoading = ref(true);
 
 const handleSplashLoaded = () => {
-  isLoading.value = false
-}
+  isLoading.value = false;
+};
 </script>
 
 <style>
