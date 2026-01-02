@@ -7,7 +7,7 @@
           Quay lại #trang chủ
         </router-link>
         <div class="header-content">
-          <h1><span class="text-accent">Đồ nghề</span> của tui</h1>
+          <h1><span class="text-accent">Đồ nghề</span> tui xài</h1>
           <p>
             Dưới đây là danh sách những món đồ nghề, linh kiện mà tôi thường
             xuyên sử dụng và tin dùng
