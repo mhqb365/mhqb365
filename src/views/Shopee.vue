@@ -88,8 +88,7 @@ const products = ref([
   {
     id: 2,
     name: "Máy mài đa năng KOMAX 12V",
-    description:
-      "Dùng adapter 12v. Mài, khoan, cắt, đánh bóng. Tạo hình khi làm bản lề",
+    description: "Dùng adapter 12v. Mài, khoan, cắt, tạo hình khi làm bản lề",
     category: "Dụng cụ",
     price: "~ 230.000đ",
     url: "https://s.shopee.vn/7ASrMc2nVT",
@@ -109,6 +108,27 @@ const products = ref([
   },
   {
     id: 4,
+    name: "Máy mài cắt IC 2UUL",
+    description:
+      "Tương tự như bút mài YCS nhưng kích thước to hơn, cầm chắc tay hơn",
+    category: "Dụng cụ",
+    price: "~ 459.000đ",
+    url: "https://s.shopee.vn/5VOqI4d5LZ",
+    image:
+      "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m6zlhtnpq06ff5.webp",
+  },
+  {
+    id: 5,
+    name: "Set 5 lưới thép không gỉ",
+    description: "Gia cường mối hàn nhựa",
+    category: "Dụng cụ",
+    price: "~ 89.000đ",
+    url: "https://s.shopee.vn/LftMWz8st",
+    image:
+      "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lsv1nrsy0cd5bf.webp",
+  },
+  {
+    id: 6,
     name: "Đồng hồ vạn năng ZOZY ZT102A",
     description:
       "Đo điện áp, dòng điện, điện trở, thông mạch với độ chính xác cao và bền bỉ",
@@ -119,7 +139,7 @@ const products = ref([
       "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m2l34r1oancqa6@resize_w900_nl.webp",
   },
   {
-    id: 5,
+    id: 7,
     name: "Keo tản nhiệt Snowman 14.3W/mK",
     description: "Keo tản nhiệt quốc dân cho laptop và PC, hiệu năng cực tốt.",
     category: "Tản nhiệt",
@@ -129,7 +149,7 @@ const products = ref([
       "https://down-vn.img.susercontent.com/file/1bfe22e88d5ff1fe6b6bd8d6bd5b107a@resize_w900_nl.webp",
   },
   {
-    id: 6,
+    id: 8,
     name: "Máy hút bụi cầm tay",
     description: "Máy hút bụi cầm tay Nhật Bản, chạy pin, hiệu năng tốt",
     category: "Dụng cụ",
@@ -137,6 +157,16 @@ const products = ref([
     url: "https://s.shopee.vn/20jk7rtmIm",
     image:
       "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m2hms1rahcqcf5.webp",
+  },
+  {
+    id: 9,
+    name: "Máy nạp ROM XGecu T48",
+    description: "Hỗ trợ đọc nạp nhiều BIOS, IC",
+    category: "BIOS",
+    price: "~ 1.550.000đ",
+    url: "https://s.shopee.vn/LgeonRlUm",
+    image:
+      "https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-llqkiuaqfa3j7d@resize_w900_nl.webp",
   },
 ]);
 

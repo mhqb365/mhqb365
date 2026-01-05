@@ -173,7 +173,7 @@ const featuredProjects = ref([
     description: "Tra cứu hóa đơn ở Doctor Laptop",
     tech: ["Chrome Extension"],
     liveUrl:
-      "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
+      "https://chromewebstore.google.com/detail/tra-c%E1%BB%A9u-h%C3%B3a-%C4%91%C6%A1n-doctor-la/mjjboplmkbjegcfcdglkadcpeibfdhmb",
   },
   {
     id: 9,
