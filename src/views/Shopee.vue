@@ -8,10 +8,7 @@
         </router-link>
         <div class="header-content">
           <h1><span class="text-accent">Đồ nghề</span> tui xài</h1>
-          <p>
-            Dưới đây là danh sách những món đồ nghề, linh kiện mà tôi thường
-            xuyên sử dụng và tin dùng
-          </p>
+          <p>Dưới đây là những món đồ nghề, linh kiện mà tui tin dùng</p>
         </div>
       </header>
 
@@ -51,7 +48,7 @@
       </div>
 
       <div class="shopee-footer">
-        <p>Nếu muốn xem toàn bộ danh mục đồ nghề tui xài thì ghé đây 👇</p>
+        <p>Xem toàn bộ danh mục đồ nghề 👇</p>
         <a
           href="https://collshp.com/mhqb365"
           target="_blank"
@@ -79,7 +76,7 @@ const products = ref([
     name: "Nhựa tự cứng làm bản lề",
     description:
       "Dùng trong nha khoa nhưng có độ cứng tốt, phù hợp để làm bản lề laptop",
-    category: "Vật liệu tiêu hao",
+    category: "Vật liệu",
     price: "~ 160.000đ",
     url: "https://s.shopee.vn/8fJZIH75cK",
     image:
@@ -119,9 +116,9 @@ const products = ref([
   },
   {
     id: 5,
-    name: "Set 5 lưới thép không gỉ",
+    name: "Lưới thép không gỉ",
     description: "Gia cường mối hàn nhựa",
-    category: "Dụng cụ",
+    category: "Vật liệu",
     price: "~ 89.000đ",
     url: "https://s.shopee.vn/LftMWz8st",
     image:

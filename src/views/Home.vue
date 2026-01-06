@@ -19,7 +19,8 @@
             <img src="/Mai-Noel.png" alt="Hero graphic" />
             <div class="status-badge">
               <span class="status-dot"></span>
-              Như 1 con mèo <span class="text-accent">LƯỜI</span>
+              Tự dưng vào ở ké từ
+              <span class="text-accent">29/12/2024</span> đến nay
             </div>
           </div>
         </div>
@@ -77,7 +78,7 @@
         <div class="contacts-content">
           <p>
             Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa
-            laptop thì lên Google tìm "
+            laptop thì lên Google tìm
             <a
               href="https://www.google.com/search?q=Doctor+Laptop"
               target="_blank"
@@ -85,8 +86,8 @@
             >
               Doctor Laptop
             </a>
-            " nhé. Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch
-            điện nhỏ mà không quan trọng thời gian thì
+            nhé. Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch điện
+            nhỏ mà không quan trọng thời gian thì
             <span id="iconHand" class="icon-hand-md">👉</span>
             <span id="iconHand" class="icon-hand-sm">👇</span>
           </p>
@@ -120,47 +121,33 @@ const featuredProjects = ref([
   {
     id: 1,
     title: "Link mua đồ nghề",
-    description: "Tổng hợp các món đồ mà tôi hay dùng",
+    description: "Tổng hợp các món đồ mà tui hay dùng",
     tech: ["Shopee"],
     liveUrl: "/shopee",
   },
   {
     id: 2,
-    title: "Active Win & Office",
-    description: "Active Windows & Office miễn phí (tin dùng)",
-    tech: ["PowerShell"],
-    liveUrl: "https://massgrave.dev",
-  },
-  {
-    id: 3,
     title: "bBattery",
     description: "Kiểm tra độ chai pin laptop Windows",
     tech: ["PowerShell"],
     liveUrl: "https://github.com/mhqb365/bbattery",
   },
   {
-    id: 4,
-    title: "Hướng dẫn cài Win",
-    description: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
-    tech: ["Windows"],
-    liveUrl: "https://tranphu.gitbook.io/setup",
-  },
-  {
-    id: 5,
+    id: 3,
     title: "Multi BoardViewer",
-    description: "Xem nhiều boardview/schematic trong cùng một ứng dụng",
+    description: "Xem nhiều boardview & schematic trong một ứng dụng",
     tech: ["Windows"],
     liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
   },
   {
-    id: 6,
+    id: 4,
     title: "Bypass MDM Macbook",
     description: "Bypass Mobile Device Management trên Macbook",
     tech: ["Terminal"],
     liveUrl: "https://j2c.cc/mdm",
   },
   {
-    id: 7,
+    id: 5,
     title: "Tính số lượng gạch",
     description: "Tính toán số lượng gạch ốp tường ở Ecobig",
     tech: ["Chrome Extension"],
@@ -168,7 +155,7 @@ const featuredProjects = ref([
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
   },
   {
-    id: 8,
+    id: 6,
     title: "Tra cứu hóa đơn",
     description: "Tra cứu hóa đơn ở Doctor Laptop",
     tech: ["Chrome Extension"],
@@ -176,11 +163,25 @@ const featuredProjects = ref([
       "https://chromewebstore.google.com/detail/tra-c%E1%BB%A9u-h%C3%B3a-%C4%91%C6%A1n-doctor-la/mjjboplmkbjegcfcdglkadcpeibfdhmb",
   },
   {
-    id: 9,
+    id: 7,
     title: "Tra cứu BH cá nhân",
     description: "Tra cứu bảo hành khi gửi sửa cá nhân",
     tech: ["Website"],
     liveUrl: "https://repair.mhqb365.com",
+  },
+  {
+    id: 8,
+    title: "Hướng dẫn cài Win",
+    description: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
+    tech: ["Windows"],
+    liveUrl: "https://tranphu.gitbook.io/setup",
+  },
+  {
+    id: 9,
+    title: "Active Win & Office",
+    description: "Active Windows & Office miễn phí (tin dùng)",
+    tech: ["PowerShell"],
+    liveUrl: "https://massgrave.dev",
   },
 ]);
 
