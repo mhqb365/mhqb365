@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- Hero Section -->
     <section id="home" class="hero section-padding">
       <div class="container">
         <div class="hero-content">
@@ -10,24 +9,14 @@
               <span class="text-accent">sửa laptop</span> và
               <span class="text-accent">máy đào công suất nhỏ</span>
             </h1>
-            <!-- <p>He crafts responsive websites where technologies meet creativity</p> -->
-            <!-- <a href="#contacts" class="btn" @click.prevent="scrollToElement('contacts')">
-              Liên hệ với tui
-            </a> -->
           </div>
           <div class="hero-image">
-            <img src="/Mai-Noel.png" alt="Hero graphic" />
-            <div class="status-badge">
-              <span class="status-dot"></span>
-              Tự dưng vào ở ké từ
-              <span class="text-accent">29/12/2024</span> đến nay
-            </div>
+            <img src="/sua-may-dao.png" alt="Sửa Máy Đào" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects section-padding">
       <div class="container">
         <SectionTitle title="dự án" />
@@ -41,7 +30,6 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills section-padding">
       <div class="container">
         <SectionTitle title="kỹ năng" />
@@ -56,7 +44,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about-me" class="about section-padding">
       <div class="container">
         <SectionTitle title="thông tin" />
@@ -71,7 +58,6 @@
       </div>
     </section>
 
-    <!-- Contacts Section -->
     <section id="contacts" class="contacts section-padding">
       <div class="container">
         <SectionTitle title="liên hệ" />
@@ -188,7 +174,7 @@ const featuredProjects = ref([
 const skills = ref([
   {
     category: "Sửa Laptop",
-    items: ["Thay linh kiện", "Sửa main board", "Sửa bản lề"],
+    items: ["Thay Linh Kiện", "Sửa Main Board", "Sửa Bản Lề"],
   },
   {
     category: "Sửa Máy Đào",
@@ -196,7 +182,7 @@ const skills = ref([
   },
   {
     category: "Code",
-    items: ["Vibe-coding"],
+    items: ["Vibe Coding"],
   },
 ]);
 
