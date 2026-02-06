@@ -8,6 +8,11 @@
               <span style="color: #c778dd">Mai Hoàng Quốc Bảo aka mhqb365</span>
               {{ t("heroTitle") }}
             </h1>
+            <p class="policy-inline">
+              <a href="/privacy">Privacy Policy</a>
+              <span aria-hidden="true"> • </span>
+              <a href="/terms">Terms of Service</a>
+            </p>
           </div>
           <div class="hero-image">
             <img src="/sua-may-dao.png" alt="Sửa máy đào" />
