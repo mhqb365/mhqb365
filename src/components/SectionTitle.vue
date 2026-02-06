@@ -35,7 +35,6 @@ defineProps({
   flex: 1;
   height: 1px;
   background: var(--accent);
-  max-width: 511px;
 }
 
 @media (max-width: 768px) {
@@ -55,10 +54,6 @@ defineProps({
 
   .section-title h2 {
     font-size: 20px;
-  }
-
-  .line {
-    max-width: 200px;
   }
 }
 </style>

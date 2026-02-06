@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <nav class="navbar">
     <div class="container navbar-content">
       <a href="/#home" class="logo" @click.prevent="scrollToSection('home')">
@@ -21,56 +21,67 @@
           class="nav-link"
           @click.prevent="scrollToSection('home')"
         >
-          <span class="text-accent">#</span>trang chủ
+          <span class="text-accent">#</span>{{ t("home") }}
         </a>
         <a
           href="/#projects"
           class="nav-link"
           @click.prevent="scrollToSection('projects')"
         >
-          <span class="text-accent">#</span>dự án
+          <span class="text-accent">#</span>{{ t("projects") }}
         </a>
         <a
           href="/#skills"
           class="nav-link"
           @click.prevent="scrollToSection('skills')"
         >
-          <span class="text-accent">#</span>kỹ năng
+          <span class="text-accent">#</span>{{ t("skills") }}
         </a>
         <a
           href="/#about-me"
           class="nav-link"
           @click.prevent="scrollToSection('about-me')"
         >
-          <span class="text-accent">#</span>thông tin
+          <span class="text-accent">#</span>{{ t("about") }}
         </a>
         <a
           href="/#contacts"
           class="nav-link"
           @click.prevent="scrollToSection('contacts')"
         >
-          <span class="text-accent">#</span>liên hệ
+          <span class="text-accent">#</span>{{ t("contact") }}
         </a>
-        <router-link to="/shopee" class="nav-link" @click="closeMenu">
-          <span class="text-accent">#</span>đồ nghề
-        </router-link>
 
-        <!-- <div class="language-switcher">
-          <span class="active">VI</span>
+        <div class="language-switcher">
+          <button
+            class="lang-btn"
+            :class="{ active: lang === 'vi' }"
+            @click="setLang('vi')"
+          >
+            VI
+          </button>
           <span class="divider">|</span>
-          <span>EN</span>
-        </div> -->
+          <button
+            class="lang-btn"
+            :class="{ active: lang === 'en' }"
+            @click="setLang('en')"
+          >
+            EN
+          </button>
+        </div>
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
+import { useLang } from "../composables/useLang";
 
 const router = useRouter();
 const mobileMenuOpen = ref(false);
+const { lang, setLang } = useLang();
 
 const toggleMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -80,10 +91,19 @@ const closeMenu = () => {
   mobileMenuOpen.value = false;
 };
 
+const copy = computed(() => ({
+  home: { vi: "trang chủ", en: "home" },
+  projects: { vi: "dự án", en: "projects" },
+  skills: { vi: "kỹ năng", en: "skills" },
+  about: { vi: "thông tin", en: "about" },
+  contact: { vi: "liên hệ", en: "contact" },
+}));
+
+const t = (key) => copy.value[key][lang.value];
+
 const scrollToSection = (sectionId) => {
   closeMenu();
 
-  // Nếu không ở trang home, navigate về home trước
   if (router.currentRoute.value.path !== "/") {
     router.push("/").then(() => {
       setTimeout(() => {
@@ -98,7 +118,7 @@ const scrollToSection = (sectionId) => {
 const scrollToElement = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    const navbarHeight = 57; // Chiều cao của navbar
+    const navbarHeight = 57; // Navbar height
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
@@ -156,15 +176,26 @@ const scrollToElement = (sectionId) => {
 
 .language-switcher {
   display: flex;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
   color: var(--gray);
 }
 
-.language-switcher .active {
-  color: var(--white);
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
 }
 
-.language-switcher .divider {
+.lang-btn.active {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.divider {
   color: var(--gray);
 }
 

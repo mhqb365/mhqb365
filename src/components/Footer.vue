@@ -1,38 +1,86 @@
-<template>
+﻿<template>
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-left">
           <div class="footer-logo">
             <span class="text-accent">mhqb365.com</span>
-            <p>sửa laptop nhưng thích vibe coding</p>
+            <p>{{ tagline }}</p>
           </div>
         </div>
         <div class="footer-right">
-          <h3>Mạng xã hội</h3>
-          <div class="footer-social">
-            <a href="https://www.tiktok.com/@mhqb365" target="_blank" rel="noopener noreferrer" title="TikTok">
-              <TikTokIcon :size="20" />
-            </a>
-            <a href="https://www.youtube.com/@mhqb365" target="_blank" rel="noopener noreferrer" title="YouTube">
-              <Youtube :size="20" />
-            </a>
-            <a href="https://github.com/mhqb365" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <Github :size="20" />
-            </a>
+          <div class="footer-block">
+            <h3>{{ t("social") }}</h3>
+            <div class="footer-social">
+              <a
+                href="https://www.tiktok.com/@mhqb365"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="TikTok"
+              >
+                <TikTokIcon :size="20" />
+              </a>
+              <a
+                href="https://www.youtube.com/@mhqb365"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="YouTube"
+              >
+                <Youtube :size="20" />
+              </a>
+              <a
+                href="https://github.com/mhqb365"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <Github :size="20" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-block">
+            <h3>{{ t("legal") }}</h3>
+            <div class="legal-links">
+              <RouterLink to="/privacy">{{ t("privacy") }}</RouterLink>
+              <RouterLink to="/terms">{{ t("terms") }}</RouterLink>
+            </div>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© Copyright 2025. Made by Antigravity & tui. Template by EliasDevis</p>
+        <p>{{ copyright }}</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { Github, Youtube } from 'lucide-vue-next'
-import TikTokIcon from './TikTokIcon.vue'
+import { Github, Youtube } from "lucide-vue-next";
+import TikTokIcon from "./TikTokIcon.vue";
+import { RouterLink } from "vue-router";
+import { computed } from "vue";
+import { useLang } from "../composables/useLang";
+
+const { lang } = useLang();
+
+const copy = {
+  tagline: {
+    vi: "sửa laptop nhưng thích vibe coding",
+    en: "laptop repair but loves vibe coding",
+  },
+  social: { vi: "Mạng xã hội", en: "Social" },
+  legal: { vi: "Pháp lý", en: "Legal" },
+  privacy: { vi: "Quyền riêng tư", en: "Privacy policy" },
+  terms: { vi: "Điều khoản dịch vụ", en: "Terms of service" },
+  copyright: {
+    vi: "© 2026. Làm bởi Antigravity & tui. Mẫu bởi EliasDevis",
+    en: "© 2026. Made by Antigravity & me. Template by EliasDevis",
+  },
+};
+
+const t = (key) => copy[key][lang.value];
+const tagline = computed(() => t("tagline"));
+const copyright = computed(() => t("copyright"));
 </script>
 
 <style scoped>
@@ -48,6 +96,21 @@ import TikTokIcon from './TikTokIcon.vue'
   align-items: flex-start;
   margin-bottom: 48px;
   gap: 32px;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-block {
+  min-width: 180px;
 }
 
 .footer-logo {
@@ -81,6 +144,19 @@ import TikTokIcon from './TikTokIcon.vue'
   color: var(--accent);
 }
 
+.legal-links {
+  display: grid;
+  gap: 8px;
+}
+
+.legal-links a {
+  color: var(--gray);
+}
+
+.legal-links a:hover {
+  color: var(--white);
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: 32px;
@@ -102,6 +178,10 @@ import TikTokIcon from './TikTokIcon.vue'
   .footer-content {
     flex-direction: column;
     margin-bottom: 32px;
+  }
+
+  .footer-right {
+    width: 100%;
   }
 
   .footer-logo {

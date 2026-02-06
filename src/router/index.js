@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Shopee from "../views/Shopee.vue";
+import Privacy from "../views/Privacy.vue";
+import Terms from "../views/Terms.vue";
 
 const routes = [
   {
@@ -9,9 +10,14 @@ const routes = [
     component: Home,
   },
   {
-    path: "/shopee",
-    name: "Shopee",
-    component: Shopee,
+    path: "/privacy",
+    name: "Privacy",
+    component: Privacy,
+  },
+  {
+    path: "/terms",
+    name: "Terms",
+    component: Terms,
   },
 ];
 

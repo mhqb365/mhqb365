@@ -1,17 +1,16 @@
-<template>
+﻿<template>
   <div class="home">
     <section id="home" class="hero section-padding">
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
             <h1>
-              Mai Hoàng Quốc Bảo aka mhqb365 -
-              <span class="text-accent">sửa laptop</span> và
-              <span class="text-accent">máy đào công suất nhỏ</span>
+              <span style="color: #c778dd">Mai Hoàng Quốc Bảo aka mhqb365</span>
+              {{ t("heroTitle") }}
             </h1>
           </div>
           <div class="hero-image">
-            <img src="/sua-may-dao.png" alt="Sửa Máy Đào" />
+            <img src="/sua-may-dao.png" alt="Sửa máy đào" />
           </div>
         </div>
       </div>
@@ -19,23 +18,31 @@
 
     <section id="projects" class="projects section-padding">
       <div class="container">
-        <SectionTitle title="dự án" />
-        <div class="projects-grid">
-          <ProjectCard
+        <SectionTitle :title="sectionTitles.projects" />
+        <div class="projects-list">
+          <a
             v-for="project in featuredProjects"
             :key="project.id"
-            :project="project"
-          />
+            class="project-row"
+            :href="project.liveUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-main">
+              <div class="project-title">{{ project.title }}</div>
+              <div class="project-desc">{{ project.description }}</div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
     <section id="skills" class="skills section-padding">
       <div class="container">
-        <SectionTitle title="kỹ năng" />
+        <SectionTitle :title="sectionTitles.skills" />
         <div class="skills-grid">
           <SkillBox
-            v-for="skill in skills"
+            v-for="skill in skillsView"
             :key="skill.category"
             :category="skill.category"
             :skills="skill.items"
@@ -46,13 +53,10 @@
 
     <section id="about-me" class="about section-padding">
       <div class="container">
-        <SectionTitle title="thông tin" />
+        <SectionTitle :title="sectionTitles.about" />
         <div class="about-content">
           <div class="about-text">
-            <p>Làm ở Doctor Laptop (01/06/2020 - hiện tại)</p>
-            <p>Làm ở Azsoft Mobile Service (03/2019 - 04/2020)</p>
-            <p>Làm ở Phồn Vinh Mobile (03/2017 - 12/2018)</p>
-            <p>Làm ở Khách sạn Hoài Phú (03/2016 - 02/2017)</p>
+            <p v-for="line in aboutLines" :key="line">{{ line }}</p>
           </div>
         </div>
       </div>
@@ -60,25 +64,16 @@
 
     <section id="contacts" class="contacts section-padding">
       <div class="container">
-        <SectionTitle title="liên hệ" />
+        <SectionTitle :title="sectionTitles.contacts" />
         <div class="contacts-content">
           <p>
-            Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa
-            laptop thì lên Google tìm
-            <a
-              href="https://www.google.com/search?q=Doctor+Laptop"
-              target="_blank"
-              style="color: white"
-            >
-              Doctor Laptop
-            </a>
-            nhé. Nếu có nhu cầu nghiên cứu sữa chữa máy đào hoặc những mạch điện
-            nhỏ mà không quan trọng thời gian thì
+            {{ contactIntro.text1 }}
+            {{ contactIntro.text2 }}
             <span id="iconHand" class="icon-hand-md">👉</span>
             <span id="iconHand" class="icon-hand-sm">👇</span>
           </p>
           <div class="contact-box">
-            <h3>Gửi tin nhắn cho tui</h3>
+            <h3>{{ contactBoxTitle }}</h3>
             <div class="contact-links">
               <a href="https://t.me/mhqb365" target="_blank">
                 <MessageCircle :size="20" />
@@ -97,108 +92,220 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import { MessageCircle } from "lucide-vue-next";
 import SectionTitle from "../components/SectionTitle.vue";
-import ProjectCard from "../components/ProjectCard.vue";
 import SkillBox from "../components/SkillBox.vue";
+import { useLang } from "../composables/useLang";
 
-const featuredProjects = ref([
+const { lang } = useLang();
+
+const dictionary = {
+  heroTitle: {
+    vi: " - sửa laptop và máy đào công suất nhỏ",
+    en: " - laptop repair and compact mining device",
+  },
+  sectionTitles: {
+    projects: { vi: "dự án", en: "projects" },
+    skills: { vi: "kỹ năng", en: "skills" },
+    about: { vi: "thông tin", en: "about" },
+    contacts: { vi: "liên hệ", en: "contact" },
+  },
+  aboutLines: [
+    {
+      vi: "Làm ở Doctor Laptop (01/06/2020 - hiện tại)",
+      en: "Working at Doctor Laptop (01/06/2020 - present)",
+    },
+    {
+      vi: "Làm ở Azsoft Mobile Service (03/2019 - 04/2020)",
+      en: "Worked at Azsoft Mobile Service (03/2019 - 04/2020)",
+    },
+    {
+      vi: "Làm ở Phồn Vinh Mobile (03/2017 - 12/2018)",
+      en: "Worked at Phon Vinh Mobile (03/2017 - 12/2018)",
+    },
+    {
+      vi: "Làm ở Khách sạn Hoài Phú (03/2016 - 02/2017)",
+      en: "Worked at Hoai Phu Hotel (03/2016 - 02/2017)",
+    },
+  ],
+  contactIntro: {
+    text1: {
+      vi: "Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa laptop thì lên Google tìm Doctor Laptop.",
+      en: "I work full-time at Doctor Laptop. If you need repair your laptop, just search for Doctor Laptop on Google.",
+    },
+    text2: {
+      vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì",
+      en: "If you want to research or fix compact mining rigs or small electronic circuits and it is not urgent",
+    },
+  },
+  contactBoxTitle: { vi: "Gửi tin nhắn cho tui", en: "Message me" },
+};
+
+const projects = [
   {
     id: 1,
-    title: "Link mua đồ nghề",
-    description: "Tổng hợp các món đồ mà tui hay dùng",
+    title: {
+      vi: "Link mua đồ nghề",
+      en: "Recommended tools links",
+    },
+    description: {
+      vi: "Tổng hợp các món đồ mà tui hay dùng",
+      en: "A bundle of items I frequently use",
+    },
     tech: ["Shopee"],
-    liveUrl: "/shopee",
+    liveUrl: "https://collshp.com/mhqb365",
   },
   {
     id: 2,
-    title: "bBattery",
-    description: "Kiểm tra độ chai pin laptop Windows",
+    title: { vi: "bBattery", en: "bBattery" },
+    description: {
+      vi: "Kiểm tra độ chai pin laptop Windows",
+      en: "Check Windows laptop battery wear level",
+    },
     tech: ["PowerShell"],
     liveUrl: "https://github.com/mhqb365/bbattery",
   },
   {
     id: 3,
-    title: "Multi BoardViewer",
-    description: "Xem nhiều boardview & schematic trong một ứng dụng",
+    title: { vi: "Multi BoardViewer", en: "Multi BoardViewer" },
+    description: {
+      vi: "Xem nhiều boardview & schematic trong một ứng dụng",
+      en: "View multiple boardviews & schematics in one app",
+    },
     tech: ["Windows"],
     liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
   },
   {
     id: 4,
-    title: "Bypass MDM Macbook",
-    description: "Bypass Mobile Device Management trên Macbook",
+    title: { vi: "QR Station", en: "QR Station" },
+    description: {
+      vi: "Tạo QR thanh toán & thông báo nhận tiền với ESP32",
+      en: "Generate payment QR and notify via ESP32",
+    },
+    tech: ["Hardware"],
+    liveUrl: "https://github.com/mhqb365/QR-Station",
+  },
+  {
+    id: 5,
+    title: { vi: "Bypass MDM Macbook", en: "Bypass MDM Macbook" },
+    description: {
+      vi: "Bypass Mobile Device Management trên Macbook",
+      en: "Bypass Mobile Device Management on Macbook",
+    },
     tech: ["Terminal"],
     liveUrl: "https://j2c.cc/mdm",
   },
   {
-    id: 5,
-    title: "Tính số lượng gạch",
-    description: "Tính toán số lượng gạch ốp tường ở Ecobig",
+    id: 6,
+    title: { vi: "Tính số lượng gạch", en: "Tile calculator" },
+    description: {
+      vi: "Tính toán số lượng gạch ốp tường ở Ecobig",
+      en: "Calculate wall tile quantity for Ecobig",
+    },
     tech: ["Chrome Extension"],
     liveUrl:
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
   },
   {
-    id: 6,
-    title: "Tra cứu hóa đơn",
-    description: "Tra cứu hóa đơn ở Doctor Laptop",
+    id: 7,
+    title: { vi: "Tra cứu hóa đơn", en: "Invoice lookup" },
+    description: {
+      vi: "Tra cứu hóa đơn ở Doctor Laptop",
+      en: "Invoice lookup at Doctor Laptop",
+    },
     tech: ["Chrome Extension"],
     liveUrl:
       "https://chromewebstore.google.com/detail/tra-c%E1%BB%A9u-h%C3%B3a-%C4%91%C6%A1n-doctor-la/mjjboplmkbjegcfcdglkadcpeibfdhmb",
   },
   {
-    id: 7,
-    title: "Tra cứu BH cá nhân",
-    description: "Tra cứu bảo hành khi gửi sửa cá nhân",
+    id: 8,
+    title: { vi: "Tra cứu bảo hành cá nhân", en: "Warranty lookup" },
+    description: {
+      vi: "Tra cứu bảo hành khi gửi sửa cá nhân",
+      en: "Lookup warranty for personal repair orders",
+    },
     tech: ["Website"],
     liveUrl: "https://repair.mhqb365.com",
   },
   {
-    id: 8,
-    title: "Hướng dẫn cài Win",
-    description: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
+    id: 9,
+    title: { vi: "Hướng dẫn cài Win", en: "Windows install guide" },
+    description: {
+      vi: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
+      en: "Windows & Office install guide (curated)",
+    },
     tech: ["Windows"],
     liveUrl: "https://tranphu.gitbook.io/setup",
   },
   {
-    id: 9,
-    title: "Active Win & Office",
-    description: "Active Windows & Office miễn phí (tin dùng)",
+    id: 10,
+    title: { vi: "Active Win & Office", en: "Activate Windows & Office" },
+    description: {
+      vi: "Active Windows & Office miễn phí (tin dùng)",
+      en: "Free activation for Windows & Office (trusted)",
+    },
     tech: ["PowerShell"],
     liveUrl: "https://massgrave.dev",
   },
-]);
+];
 
-const skills = ref([
+const t = (key) => dictionary[key][lang.value];
+
+const sectionTitles = computed(() => ({
+  projects: dictionary.sectionTitles.projects[lang.value],
+  skills: dictionary.sectionTitles.skills[lang.value],
+  about: dictionary.sectionTitles.about[lang.value],
+  contacts: dictionary.sectionTitles.contacts[lang.value],
+}));
+
+const aboutLines = computed(() =>
+  dictionary.aboutLines.map((line) => line[lang.value]),
+);
+
+const contactIntro = computed(() => ({
+  text1: dictionary.contactIntro.text1[lang.value],
+  text2: dictionary.contactIntro.text2[lang.value],
+}));
+
+const contactBoxTitle = computed(() => dictionary.contactBoxTitle[lang.value]);
+
+const featuredProjects = computed(() =>
+  projects.map((p) => ({
+    ...p,
+    title: p.title[lang.value],
+    description: p.description[lang.value],
+  })),
+);
+
+const skillsSource = [
   {
-    category: "Sửa Laptop",
-    items: ["Thay Linh Kiện", "Sửa Main Board", "Sửa Bản Lề"],
+    category: { vi: "Sửa Laptop", en: "Laptop Repair" },
+    items: [
+      { vi: "Thay linh kiện", en: "Parts replacement" },
+      { vi: "Sửa mainboard", en: "Mainboard repair" },
+      { vi: "Sửa bản lề", en: "Hinge repair" },
+    ],
   },
   {
-    category: "Sửa Máy Đào",
-    items: ["IceRiver", "Goldshell"],
+    category: { vi: "Sửa Máy Đào", en: "Mining Rigs" },
+    items: [
+      { vi: "IceRiver", en: "IceRiver" },
+      { vi: "Goldshell", en: "Goldshell" },
+    ],
   },
   {
-    category: "Code",
-    items: ["Vibe Coding"],
+    category: { vi: "Code", en: "Code" },
+    items: [{ vi: "Vibe Coding", en: "Vibe Coding" }],
   },
-]);
+];
 
-const scrollToElement = (id) => {
-  const element = document.getElementById(id);
-  if (element) {
-    const navbarHeight = 57; // Navbar height
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
-};
+const skillsView = computed(() =>
+  skillsSource.map((s) => ({
+    category: s.category[lang.value],
+    items: s.items.map((i) => i[lang.value]),
+  })),
+);
 </script>
 
 <style scoped>
@@ -216,13 +323,8 @@ const scrollToElement = (id) => {
 .hero-text h1 {
   font-size: 32px;
   margin: 0 0 32px 0;
-  line-height: 1.5;
+  line-height: 1.45;
   word-wrap: break-word;
-}
-
-.hero-text p {
-  color: var(--gray);
-  margin: 0 0 24px 0;
 }
 
 .hero-image {
@@ -234,88 +336,67 @@ const scrollToElement = (id) => {
   height: auto;
 }
 
-.status-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px;
+.projects-list {
+  display: grid;
+  gap: 12px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 10px 12px;
   border: 1px solid var(--gray);
-  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.project-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.project-desc {
+  color: var(--gray);
+  line-height: 1.5;
   font-size: 14px;
 }
 
-.status-dot {
-  width: 16px;
-  height: 16px;
-  background: var(--accent);
-  display: inline-block;
-}
-
-.quote-section {
-  padding: 60px 0;
-}
-
-.quote-box {
-  border: 1px solid var(--gray);
-  padding: 32px;
-  position: relative;
-}
-
-.quote-box::before {
-  content: '"';
-  position: absolute;
-  top: -20px;
-  left: 16px;
-  font-size: 60px;
-  color: var(--white);
-  background: var(--background);
-  padding: 0 8px;
-}
-
-.quote-box::after {
-  content: '"';
-  position: absolute;
-  bottom: -20px;
-  right: 16px;
-  font-size: 60px;
-  color: var(--white);
-  background: var(--background);
-  padding: 0 8px;
-}
-
-.quote-text {
-  margin: 0 0 16px 0;
-  color: var(--white);
-  font-size: 24px;
-  word-wrap: break-word;
-}
-
-.quote-author {
-  margin: 0;
-  color: var(--gray);
-  text-align: right;
-}
-
-.section-header {
+.project-meta {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.view-all {
+.project-tag {
+  border: 1px solid var(--gray);
+  padding: 4px 8px;
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.project-link {
+  border: 1px solid var(--accent);
+  padding: 6px 12px;
   color: var(--white);
   text-decoration: none;
-  transition: color 0.3s;
 }
 
-.view-all:hover {
-  color: var(--accent);
+.project-link:hover {
+  background: rgba(199, 120, 221, 0.15);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+.project-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  border-color: var(--accent);
 }
 
 .skills-grid {
@@ -326,25 +407,15 @@ const scrollToElement = (id) => {
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 960px;
 }
 
 .about-text p {
   color: var(--gray);
   margin: 0 0 16px 0;
   line-height: 1.6;
-}
-
-.about-text .btn {
-  margin-top: 16px;
-}
-
-.image-placeholder {
-  width: 100%;
-  height: 400px;
-  border: 1px solid var(--gray);
-  background: rgba(199, 120, 221, 0.1);
 }
 
 .contacts-content {
@@ -401,70 +472,21 @@ const scrollToElement = (id) => {
   }
 
   .hero-text h1 {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
     margin: 0 0 20px 0;
   }
 
-  .hero-text p {
-    font-size: 14px;
-    margin: 0 0 20px 0;
+  .projects-list {
+    gap: 12px;
   }
 
-  .status-badge {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .quote-section {
-    padding: 40px 0;
-  }
-
-  .quote-box {
-    padding: 20px;
-  }
-
-  .quote-box::before,
-  .quote-box::after {
-    font-size: 40px;
-  }
-
-  .quote-text {
-    font-size: 16px;
-  }
-
-  .quote-author {
-    font-size: 14px;
-  }
-
-  .section-padding {
-    padding: 48px 0;
-  }
-
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .projects-grid {
+  .project-row {
     grid-template-columns: 1fr;
   }
 
   .skills-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-
-  .image-placeholder {
-    height: 250px;
-  }
-
-  .contact-box {
-    padding: 12px;
-  }
-
-  .contact-links a {
-    font-size: 14px;
   }
 }
 
@@ -484,10 +506,6 @@ const scrollToElement = (id) => {
 
 @media (max-width: 480px) {
   .hero-text h1 {
-    font-size: 18px;
-  }
-
-  .quote-text {
     font-size: 14px;
   }
 
