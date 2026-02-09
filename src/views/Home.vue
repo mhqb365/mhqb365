@@ -9,9 +9,9 @@
               {{ t("heroTitle") }}
             </h1>
             <p class="policy-inline">
-              <a href="/privacy">Privacy Policy</a>
+              <RouterLink to="/privacy.html">Privacy Policy</RouterLink>
               <span aria-hidden="true"> • </span>
-              <a href="/terms">Terms of Service</a>
+              <RouterLink to="/terms.html">Terms of Service</RouterLink>
             </p>
           </div>
           <div class="hero-image">
@@ -99,6 +99,7 @@
 <script setup>
 import { computed } from "vue";
 import { MessageCircle } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 import SectionTitle from "../components/SectionTitle.vue";
 import SkillBox from "../components/SkillBox.vue";
 import { useLang } from "../composables/useLang";

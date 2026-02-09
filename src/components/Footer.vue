@@ -38,13 +38,13 @@
               </a>
             </div>
           </div>
-          <div class="footer-block">
+          <!-- <div class="footer-block">
             <h3>{{ t("legal") }}</h3>
             <div class="legal-links">
-              <RouterLink to="/privacy">{{ t("privacy") }}</RouterLink>
-              <RouterLink to="/terms">{{ t("terms") }}</RouterLink>
+              <RouterLink to="/privacy.html">{{ t("privacy") }}</RouterLink>
+              <RouterLink to="/terms.html">{{ t("terms") }}</RouterLink>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="footer-bottom">

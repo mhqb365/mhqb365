@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+@font-face {
+  font-family: "BCH Games";
+  src: url("./assets/fonts/BCH.games.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #282c33;
   --accent: #c778dd;
   --gray: #abb2bf;
   --white: #ffffff;
-  --font-mono: "Fira Code", monospace;
+  --font-mono: "BCH Games", "Fira Code", monospace;
   --font-sans: "Inter", sans-serif;
 
   font-family: var(--font-mono);
