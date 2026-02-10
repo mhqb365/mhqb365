@@ -200,7 +200,7 @@ const projects = [
       en: "Manage and track your subscriptions in work and life",
     },
     tech: ["VueJS"],
-    liveUrl: "https://github.com/mhqb365/subscription-tracker",
+    liveUrl: "https://sub-track.mhqb365.com",
   },
   {
     id: 6,
