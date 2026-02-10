@@ -163,9 +163,9 @@
             <article class="card border-box">
               <h2>Phạm vi & Vai trò</h2>
               <p>
-                mhqb365.com (“chúng tôi”) là đơn vị kiểm soát dữ liệu cá nhân
-                thu thập qua trang web và Google OAuth. Nhà cung cấp dịch vụ xử
-                lý dữ liệu thay chúng tôi theo hợp đồng.
+                mhqb365.com là đơn vị kiểm soát dữ liệu cá nhân thu thập qua
+                trang web và Google OAuth. Nhà cung cấp dịch vụ xử lý dữ liệu
+                thay chúng tôi theo hợp đồng.
               </p>
             </article>
             <article class="card border-box">
@@ -295,7 +295,7 @@
 <script setup>
 import { useLang } from "../composables/useLang";
 
-const { lang, setLang } = useLang();
+const { lang } = useLang();
 </script>
 
 <style scoped>

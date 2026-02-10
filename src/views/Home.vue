@@ -194,6 +194,16 @@ const projects = [
   },
   {
     id: 5,
+    title: { vi: "Subscription Tracker", en: "Subscription Tracker" },
+    description: {
+      vi: "Quản lý và theo dõi các khoản đăng ký của các dịch vụ trong công việc và cuộc sống",
+      en: "Manage and track your subscriptions in work and life",
+    },
+    tech: ["VueJS"],
+    liveUrl: "https://github.com/mhqb365/subscription-tracker",
+  },
+  {
+    id: 6,
     title: { vi: "Bypass MDM Macbook", en: "Bypass MDM Macbook" },
     description: {
       vi: "Bypass Mobile Device Management trên Macbook",
@@ -203,7 +213,7 @@ const projects = [
     liveUrl: "https://j2c.cc/mdm",
   },
   {
-    id: 6,
+    id: 7,
     title: { vi: "Tính số lượng gạch", en: "Tile calculator" },
     description: {
       vi: "Tính toán số lượng gạch ốp tường ở Ecobig",
@@ -214,7 +224,7 @@ const projects = [
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
   },
   {
-    id: 7,
+    id: 8,
     title: { vi: "Tra cứu hóa đơn", en: "Invoice lookup" },
     description: {
       vi: "Tra cứu hóa đơn ở Doctor Laptop",
@@ -225,7 +235,7 @@ const projects = [
       "https://chromewebstore.google.com/detail/tra-c%E1%BB%A9u-h%C3%B3a-%C4%91%C6%A1n-doctor-la/mjjboplmkbjegcfcdglkadcpeibfdhmb",
   },
   {
-    id: 8,
+    id: 9,
     title: { vi: "Tra cứu bảo hành cá nhân", en: "Warranty lookup" },
     description: {
       vi: "Tra cứu bảo hành khi gửi sửa cá nhân",
@@ -235,7 +245,7 @@ const projects = [
     liveUrl: "https://repair.mhqb365.com",
   },
   {
-    id: 9,
+    id: 10,
     title: { vi: "Hướng dẫn cài Win", en: "Windows install guide" },
     description: {
       vi: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
@@ -245,7 +255,7 @@ const projects = [
     liveUrl: "https://tranphu.gitbook.io/setup",
   },
   {
-    id: 10,
+    id: 11,
     title: { vi: "Active Win & Office", en: "Activate Windows & Office" },
     description: {
       vi: "Active Windows & Office miễn phí (tin dùng)",
@@ -288,8 +298,8 @@ const skillsSource = [
   {
     category: { vi: "Sửa Laptop", en: "Laptop Repair" },
     items: [
-      { vi: "Thay linh kiện", en: "Parts replacement" },
       { vi: "Sửa mainboard", en: "Mainboard repair" },
+      { vi: "Thay thế linh kiện", en: "Parts replacement" },
       { vi: "Sửa bản lề", en: "Hinge repair" },
     ],
   },

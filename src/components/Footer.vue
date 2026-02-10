@@ -57,7 +57,6 @@
 <script setup>
 import { Github, Youtube } from "lucide-vue-next";
 import TikTokIcon from "./TikTokIcon.vue";
-import { RouterLink } from "vue-router";
 import { computed } from "vue";
 import { useLang } from "../composables/useLang";
 
@@ -73,8 +72,8 @@ const copy = {
   privacy: { vi: "Quyền riêng tư", en: "Privacy policy" },
   terms: { vi: "Điều khoản dịch vụ", en: "Terms of service" },
   copyright: {
-    vi: "© 2026. Làm bởi Antigravity & tui. Mẫu bởi EliasDevis",
-    en: "© 2026. Made by Antigravity & me. Template by EliasDevis",
+    vi: "© 2026. Tạo bởi Antigravity & tui. Mẫu bởi EliasDevis",
+    en: "© 2026. Created by Antigravity & me. Template by EliasDevis",
   },
 };
 

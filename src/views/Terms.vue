@@ -15,14 +15,6 @@
               2026</span
             >
           </p>
-          <div class="lang-toggle">
-            <button :class="{ active: lang === 'en' }" @click="setLang('en')">
-              English
-            </button>
-            <button :class="{ active: lang === 'vi' }" @click="setLang('vi')">
-              Tiếng Việt
-            </button>
-          </div>
           <div class="lead-card border-box">
             <p class="lang lang-en">
               By using mhqb365.com you agree to these Terms and the Privacy
