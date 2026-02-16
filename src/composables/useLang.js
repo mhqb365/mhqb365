@@ -1,10 +1,16 @@
 import { ref } from "vue";
 
+// Get initial language from localStorage or default to 'vi'
+const savedLang = localStorage.getItem("lang");
+const initialLang = savedLang === "en" ? "en" : "vi";
+
 // Simple shared language state (vi | en)
-const lang = ref("vi");
+const lang = ref(initialLang);
 
 const setLang = (value) => {
-  lang.value = value === "en" ? "en" : "vi";
+  const newLang = value === "en" ? "en" : "vi";
+  lang.value = newLang;
+  localStorage.setItem("lang", newLang);
 };
 
 const toggleLang = () => {

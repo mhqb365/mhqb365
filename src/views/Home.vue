@@ -9,9 +9,13 @@
               {{ t("heroTitle") }}
             </h1>
             <p class="policy-inline">
-              <RouterLink to="/privacy.html">Privacy Policy</RouterLink>
+              <RouterLink to="/privacy.html">{{
+                t("privacyPolicy")
+              }}</RouterLink>
               <span aria-hidden="true"> • </span>
-              <RouterLink to="/terms.html">Terms of Service</RouterLink>
+              <RouterLink to="/terms.html">{{
+                t("termsOfService")
+              }}</RouterLink>
             </p>
           </div>
           <div class="hero-image">
@@ -27,7 +31,7 @@
         <div class="projects-list">
           <a
             v-for="project in featuredProjects"
-            :key="project.id"
+            :key="project.liveUrl"
             class="project-row"
             :href="project.liveUrl"
             target="_blank"
@@ -146,123 +150,98 @@ const dictionary = {
     },
   },
   contactBoxTitle: { vi: "Gửi tin nhắn cho tui", en: "Message me" },
+  privacyPolicy: { vi: "Chính sách bảo mật", en: "Privacy Policy" },
+  termsOfService: { vi: "Điều khoản dịch vụ", en: "Terms of Service" },
 };
 
 const projects = [
   {
-    id: 1,
     title: {
-      vi: "Link mua đồ nghề",
-      en: "Recommended tools links",
+      vi: "Link mua đồ nghề trên Shopee",
+      en: "Recommended tools on Shopee",
     },
     description: {
-      vi: "Tổng hợp các món đồ mà tui hay dùng",
-      en: "A bundle of items I frequently use",
+      vi: "Tổng hợp các món đồ mà tui hay dùng trên Shopee",
+      en: "A bundle of items I frequently use on Shopee",
     },
-    tech: ["Shopee"],
     liveUrl: "https://collshp.com/mhqb365",
   },
   {
-    id: 2,
+    title: {
+      vi: "Kích hoạt Windows & Office",
+      en: "Activate Windows & Office",
+    },
+    description: {
+      vi: "Kích hoạt Windows & Office miễn phí",
+      en: "Free activation for Windows & Office",
+    },
+    liveUrl: "https://massgrave.dev",
+  },
+  {
+    title: { vi: "Winstaller Hub", en: "Winstaller Hub" },
+    description: {
+      vi: "Công cụ cài đặt ứng dụng Windows đa năng",
+      en: "Windows toolkit for auto install apps",
+    },
+    liveUrl: "https://github.com/mhqb365/Winstaller-Hub",
+  },
+  {
     title: { vi: "bBattery", en: "bBattery" },
     description: {
       vi: "Kiểm tra độ chai pin laptop Windows",
       en: "Check Windows laptop battery wear level",
     },
-    tech: ["PowerShell"],
     liveUrl: "https://github.com/mhqb365/bbattery",
   },
   {
-    id: 3,
     title: { vi: "Multi BoardViewer", en: "Multi BoardViewer" },
     description: {
       vi: "Xem nhiều boardview & schematic trong một ứng dụng",
       en: "View multiple boardviews & schematics in one app",
     },
-    tech: ["Windows"],
     liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
   },
   {
-    id: 4,
     title: { vi: "QR Station", en: "QR Station" },
     description: {
       vi: "Tạo QR thanh toán & thông báo nhận tiền với ESP32",
       en: "Generate payment QR and notify via ESP32",
     },
-    tech: ["Hardware"],
     liveUrl: "https://github.com/mhqb365/QR-Station",
   },
   {
-    id: 5,
     title: { vi: "Subscription Tracker", en: "Subscription Tracker" },
     description: {
-      vi: "Quản lý và theo dõi các khoản đăng ký của các dịch vụ trong công việc và cuộc sống",
+      vi: "Quản lý và theo dõi các gói đăng ký trong công việc và cuộc sống",
       en: "Manage and track your subscriptions in work and life",
     },
-    tech: ["VueJS"],
     liveUrl: "https://sub-track.mhqb365.com",
   },
   {
-    id: 6,
-    title: { vi: "Bypass MDM Macbook", en: "Bypass MDM Macbook" },
-    description: {
-      vi: "Bypass Mobile Device Management trên Macbook",
-      en: "Bypass Mobile Device Management on Macbook",
-    },
-    tech: ["Terminal"],
-    liveUrl: "https://j2c.cc/mdm",
-  },
-  {
-    id: 7,
     title: { vi: "Tính số lượng gạch", en: "Tile calculator" },
     description: {
       vi: "Tính toán số lượng gạch ốp tường ở Ecobig",
       en: "Calculate wall tile quantity for Ecobig",
     },
-    tech: ["Chrome Extension"],
     liveUrl:
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
   },
   {
-    id: 8,
     title: { vi: "Tra cứu hóa đơn", en: "Invoice lookup" },
     description: {
       vi: "Tra cứu hóa đơn ở Doctor Laptop",
       en: "Invoice lookup at Doctor Laptop",
     },
-    tech: ["Chrome Extension"],
     liveUrl:
       "https://chromewebstore.google.com/detail/tra-c%E1%BB%A9u-h%C3%B3a-%C4%91%C6%A1n-doctor-la/mjjboplmkbjegcfcdglkadcpeibfdhmb",
   },
   {
-    id: 9,
     title: { vi: "Tra cứu bảo hành cá nhân", en: "Warranty lookup" },
     description: {
       vi: "Tra cứu bảo hành khi gửi sửa cá nhân",
       en: "Lookup warranty for personal repair orders",
     },
-    tech: ["Website"],
     liveUrl: "https://repair.mhqb365.com",
-  },
-  {
-    id: 10,
-    title: { vi: "Hướng dẫn cài Win", en: "Windows install guide" },
-    description: {
-      vi: "Hướng dẫn tự cài Windows & Office tại nhà (sưu tầm)",
-      en: "Windows & Office install guide (curated)",
-    },
-    tech: ["Windows"],
-    liveUrl: "https://tranphu.gitbook.io/setup",
-  },
-  {
-    id: 11,
-    title: { vi: "Active Win & Office", en: "Activate Windows & Office" },
-    description: {
-      vi: "Active Windows & Office miễn phí (tin dùng)",
-      en: "Free activation for Windows & Office (trusted)",
-    },
-    tech: ["PowerShell"],
-    liveUrl: "https://massgrave.dev",
   },
 ];
 
