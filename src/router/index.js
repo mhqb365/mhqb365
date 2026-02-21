@@ -21,7 +21,7 @@ const routes = [
     component: Terms,
   },
   {
-    path: "/buymeacoffee",
+    path: "/buymeacoffee.html",
     name: "BuyMeCoffee",
     component: BuyMeCoffee,
   },
