@@ -302,7 +302,7 @@ const { lang } = useLang();
 .policy-page {
   padding: 64px 0 96px;
   color: #111827;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans);
 }
 
 .policy-surface {
@@ -350,7 +350,7 @@ const { lang } = useLang();
   color: #0f172a;
   padding: 8px 14px;
   cursor: pointer;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans);
   border-radius: 6px;
   transition: all 0.2s;
 }

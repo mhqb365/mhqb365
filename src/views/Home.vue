@@ -113,7 +113,7 @@ const { lang } = useLang();
 const dictionary = {
   heroTitle: {
     vi: " - sửa laptop và máy đào công suất nhỏ",
-    en: " - laptop repair and compact mining device",
+    en: " - repair laptop and compact mining device",
   },
   sectionTitles: {
     projects: { vi: "dự án", en: "projects" },
@@ -167,6 +167,14 @@ const projects = [
     liveUrl: "https://collshp.com/mhqb365",
   },
   {
+    title: { vi: "Winstaller Hub", en: "Winstaller Hub" },
+    description: {
+      vi: "Công cụ cài đặt ứng dụng Windows đa năng",
+      en: "Windows toolkit for auto install apps",
+    },
+    liveUrl: "https://github.com/mhqb365/Winstaller-Hub",
+  },
+  {
     title: {
       vi: "Kích hoạt Windows & Office",
       en: "Activate Windows & Office",
@@ -178,18 +186,10 @@ const projects = [
     liveUrl: "https://massgrave.dev",
   },
   {
-    title: { vi: "Winstaller Hub", en: "Winstaller Hub" },
-    description: {
-      vi: "Công cụ cài đặt ứng dụng Windows đa năng",
-      en: "Windows toolkit for auto install apps",
-    },
-    liveUrl: "https://github.com/mhqb365/Winstaller-Hub",
-  },
-  {
     title: { vi: "bBattery", en: "bBattery" },
     description: {
-      vi: "Kiểm tra độ chai pin laptop Windows",
-      en: "Check Windows laptop battery wear level",
+      vi: "Kiểm tra nhanh độ chai pin laptop Windows",
+      en: "Quick check Windows laptop battery wear level",
     },
     liveUrl: "https://github.com/mhqb365/bbattery",
   },
