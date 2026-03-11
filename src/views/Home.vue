@@ -77,6 +77,7 @@
         <div class="contacts-content">
           <p>
             {{ contactIntro.text1 }}
+            <br />
             {{ contactIntro.text2 }}
             <span id="iconHand" class="icon-hand-md">👉</span>
             <span id="iconHand" class="icon-hand-sm">👇</span>
@@ -141,8 +142,8 @@ const dictionary = {
   ],
   contactIntro: {
     text1: {
-      vi: "Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa laptop thì lên Google tìm Doctor Laptop.",
-      en: "I work full-time at Doctor Laptop. If you need repair your laptop, just search for Doctor Laptop on Google.",
+      vi: "Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa laptop thì lên Google tìm Doctor Laptop",
+      en: "I work full-time at Doctor Laptop. If you need repair your laptop, just search for Doctor Laptop on Google",
     },
     text2: {
       vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì",
@@ -167,6 +168,22 @@ const projects = [
     liveUrl: "https://collshp.com/mhqb365",
   },
   {
+    title: { vi: "Computer Test", en: "Computer Test" },
+    description: {
+      vi: "Công cụ kiểm tra phần cứng máy tính trực tuyến",
+      en: "Online computer hardware testing tool",
+    },
+    liveUrl: "https://vibe.j2team.org/computer-test",
+  },
+  {
+    title: { vi: "Multi BoardViewer", en: "Multi BoardViewer" },
+    description: {
+      vi: "Xem nhiều boardview & schematic trong một ứng dụng",
+      en: "View multiple boardviews & schematics in one app",
+    },
+    liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
+  },
+  {
     title: { vi: "Winstaller Hub", en: "Winstaller Hub" },
     description: {
       vi: "Công cụ cài đặt ứng dụng Windows đa năng",
@@ -186,30 +203,6 @@ const projects = [
     liveUrl: "https://massgrave.dev",
   },
   {
-    title: { vi: "bBattery", en: "bBattery" },
-    description: {
-      vi: "Kiểm tra nhanh độ chai pin laptop Windows",
-      en: "Quick check Windows laptop battery wear level",
-    },
-    liveUrl: "https://github.com/mhqb365/bbattery",
-  },
-  {
-    title: { vi: "Multi BoardViewer", en: "Multi BoardViewer" },
-    description: {
-      vi: "Xem nhiều boardview & schematic trong một ứng dụng",
-      en: "View multiple boardviews & schematics in one app",
-    },
-    liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
-  },
-  {
-    title: { vi: "QR Station", en: "QR Station" },
-    description: {
-      vi: "Tạo QR thanh toán & thông báo nhận tiền với ESP32",
-      en: "Generate payment QR and notify via ESP32",
-    },
-    liveUrl: "https://github.com/mhqb365/QR-Station",
-  },
-  {
     title: { vi: "Subscription Tracker", en: "Subscription Tracker" },
     description: {
       vi: "Quản lý và theo dõi các gói đăng ký trong công việc và cuộc sống",
@@ -220,8 +213,8 @@ const projects = [
   {
     title: { vi: "Tính số lượng gạch", en: "Tile calculator" },
     description: {
-      vi: "Tính toán số lượng gạch ốp tường ở Ecobig",
-      en: "Calculate wall tile quantity for Ecobig",
+      vi: "Tính toán số lượng gạch ở Ecobig Tile",
+      en: "Calculate tile quantity for Ecobig Tile",
     },
     liveUrl:
       "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
