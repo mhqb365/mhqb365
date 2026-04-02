@@ -184,6 +184,14 @@ const projects = [
     liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
   },
   {
+    title: { vi: "Phần mềm chia áp", en: "Voltage Divider Tool" },
+    description: {
+      vi: "Công cụ tính toán điện áp hỗ trợ sửa chữa",
+      en: "Voltage divider calculator for repair work",
+    },
+    liveUrl: "https://github.com/mhqb365/VoltageDividerTool",
+  },
+  {
     title: { vi: "Winstaller Hub", en: "Winstaller Hub" },
     description: {
       vi: "Công cụ cài đặt ứng dụng Windows đa năng",
