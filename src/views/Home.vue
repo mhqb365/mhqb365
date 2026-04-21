@@ -77,12 +77,12 @@
         <div class="contacts-content">
           <p>
             {{ contactIntro.text1 }}
-            <br />
+            <!-- <br />
             {{ contactIntro.text2 }}
             <span id="iconHand" class="icon-hand-md">👉</span>
-            <span id="iconHand" class="icon-hand-sm">👇</span>
+            <span id="iconHand" class="icon-hand-sm">👇</span> -->
           </p>
-          <div class="contact-box">
+          <!-- <div class="contact-box">
             <h3>{{ contactBoxTitle }}</h3>
             <div class="contact-links">
               <a href="https://t.me/mhqb365" target="_blank">
@@ -94,7 +94,7 @@
                 zalo.me/+84777180098
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
