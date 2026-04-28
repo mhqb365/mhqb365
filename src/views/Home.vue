@@ -5,8 +5,8 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1>
-              <span style="color: #c778dd">Mai Hoàng Quốc Bảo aka mhqb365</span>
-              {{ t("heroTitle") }}
+              <span style="color: #c778dd">Mai Hoàng Quốc Bảo</span>
+              aka mhqb365
             </h1>
             <p class="policy-inline">
               <RouterLink to="/privacy.html">{{
@@ -77,13 +77,11 @@
         <div class="contacts-content">
           <p>
             {{ contactIntro.text1 }}
-            <!-- <br />
-            {{ contactIntro.text2 }}
-            <span id="iconHand" class="icon-hand-md">👉</span>
-            <span id="iconHand" class="icon-hand-sm">👇</span> -->
           </p>
-          <!-- <div class="contact-box">
-            <h3>{{ contactBoxTitle }}</h3>
+          <div class="contact-box">
+            <p>
+              {{ contactIntro.text2 }}
+            </p>
             <div class="contact-links">
               <a href="https://t.me/mhqb365" target="_blank">
                 <MessageCircle :size="20" />
@@ -94,7 +92,7 @@
                 zalo.me/+84777180098
               </a>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -112,10 +110,6 @@ import { useLang } from "../composables/useLang";
 const { lang } = useLang();
 
 const dictionary = {
-  heroTitle: {
-    vi: " - sửa laptop và máy đào công suất nhỏ",
-    en: " - repair laptop and compact mining device",
-  },
   sectionTitles: {
     projects: { vi: "dự án", en: "projects" },
     skills: { vi: "kỹ năng", en: "skills" },
@@ -146,11 +140,10 @@ const dictionary = {
       en: "I work full-time at Doctor Laptop. If you need repair your laptop, just search for Doctor Laptop on Google",
     },
     text2: {
-      vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì",
-      en: "If you want to research or fix compact mining rigs or small electronic circuits and it is not urgent",
+      vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì:",
+      en: "If you want to research or fix compact mining rigs or small electronic circuits and it is not urgent:",
     },
   },
-  contactBoxTitle: { vi: "Gửi tin nhắn cho tui", en: "Message me" },
   privacyPolicy: { vi: "Chính sách bảo mật", en: "Privacy Policy" },
   termsOfService: { vi: "Điều khoản dịch vụ", en: "Terms of Service" },
 };
@@ -184,65 +177,15 @@ const projects = [
     liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
   },
   {
-    title: { vi: "Phần mềm chia áp", en: "Voltage Divider Tool" },
-    description: {
-      vi: "Công cụ tính toán điện áp hỗ trợ sửa chữa",
-      en: "Voltage divider calculator for repair work",
-    },
-    liveUrl: "https://github.com/mhqb365/VoltageDividerTool",
-  },
-  {
-    title: { vi: "Winstaller Hub", en: "Winstaller Hub" },
-    description: {
-      vi: "Công cụ cài đặt ứng dụng Windows đa năng",
-      en: "Windows toolkit for auto install apps",
-    },
-    liveUrl: "https://github.com/mhqb365/Winstaller-Hub",
-  },
-  {
     title: {
-      vi: "Kích hoạt Windows & Office",
-      en: "Activate Windows & Office",
+      vi: "Microsoft Activation Scripts",
+      en: "Microsoft Activation Scripts",
     },
     description: {
       vi: "Kích hoạt Windows & Office miễn phí",
       en: "Free activation for Windows & Office",
     },
     liveUrl: "https://massgrave.dev",
-  },
-  {
-    title: { vi: "Subscription Tracker", en: "Subscription Tracker" },
-    description: {
-      vi: "Quản lý và theo dõi các gói đăng ký trong công việc và cuộc sống",
-      en: "Manage and track your subscriptions in work and life",
-    },
-    liveUrl: "https://sub-track.mhqb365.com",
-  },
-  {
-    title: { vi: "Tính số lượng gạch", en: "Tile calculator" },
-    description: {
-      vi: "Tính toán số lượng gạch ở Ecobig Tile",
-      en: "Calculate tile quantity for Ecobig Tile",
-    },
-    liveUrl:
-      "https://chromewebstore.google.com/detail/t%C3%ADnh-s%E1%BB%91-l%C6%B0%E1%BB%A3ng-g%E1%BA%A1ch/epfghdhidlpeeiajpgnemcobjalodfal",
-  },
-  {
-    title: { vi: "Tra cứu hóa đơn", en: "Invoice lookup" },
-    description: {
-      vi: "Tra cứu hóa đơn ở Doctor Laptop",
-      en: "Invoice lookup at Doctor Laptop",
-    },
-    liveUrl:
-      "https://chromewebstore.google.com/detail/tra-c%E1%BB%A9u-h%C3%B3a-%C4%91%C6%A1n-doctor-la/mjjboplmkbjegcfcdglkadcpeibfdhmb",
-  },
-  {
-    title: { vi: "Tra cứu bảo hành cá nhân", en: "Warranty lookup" },
-    description: {
-      vi: "Tra cứu bảo hành khi gửi sửa cá nhân",
-      en: "Lookup warranty for personal repair orders",
-    },
-    liveUrl: "https://repair.mhqb365.com",
   },
 ];
 
@@ -264,8 +207,6 @@ const contactIntro = computed(() => ({
   text2: dictionary.contactIntro.text2[lang.value],
 }));
 
-const contactBoxTitle = computed(() => dictionary.contactBoxTitle[lang.value]);
-
 const featuredProjects = computed(() =>
   projects.map((p) => ({
     ...p,
@@ -278,15 +219,15 @@ const skillsSource = [
   {
     category: { vi: "Sửa Laptop", en: "Laptop Repair" },
     items: [
-      { vi: "Sửa mainboard", en: "Mainboard repair" },
+      { vi: "Sửa bản lề,", en: "Hinge repair," },
+      { vi: "Sửa mainboard,", en: "Mainboard repair," },
       { vi: "Thay thế linh kiện", en: "Parts replacement" },
-      { vi: "Sửa bản lề", en: "Hinge repair" },
     ],
   },
   {
     category: { vi: "Sửa Máy Đào", en: "Mining Rigs" },
     items: [
-      { vi: "IceRiver", en: "IceRiver" },
+      { vi: "IceRiver,", en: "IceRiver," },
       { vi: "Goldshell", en: "Goldshell" },
     ],
   },
