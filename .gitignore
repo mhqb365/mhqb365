@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .vscode
+
+.agent
+GEMINI.md
+ERRORS.md
