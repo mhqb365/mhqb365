@@ -182,7 +182,7 @@ const projects = [
       en: "Win Tool",
     },
     description: {
-      vi: "Công cụ windows (active win/office)",
+      vi: "Công cụ Windows (active win/office)",
       en: "Windows tool (active windows/office)",
     },
     liveUrl: "https://github.com/mhqb365/mhqb365/blob/master/scripts/README.md",
