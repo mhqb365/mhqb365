@@ -1,4 +1,4 @@
-# win tool
+# Win Tool
 
 🇻🇳 Sao chép dòng lệnh dưới đây, mở Terminal hoặc PowerShell với quyền Admin, paste vào và enter:
 

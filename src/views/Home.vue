@@ -178,14 +178,14 @@ const projects = [
   },
   {
     title: {
-      vi: "Microsoft Activation Scripts",
-      en: "Microsoft Activation Scripts",
+      vi: "Win Tool",
+      en: "Win Tool",
     },
     description: {
-      vi: "Kích hoạt Windows & Office miễn phí",
-      en: "Free activation for Windows & Office",
+      vi: "Công cụ windows (active win/office)",
+      en: "Windows tool (active windows/office)",
     },
-    liveUrl: "https://massgrave.dev",
+    liveUrl: "https://github.com/mhqb365/mhqb365/blob/master/scripts/README.md",
   },
 ];
 
