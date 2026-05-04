@@ -1,6 +1,8 @@
 # win tool
 
-Copy then paste into Terminal/PowerShell and press enter
+🇻🇳 Sao chép dòng lệnh dưới đây, mở Terminal hoặc PowerShell với quyền Admin, paste vào và enter:
+
+🇺🇸 Copy the command below, open Terminal or PowerShell as Admin, paste and enter:
 
 ```
 irm https://mhqb365.com/win | iex

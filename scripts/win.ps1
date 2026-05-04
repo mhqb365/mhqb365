@@ -18,10 +18,12 @@ $Msg = @{
         Menu1 = "Active Windows - HWID"
         Menu2 = "Active Office - Ohook"
         Menu3 = "Check Battery"
-        Menu4 = "Exit"
-        Prompt = ">>> Please choose (1-4)"
-        MAS_Win = "[*] Starting MAS (Windows Activation)..."
-        MAS_Off = "[*] Starting MAS (Office Activation)..."
+        Menu4 = "Full Menu MAS"
+        Menu0 = "Exit"
+        Prompt = ">>> Please choose (1-4, 0)"
+        MAS_Win = "[*] Loading MAS (Windows Activation)..."
+        MAS_Off = "[*] Loading MAS (Office Activation)..."
+        MAS_AIO = "[*] Loading Full Menu MAS..."
         Battery = "[*] Loading Battery Check script..."
         Done = "[*] Done. Press any key to return to menu..."
         Error_MAS = "[!] Error loading MAS: "
@@ -34,10 +36,12 @@ $Msg = @{
         Menu1 = "Kich hoat Windows - HWID"
         Menu2 = "Kich hoat Office - Ohook"
         Menu3 = "Kiem tra do chai Pin"
-        Menu4 = "Thoat"
-        Prompt = ">>> Vui long chon (1-4)"
-        MAS_Win = "[*] Dang khoi dong MAS (Windows Activation)..."
-        MAS_Off = "[*] Dang khoi dong MAS (Office Activation)..."
+        Menu4 = "Menu Day Du MAS"
+        Menu0 = "Thoat"
+        Prompt = ">>> Vui long chon (1-4, 0)"
+        MAS_Win = "[*] Dang tai MAS (Windows Activation)..."
+        MAS_Off = "[*] Dang tai MAS (Office Activation)..."
+        MAS_AIO = "[*] Dang tai Menu Day Du MAS..."
         Battery = "[*] Dang tai script kiem tra pin..."
         Done = "[*] Hoan tat. Nhan phim bat ky de quay lai menu..."
         Error_MAS = "[!] Loi khi tai MAS: "
@@ -73,9 +77,14 @@ function Show-Menu {
     
     Write-Host " [3] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu3)" -ForegroundColor White
-    
-    Write-Host " [4] " -NoNewline -ForegroundColor Red
+
+    Write-Host "------------------------------------------------" -ForegroundColor Gray
+    Write-Host " [4] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu4)" -ForegroundColor White
+    
+    Write-Host "------------------------------------------------" -ForegroundColor Gray
+    Write-Host " [0] " -NoNewline -ForegroundColor Red
+    Write-Host "$($S.Menu0)" -ForegroundColor White
     Write-Host "------------------------------------------------" -ForegroundColor Gray
 }
 
@@ -123,6 +132,18 @@ while ($true) {
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
         '4' {
+            Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
+            try {
+                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
+                $SB = [scriptblock]::Create($MAS)
+                & $SB
+            } catch {
+                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
+            }
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        }
+        '0' {
             Write-Host "`n$($S.Exit)" -ForegroundColor Cyan
             Start-Sleep -Seconds 1
             return
