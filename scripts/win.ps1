@@ -1,11 +1,11 @@
 # --- Initial Language Selection ---
 Clear-Host
-Write-Host "================================================" -ForegroundColor Cyan
-Write-Host "        SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
-Write-Host "================================================" -ForegroundColor Cyan
+Write-Host "=====================================================" -ForegroundColor Cyan
+Write-Host "          SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
+Write-Host "=====================================================" -ForegroundColor Cyan
 Write-Host " [1] Tieng Viet"
 Write-Host " [2] English"
-Write-Host "------------------------------------------------" -ForegroundColor Gray
+Write-Host "-----------------------------------------------------" -ForegroundColor Gray
 $langChoice = Read-Host ">>> Chon / Choice (1-2)"
 
 $lang = "EN"
@@ -20,15 +20,21 @@ $Msg = @{
         Menu4 = "Quan ly Windows Update"
         Menu5 = "Chay MAS Full (Kich hoat Windows/Office & bla bla)"
         Menu7 = "Office Tool Plus (Tai/Cai dat Office)"
+        Menu8 = "Don dep RAM"
+        Menu9 = "Don dep Disk"
         MenuL = "Thay doi ngon ngu"
         Menu0 = "Thoat"
-        Prompt = ">>> Vui long chon (1-7, L, E)"
+        Prompt = ">>> Vui long chon (1-9, L, E)"
         SubPrompt = ">>> Vui long chon (1-2, B)"
         MAS_Win = "[*] Dang tai MAS Windows Activation..."
         MAS_Off = "[*] Dang tai MAS Office Activation..."
         MAS_AIO = "[*] Dang tai MAS Full..."
         OTP_Loading = "[*] Dang tai Office Tool Plus..."
         Battery = "[*] Dang tai script kiem tra do chai pin..."
+        Clean_RAM_Wait = "[*] Dang toi uu hoa bo nho RAM..."
+        Clean_Disk_Wait = "[*] Dang quet va don dep o cung..."
+        Clean_Result = "--- KET QUA DON DEP ---"
+        Clean_Total = "TONG DUNG LUONG DA DON DEP: "
         Update_Status = "Trang thai hien tai: "
         Update_On = "DANG BAT"
         Update_Off = "DANG TAT"
@@ -63,15 +69,21 @@ $Msg = @{
         Menu4 = "Windows Update Manager"
         Menu5 = "Run MAS Full (Active Windows/Office & more)"
         Menu7 = "Office Tool Plus (Download/Install Office)"
+        Menu8 = "Clean RAM"
+        Menu9 = "Clean Disk"
         MenuL = "Change Language"
         Menu0 = "Exit"
-        Prompt = ">>> Please choose (1-7, L, E)"
+        Prompt = ">>> Please choose (1-9, L, E)"
         SubPrompt = ">>> Please choose (1-2, B)"
         MAS_Win = "[*] Loading MAS Windows Activation..."
         MAS_Off = "[*] Loading MAS Office Activation..."
         MAS_AIO = "[*] Loading MAS Full..."
         OTP_Loading = "[*] Loading Office Tool Plus..."
         Battery = "[*] Loading Battery Check script..."
+        Clean_RAM_Wait = "[*] Optimizing RAM memory..."
+        Clean_Disk_Wait = "[*] Scanning and cleaning disk..."
+        Clean_Result = "--- CLEANUP RESULT ---"
+        Clean_Total = "TOTAL SPACE FREE: "
         Update_Status = "Current Status: "
         Update_On = "ENABLED"
         Update_Off = "DISABLED"
@@ -115,7 +127,7 @@ __  _  _|__| ____   _/  |_  ____   ____ |  |
         >>> cook by mhqb365.com <<<
 '@
     Write-Host $Ascii -ForegroundColor Yellow
-    Write-Host "------------------------------------------------" -ForegroundColor Gray
+    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
 }
 
 function Show-Menu {
@@ -135,19 +147,25 @@ function Show-Menu {
     Write-Host "$($S.Menu3)" -ForegroundColor White
 
     Write-Host " [6] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu4)" -ForegroundColor White
+    Write-Host "$($S.Menu8)" -ForegroundColor White
 
     Write-Host " [7] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu9)" -ForegroundColor White
+
+    Write-Host " [8] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu4)" -ForegroundColor White
+
+    Write-Host " [9] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Bit_Menu)" -ForegroundColor White
 
-    Write-Host "------------------------------------------------" -ForegroundColor Gray
+    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
     
-    Write-Host " [L] " -NoNewline -ForegroundColor Green
+    Write-Host " [L] " -NoNewline -ForegroundColor Yellow
     Write-Host "$($S.MenuL)" -ForegroundColor White
 
     Write-Host " [E] " -NoNewline -ForegroundColor Red
     Write-Host "$($S.Menu0)" -ForegroundColor White
-    Write-Host "------------------------------------------------" -ForegroundColor Gray
+    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
 }
 
 while ($true) {
@@ -196,7 +214,6 @@ while ($true) {
         '4' {
             Write-Host "`n$($S.OTP_Loading)" -ForegroundColor Yellow
             try {
-                # Run in a separate process to prevent 'exit' from closing the main window
                 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm https://officetool.plus)"
             } catch {
                 Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
@@ -217,10 +234,61 @@ while ($true) {
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
         '6' {
+            Write-Host "`n$($S.Clean_RAM_Wait)" -ForegroundColor Yellow
+            $before = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory
+            [System.GC]::Collect()
+            [System.GC]::WaitForPendingFinalizers()
+            $after = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory
+            $freed = [Math]::Max(0, [Math]::Round(($after - $before) / 1024, 2))
+            
+            Write-Host "`n$($S.Clean_Result)" -ForegroundColor Cyan
+            Write-Host " - System RAM: +$freed MB free" -ForegroundColor Green
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        }
+        '7' {
+            Write-Host "`n$($S.Clean_Disk_Wait)" -ForegroundColor Yellow
+            $targets = @{
+                "Windows Temp" = "C:\Windows\Temp"
+                "User Temp" = $env:TEMP
+                "Prefetch" = "C:\Windows\Prefetch"
+                "Windows Update Cache" = "C:\Windows\SoftwareDistribution\Download"
+            }
+            $total = 0
+            Write-Host "`n$($S.Clean_Result)" -ForegroundColor Cyan
+            foreach ($key in $targets.Keys) {
+                $path = $targets[$key]
+                $size = 0
+                if (Test-Path $path) {
+                    $items = Get-ChildItem -Path $path -Recurse -ErrorAction SilentlyContinue
+                    foreach ($item in $items) {
+                        if ($item.PSIsContainer -eq $false) {
+                            try {
+                                Remove-Item $item.FullName -Force -ErrorAction Stop
+                                $size += $item.Length
+                            } catch {
+                                # File đang bận, bỏ qua không cộng vào dung lượng đã dọn
+                            }
+                        }
+                    }
+                }
+                $mb = [Math]::Round($size / 1MB, 2)
+                Write-Host " - $($key): " -NoNewline
+                Write-Host "$mb MB" -ForegroundColor Green
+                $total += $size
+            }
+            $totalMB = [Math]::Round($total / 1MB, 2)
+            Write-Host "-----------------------------------------------------" -ForegroundColor Gray
+            Write-Host "$($S.Clean_Total) " -NoNewline
+            Write-Host "$totalMB MB" -ForegroundColor Cyan
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        }
+        '8' {
             while ($true) {
                 Show-Header
                 Write-Host "         $($S.Update_Header)" -ForegroundColor Cyan
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 $status = (Get-Service wuauserv).StartType
                 $statusColor = "Green"
                 $statusText = $S.Update_On
@@ -231,15 +299,15 @@ while ($true) {
                 
                 Write-Host " $($S.Update_Status)" -NoNewline
                 Write-Host $statusText -ForegroundColor $statusColor
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 Write-Host " [1] " -NoNewline -ForegroundColor Green
                 Write-Host "$($S.Update_Menu1)" -ForegroundColor White
                 Write-Host " [2] " -NoNewline -ForegroundColor Green
                 Write-Host "$($S.Update_Menu2)" -ForegroundColor White
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 Write-Host " [B] " -NoNewline -ForegroundColor Red
                 Write-Host "$($S.Update_Back)" -ForegroundColor White
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 
                 $upChoice = Read-Host "$($S.SubPrompt)"
                 
@@ -250,7 +318,6 @@ while ($true) {
                         Set-Service wuauserv -StartupType Disabled
                         Stop-Service bits -Force -ErrorAction SilentlyContinue
                         Set-Service bits -StartupType Disabled
-                        # Use Registry for dosvc to avoid Access Denied
                         Stop-Service dosvc -Force -ErrorAction SilentlyContinue
                         Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\dosvc' -Name "Start" -Value 4 -ErrorAction SilentlyContinue
                     } catch {
@@ -264,7 +331,6 @@ while ($true) {
                     try {
                         Set-Service wuauserv -StartupType Manual
                         Set-Service bits -StartupType Manual
-                        # Use Registry for dosvc to avoid Access Denied
                         Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\dosvc' -Name "Start" -Value 3 -ErrorAction SilentlyContinue
                         Start-Service wuauserv -ErrorAction SilentlyContinue
                     } catch {
@@ -278,11 +344,11 @@ while ($true) {
                 }
             }
         }
-        '7' {
+        '9' {
             while ($true) {
                 Show-Header
                 Write-Host "           $($S.Bit_Header)" -ForegroundColor Cyan
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 
                 try {
                     $volumes = Get-BitLockerVolume
@@ -304,15 +370,15 @@ while ($true) {
                     Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
                 }
 
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 Write-Host " [1] " -NoNewline -ForegroundColor Green
                 Write-Host "$($S.Bit_Menu_Off)" -ForegroundColor White
                 Write-Host " [2] " -NoNewline -ForegroundColor Green
                 Write-Host "$($S.Bit_Menu_On)" -ForegroundColor White
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 Write-Host " [B] " -NoNewline -ForegroundColor Red
                 Write-Host "$($S.Update_Back)" -ForegroundColor White
-                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host "-----------------------------------------------------" -ForegroundColor Gray
                 
                 $bitChoice = Read-Host "$($S.SubPrompt)"
                 
@@ -325,7 +391,6 @@ while ($true) {
                         Write-Host "$($S.Bit_NotFound)" -ForegroundColor Red
                     } else {
                         if ($bitChoice -eq '1') {
-                            # Turn OFF
                             if ($target.ProtectionStatus -eq 'Off') {
                                 Write-Host "[!] Bitlocker is already OFF for drive $($drive):" -ForegroundColor Yellow
                             } else {
@@ -333,28 +398,16 @@ while ($true) {
                                 manage-bde -off "$($drive):"
                             }
                         } else {
-                            # Turn ON
                             if ($target.ProtectionStatus -eq 'On') {
                                 Write-Host "[!] Bitlocker is already ON for drive $($drive):" -ForegroundColor Yellow
                             } else {
                                 Write-Host "`n$($S.Bit_Warning)" -ForegroundColor Cyan
                                 Write-Host "$($S.Bit_Enabling) $($drive):..." -ForegroundColor Yellow
-                                
-                                # Add TPM protector (standard for OS drives)
-                                Write-Host "[*] Adding TPM protector..." -ForegroundColor Gray
                                 manage-bde -protectors -add "$($drive):" -tpm | Out-Null
-                                
-                                # Add Recovery Password as backup and save to file
                                 $desktopPath = [System.Environment]::GetFolderPath('Desktop')
                                 $keyFile = "$desktopPath\BitLocker_Recovery_Key_$($drive).txt"
-                                Write-Host "[*] Generating Recovery Password and saving to Desktop..." -ForegroundColor Yellow
                                 $rpOutput = manage-bde -protectors -add "$($drive):" -rp
                                 $rpOutput | Out-File -FilePath $keyFile -Encoding utf8
-                                
-                                Write-Host "[!] IMPORTANT: Recovery Key saved to: " -NoNewline -ForegroundColor Cyan
-                                Write-Host $keyFile -ForegroundColor Green
-                                Write-Host "$($rpOutput | Out-String)" -ForegroundColor Gray
-                                
                                 manage-bde -on "$($drive):" -UsedSpaceOnly -SkipHardwareTest
                             }
                         }
@@ -369,12 +422,12 @@ while ($true) {
         }
         'l' {
             Clear-Host
-            Write-Host "================================================" -ForegroundColor Cyan
-            Write-Host "        SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
-            Write-Host "================================================" -ForegroundColor Cyan
+            Write-Host "=====================================================" -ForegroundColor Cyan
+            Write-Host "          SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
+            Write-Host "=====================================================" -ForegroundColor Cyan
             Write-Host " [1] Tieng Viet"
             Write-Host " [2] English"
-            Write-Host "------------------------------------------------" -ForegroundColor Gray
+            Write-Host "-----------------------------------------------------" -ForegroundColor Gray
             $langChoice = Read-Host ">>> Chon / Choice (1-2)"
             $lang = "EN"
             if ($langChoice -eq "1") { $lang = "VI" }
