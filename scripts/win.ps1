@@ -1,7 +1,7 @@
 # --- Initial Language Selection ---
 Clear-Host
 Write-Host "================================================" -ForegroundColor Cyan
-Write-Host "  SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
+Write-Host "        SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
 Write-Host "================================================" -ForegroundColor Cyan
 Write-Host " [1] Tieng Viet"
 Write-Host " [2] English"
@@ -18,13 +18,13 @@ $Msg = @{
         Menu1 = "Active Windows - HWID"
         Menu2 = "Active Office - Ohook"
         Menu3 = "Check Battery Wear"
-        Menu4 = "Windows Update"
-        Menu5 = "Run massgrave.dev"
+        Menu4 = "Windows Update Manager"
+        Menu5 = "Run massgrave full"
         Menu0 = "Exit"
         Prompt = ">>> Please choose (1-5, 0)"
         MAS_Win = "[*] Loading MAS (Windows Activation)..."
         MAS_Off = "[*] Loading MAS (Office Activation)..."
-        MAS_AIO = "[*] Loading Full Menu MAS..."
+        MAS_AIO = "[*] Loading massgrave full..."
         Battery = "[*] Loading Battery Check script..."
         Update_Status = "Current Status: "
         Update_On = "ENABLED"
@@ -35,6 +35,19 @@ $Msg = @{
         Update_Enabling = "[*] Enabling Windows Update services..."
         Update_Disabling = "[*] Disabling Windows Update services..."
         Done = "[*] Done. Press any key to return to menu..."
+        Update_Header = "--- WINDOWS UPDATE MANAGER ---"
+        Bit_Header = "--- BITLOCKER MANAGER ---"
+        Bit_Menu = "Bitlocker Manager"
+        Bit_Status = "Status"
+        Bit_Prot = "Protection"
+        Bit_Lock = "Lock Status"
+        Bit_Menu_On = "Turn On Bitlocker"
+        Bit_Menu_Off = "Turn Off Bitlocker"
+        Bit_EnterDrive = "Enter Drive Letter to toggle (e.g. C): "
+        Bit_Enabling = "[*] Enabling Bitlocker for drive "
+        Bit_Disabling = "[*] Disabling Bitlocker for drive "
+        Bit_NotFound = "[!] Drive not found or Bitlocker not supported."
+        Bit_Warning = "[!] WARNING: Enabling Bitlocker will require a restart and might take time."
         Error_MAS = "[!] Error loading MAS: "
         Error_Bat = "[!] Error running Battery Check: "
         Exit = "[!] Exiting... Goodbye!"
@@ -45,14 +58,14 @@ $Msg = @{
         Menu1 = "Kich hoat Windows - HWID"
         Menu2 = "Kich hoat Office - Ohook"
         Menu3 = "Kiem tra Do Chai Pin"
-        Menu4 = "Windows Update"
-        Menu5 = "Chay massgrave.dev"
+        Menu4 = "Quan ly Windows Update"
+        Menu5 = "Chay massgrave full"
         Menu0 = "Thoat"
         Prompt = ">>> Vui long chon (1-5, 0)"
         MAS_Win = "[*] Dang tai MAS (Windows Activation)..."
         MAS_Off = "[*] Dang tai MAS (Office Activation)..."
-        MAS_AIO = "[*] Dang tai Menu Day Du MAS..."
-        Battery = "[*] Dang tai script kiem tra pin..."
+        MAS_AIO = "[*] Dang tai Menu massgrave full..."
+        Battery = "[*] Dang tai script kiem tra do chai pin..."
         Update_Status = "Trang thai hien tai: "
         Update_On = "DANG BAT"
         Update_Off = "DANG TAT"
@@ -62,6 +75,19 @@ $Msg = @{
         Update_Enabling = "[*] Dang bat dich vu Windows Update..."
         Update_Disabling = "[*] Dang tat dich vu Windows Update..."
         Done = "[*] Hoan tat. Nhan phim bat ky de quay lai menu..."
+        Update_Header = "--- QUAN LY WINDOWS UPDATE ---"
+        Bit_Header = "--- BITLOCKER MANAGER ---"
+        Bit_Menu = "Quan ly Bitlocker"
+        Bit_Status = "Trang thai"
+        Bit_Prot = "Bao ve"
+        Bit_Lock = "Khoa"
+        Bit_Menu_On = "Bat Bitlocker"
+        Bit_Menu_Off = "Tat Bitlocker"
+        Bit_EnterDrive = "Nhap ky tu o dia de thay doi (vd: C): "
+        Bit_Enabling = "[*] Dang bat Bitlocker cho o "
+        Bit_Disabling = "[*] Dang tat Bitlocker cho o "
+        Bit_NotFound = "[!] Khong tim thay o dia hoac khong ho tro Bitlocker."
+        Bit_Warning = "[!] CANH BAO: Bat Bitlocker co the yeu cau khoi dong lai va ton thoi gian."
         Error_MAS = "[!] Loi khi tai MAS: "
         Error_Bat = "[!] Loi khi chay Battery Check: "
         Exit = "[!] Dang thoat... Chao tam biet!"
@@ -82,7 +108,7 @@ __  _  _|__| ____   _/  |_  ____   ____ |  |
                 \/                            
 '@
     Write-Host $Ascii -ForegroundColor Yellow
-    Write-Host "     $($S.Header)" -ForegroundColor Yellow
+    Write-Host "          $($S.Header)" -ForegroundColor Yellow
     Write-Host "------------------------------------------------" -ForegroundColor Gray
 }
 
@@ -92,17 +118,20 @@ function Show-Menu {
     
     Write-Host " [2] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu2)" -ForegroundColor White
-    
+
     Write-Host " [3] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu3)" -ForegroundColor White
-
-    Write-Host " [4] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu4)" -ForegroundColor White
-
-    Write-Host "------------------------------------------------" -ForegroundColor Gray
-    Write-Host " [5] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu5)" -ForegroundColor White
     
+    Write-Host "------------------------------------------------" -ForegroundColor Gray
+    Write-Host " [4] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu3)" -ForegroundColor White
+
+    Write-Host " [5] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu4)" -ForegroundColor White
+
+    Write-Host " [6] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Bit_Menu)" -ForegroundColor White
+
     Write-Host "------------------------------------------------" -ForegroundColor Gray
     Write-Host " [0] " -NoNewline -ForegroundColor Red
     Write-Host "$($S.Menu0)" -ForegroundColor White
@@ -141,6 +170,18 @@ while ($true) {
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
         '3' {
+            Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
+            try {
+                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
+                $SB = [scriptblock]::Create($MAS)
+                & $SB
+            } catch {
+                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
+            }
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        }
+        '4' {
             Write-Host "`n$($S.Battery)" -ForegroundColor Yellow
             try {
                 $BatteryScript = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/mhqb365/bBattery/refs/heads/master/bBattery.ps1"
@@ -152,9 +193,11 @@ while ($true) {
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
-        '4' {
+        '5' {
             while ($true) {
                 Show-Header
+                Write-Host "         $($S.Update_Header)" -ForegroundColor Cyan
+                Write-Host "------------------------------------------------" -ForegroundColor Gray
                 $status = (Get-Service wuauserv).StartType
                 $statusColor = "Green"
                 $statusText = $S.Update_On
@@ -212,17 +255,94 @@ while ($true) {
                 }
             }
         }
-        '5' {
-            Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
-            try {
-                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
-                $SB = [scriptblock]::Create($MAS)
-                & $SB
-            } catch {
-                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
+        '6' {
+            while ($true) {
+                Show-Header
+                Write-Host "           $($S.Bit_Header)" -ForegroundColor Cyan
+                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                
+                try {
+                    $volumes = Get-BitLockerVolume
+                    if ($null -eq $volumes) {
+                        Write-Host " $($S.Bit_NotFound)" -ForegroundColor Red
+                    } else {
+                        Write-Host (" {0,-7} {1,-15} {2,-15}" -f "Drive", "Protection", "LockStatus")
+                        Write-Host " ------- --------------- ---------------"
+                        foreach ($vol in $volumes) {
+                            $pColor = if ($vol.ProtectionStatus -eq 'On') { "Green" } else { "Red" }
+                            $lColor = if ($vol.LockStatus -eq 'Unlocked') { "Green" } else { "Yellow" }
+                            
+                            Write-Host (" {0,-7} " -f $vol.MountPoint) -NoNewline
+                            Write-Host ("{0,-15} " -f $vol.ProtectionStatus) -ForegroundColor $pColor -NoNewline
+                            Write-Host ("{0,-15}" -f $vol.LockStatus) -ForegroundColor $lColor
+                        }
+                    }
+                } catch {
+                    Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
+                }
+
+                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host " [1] " -NoNewline -ForegroundColor Green
+                Write-Host "$($S.Bit_Menu_Off)" -ForegroundColor White
+                Write-Host " [2] " -NoNewline -ForegroundColor Green
+                Write-Host "$($S.Bit_Menu_On)" -ForegroundColor White
+                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                Write-Host " [0] " -NoNewline -ForegroundColor Red
+                Write-Host "$($S.Update_Back)" -ForegroundColor White
+                Write-Host "------------------------------------------------" -ForegroundColor Gray
+                
+                $bitChoice = Read-Host "$($S.Prompt)"
+                
+                if ($bitChoice -eq '1' -or $bitChoice -eq '2') {
+                    $drive = Read-Host "$($S.Bit_EnterDrive)"
+                    $drive = $drive.ToUpper().Replace(":", "")
+                    $target = Get-BitLockerVolume -MountPoint "$($drive):" -ErrorAction SilentlyContinue
+                    
+                    if ($null -eq $target) {
+                        Write-Host "$($S.Bit_NotFound)" -ForegroundColor Red
+                    } else {
+                        if ($bitChoice -eq '1') {
+                            # Turn OFF
+                            if ($target.ProtectionStatus -eq 'Off') {
+                                Write-Host "[!] Bitlocker is already OFF for drive $($drive):" -ForegroundColor Yellow
+                            } else {
+                                Write-Host "`n$($S.Bit_Disabling) $($drive):..." -ForegroundColor Yellow
+                                manage-bde -off "$($drive):"
+                            }
+                        } else {
+                            # Turn ON
+                            if ($target.ProtectionStatus -eq 'On') {
+                                Write-Host "[!] Bitlocker is already ON for drive $($drive):" -ForegroundColor Yellow
+                            } else {
+                                Write-Host "`n$($S.Bit_Warning)" -ForegroundColor Cyan
+                                Write-Host "$($S.Bit_Enabling) $($drive):..." -ForegroundColor Yellow
+                                
+                                # Add TPM protector (standard for OS drives)
+                                Write-Host "[*] Adding TPM protector..." -ForegroundColor Gray
+                                manage-bde -protectors -add "$($drive):" -tpm | Out-Null
+                                
+                                # Add Recovery Password as backup and save to file
+                                $desktopPath = [System.Environment]::GetFolderPath('Desktop')
+                                $keyFile = "$desktopPath\BitLocker_Recovery_Key_$($drive).txt"
+                                Write-Host "[*] Generating Recovery Password and saving to Desktop..." -ForegroundColor Yellow
+                                $rpOutput = manage-bde -protectors -add "$($drive):" -rp
+                                $rpOutput | Out-File -FilePath $keyFile -Encoding utf8
+                                
+                                Write-Host "[!] IMPORTANT: Recovery Key saved to: " -NoNewline -ForegroundColor Cyan
+                                Write-Host $keyFile -ForegroundColor Green
+                                Write-Host "$($rpOutput | Out-String)" -ForegroundColor Gray
+                                
+                                manage-bde -on "$($drive):" -UsedSpaceOnly -SkipHardwareTest
+                            }
+                        }
+                    }
+                    Write-Host "`n$($S.Done)" -ForegroundColor Gray
+                    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+                }
+                elseif ($bitChoice -eq '0') {
+                    break
+                }
             }
-            Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
         '0' {
             Write-Host "`n$($S.Exit)" -ForegroundColor Cyan
