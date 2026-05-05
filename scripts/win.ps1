@@ -13,58 +13,21 @@ if ($langChoice -eq "1") { $lang = "VI" }
 
 # --- Translation Dictionary ---
 $Msg = @{
-    EN = @{
-        Header = ">>> cook by mhqb365.com <<<"
-        Menu1 = "Active Windows - HWID"
-        Menu2 = "Active Office - Ohook"
-        Menu3 = "Check Battery Wear"
-        Menu4 = "Windows Update Manager"
-        Menu5 = "Run massgrave full"
-        Menu0 = "Exit"
-        Prompt = ">>> Please choose (1-5, 0)"
-        MAS_Win = "[*] Loading MAS (Windows Activation)..."
-        MAS_Off = "[*] Loading MAS (Office Activation)..."
-        MAS_AIO = "[*] Loading massgrave full..."
-        Battery = "[*] Loading Battery Check script..."
-        Update_Status = "Current Status: "
-        Update_On = "ENABLED"
-        Update_Off = "DISABLED"
-        Update_Menu1 = "Disable Windows Update"
-        Update_Menu2 = "Enable Windows Update"
-        Update_Back = "Back"
-        Update_Enabling = "[*] Enabling Windows Update services..."
-        Update_Disabling = "[*] Disabling Windows Update services..."
-        Done = "[*] Done. Press any key to return to menu..."
-        Update_Header = "--- WINDOWS UPDATE MANAGER ---"
-        Bit_Header = "--- BITLOCKER MANAGER ---"
-        Bit_Menu = "Bitlocker Manager"
-        Bit_Status = "Status"
-        Bit_Prot = "Protection"
-        Bit_Lock = "Lock Status"
-        Bit_Menu_On = "Turn On Bitlocker"
-        Bit_Menu_Off = "Turn Off Bitlocker"
-        Bit_EnterDrive = "Enter Drive Letter to toggle (e.g. C): "
-        Bit_Enabling = "[*] Enabling Bitlocker for drive "
-        Bit_Disabling = "[*] Disabling Bitlocker for drive "
-        Bit_NotFound = "[!] Drive not found or Bitlocker not supported."
-        Bit_Warning = "[!] WARNING: Enabling Bitlocker will require a restart and might take time."
-        Error_MAS = "[!] Error loading MAS: "
-        Error_Bat = "[!] Error running Battery Check: "
-        Exit = "[!] Exiting... Goodbye!"
-        Invalid = "[!] Invalid choice. Please try again."
-    }
     VI = @{
-        Header = ">>> cook by mhqb365.com <<<"
-        Menu1 = "Kich hoat Windows - HWID"
-        Menu2 = "Kich hoat Office - Ohook"
+        Menu1 = "Kich hoat Windows - MAS HWID"
+        Menu2 = "Kich hoat Office - MAS Ohook"
         Menu3 = "Kiem tra Do Chai Pin"
         Menu4 = "Quan ly Windows Update"
-        Menu5 = "Chay massgrave full"
+        Menu5 = "Chay MAS Full (Kich hoat Windows/Office & bla bla)"
+        Menu7 = "Office Tool Plus (Tai/Cai dat Office)"
+        MenuL = "Thay doi ngon ngu"
         Menu0 = "Thoat"
-        Prompt = ">>> Vui long chon (1-5, 0)"
-        MAS_Win = "[*] Dang tai MAS (Windows Activation)..."
-        MAS_Off = "[*] Dang tai MAS (Office Activation)..."
-        MAS_AIO = "[*] Dang tai Menu massgrave full..."
+        Prompt = ">>> Vui long chon (1-7, L, E)"
+        SubPrompt = ">>> Vui long chon (1-2, B)"
+        MAS_Win = "[*] Dang tai MAS Windows Activation..."
+        MAS_Off = "[*] Dang tai MAS Office Activation..."
+        MAS_AIO = "[*] Dang tai MAS Full..."
+        OTP_Loading = "[*] Dang tai Office Tool Plus..."
         Battery = "[*] Dang tai script kiem tra do chai pin..."
         Update_Status = "Trang thai hien tai: "
         Update_On = "DANG BAT"
@@ -93,6 +56,49 @@ $Msg = @{
         Exit = "[!] Dang thoat... Chao tam biet!"
         Invalid = "[!] Lua chon khong hop le. Vui long thu lai."
     }
+    EN = @{
+        Menu1 = "Active Windows - MAS HWID"
+        Menu2 = "Active Office - MAS Ohook"
+        Menu3 = "Check Battery Wear"
+        Menu4 = "Windows Update Manager"
+        Menu5 = "Run MAS Full (Active Windows/Office & more)"
+        Menu7 = "Office Tool Plus (Download/Install Office)"
+        MenuL = "Change Language"
+        Menu0 = "Exit"
+        Prompt = ">>> Please choose (1-7, L, E)"
+        SubPrompt = ">>> Please choose (1-2, B)"
+        MAS_Win = "[*] Loading MAS Windows Activation..."
+        MAS_Off = "[*] Loading MAS Office Activation..."
+        MAS_AIO = "[*] Loading MAS Full..."
+        OTP_Loading = "[*] Loading Office Tool Plus..."
+        Battery = "[*] Loading Battery Check script..."
+        Update_Status = "Current Status: "
+        Update_On = "ENABLED"
+        Update_Off = "DISABLED"
+        Update_Menu1 = "Disable Windows Update"
+        Update_Menu2 = "Enable Windows Update"
+        Update_Back = "Back"
+        Update_Enabling = "[*] Enabling Windows Update services..."
+        Update_Disabling = "[*] Disabling Windows Update services..."
+        Done = "[*] Done. Press any key to return to menu..."
+        Update_Header = "--- WINDOWS UPDATE MANAGER ---"
+        Bit_Header = "--- BITLOCKER MANAGER ---"
+        Bit_Menu = "Bitlocker Manager"
+        Bit_Status = "Status"
+        Bit_Prot = "Protection"
+        Bit_Lock = "Lock Status"
+        Bit_Menu_On = "Turn On Bitlocker"
+        Bit_Menu_Off = "Turn Off Bitlocker"
+        Bit_EnterDrive = "Enter Drive Letter to toggle (e.g. C): "
+        Bit_Enabling = "[*] Enabling Bitlocker for drive "
+        Bit_Disabling = "[*] Disabling Bitlocker for drive "
+        Bit_NotFound = "[!] Drive not found or Bitlocker not supported."
+        Bit_Warning = "[!] WARNING: Enabling Bitlocker will require a restart and might take time."
+        Error_MAS = "[!] Error loading MAS: "
+        Error_Bat = "[!] Error running Battery Check: "
+        Exit = "[!] Exiting... Goodbye!"
+        Invalid = "[!] Invalid choice. Please try again."
+    }
 }
 
 $S = $Msg[$lang]
@@ -106,9 +112,9 @@ __  _  _|__| ____   _/  |_  ____   ____ |  |
  \     /|  |   |  \  |  | (  <_> |  <_> )  |__
   \/\_/ |__|___|  /  |__|  \____/ \____/|____/
                 \/                            
+        >>> cook by mhqb365.com <<<
 '@
     Write-Host $Ascii -ForegroundColor Yellow
-    Write-Host "          $($S.Header)" -ForegroundColor Yellow
     Write-Host "------------------------------------------------" -ForegroundColor Gray
 }
 
@@ -122,18 +128,24 @@ function Show-Menu {
     Write-Host " [3] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu5)" -ForegroundColor White
     
-    Write-Host "------------------------------------------------" -ForegroundColor Gray
     Write-Host " [4] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu3)" -ForegroundColor White
+    Write-Host "$($S.Menu7)" -ForegroundColor White
 
     Write-Host " [5] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu4)" -ForegroundColor White
+    Write-Host "$($S.Menu3)" -ForegroundColor White
 
     Write-Host " [6] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu4)" -ForegroundColor White
+
+    Write-Host " [7] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Bit_Menu)" -ForegroundColor White
 
     Write-Host "------------------------------------------------" -ForegroundColor Gray
-    Write-Host " [0] " -NoNewline -ForegroundColor Red
+    
+    Write-Host " [L] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.MenuL)" -ForegroundColor White
+
+    Write-Host " [E] " -NoNewline -ForegroundColor Red
     Write-Host "$($S.Menu0)" -ForegroundColor White
     Write-Host "------------------------------------------------" -ForegroundColor Gray
 }
@@ -182,6 +194,17 @@ while ($true) {
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
         '4' {
+            Write-Host "`n$($S.OTP_Loading)" -ForegroundColor Yellow
+            try {
+                # Run in a separate process to prevent 'exit' from closing the main window
+                powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm https://officetool.plus)"
+            } catch {
+                Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
+            }
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        }
+        '5' {
             Write-Host "`n$($S.Battery)" -ForegroundColor Yellow
             try {
                 $BatteryScript = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/mhqb365/bBattery/refs/heads/master/bBattery.ps1"
@@ -193,7 +216,7 @@ while ($true) {
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
-        '5' {
+        '6' {
             while ($true) {
                 Show-Header
                 Write-Host "         $($S.Update_Header)" -ForegroundColor Cyan
@@ -214,11 +237,11 @@ while ($true) {
                 Write-Host " [2] " -NoNewline -ForegroundColor Green
                 Write-Host "$($S.Update_Menu2)" -ForegroundColor White
                 Write-Host "------------------------------------------------" -ForegroundColor Gray
-                Write-Host " [0] " -NoNewline -ForegroundColor Red
+                Write-Host " [B] " -NoNewline -ForegroundColor Red
                 Write-Host "$($S.Update_Back)" -ForegroundColor White
                 Write-Host "------------------------------------------------" -ForegroundColor Gray
                 
-                $upChoice = Read-Host "$($S.Prompt)"
+                $upChoice = Read-Host "$($S.SubPrompt)"
                 
                 if ($upChoice -eq '1') {
                     Write-Host "`n$($S.Update_Disabling)" -ForegroundColor Yellow
@@ -250,12 +273,12 @@ while ($true) {
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
                     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
                 }
-                elseif ($upChoice -eq '0') {
+                elseif ($upChoice -eq 'b') {
                     break
                 }
             }
         }
-        '6' {
+        '7' {
             while ($true) {
                 Show-Header
                 Write-Host "           $($S.Bit_Header)" -ForegroundColor Cyan
@@ -287,11 +310,11 @@ while ($true) {
                 Write-Host " [2] " -NoNewline -ForegroundColor Green
                 Write-Host "$($S.Bit_Menu_On)" -ForegroundColor White
                 Write-Host "------------------------------------------------" -ForegroundColor Gray
-                Write-Host " [0] " -NoNewline -ForegroundColor Red
+                Write-Host " [B] " -NoNewline -ForegroundColor Red
                 Write-Host "$($S.Update_Back)" -ForegroundColor White
                 Write-Host "------------------------------------------------" -ForegroundColor Gray
                 
-                $bitChoice = Read-Host "$($S.Prompt)"
+                $bitChoice = Read-Host "$($S.SubPrompt)"
                 
                 if ($bitChoice -eq '1' -or $bitChoice -eq '2') {
                     $drive = Read-Host "$($S.Bit_EnterDrive)"
@@ -339,12 +362,25 @@ while ($true) {
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
                     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
                 }
-                elseif ($bitChoice -eq '0') {
+                elseif ($bitChoice -eq 'b') {
                     break
                 }
             }
         }
-        '0' {
+        'l' {
+            Clear-Host
+            Write-Host "================================================" -ForegroundColor Cyan
+            Write-Host "        SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
+            Write-Host "================================================" -ForegroundColor Cyan
+            Write-Host " [1] Tieng Viet"
+            Write-Host " [2] English"
+            Write-Host "------------------------------------------------" -ForegroundColor Gray
+            $langChoice = Read-Host ">>> Chon / Choice (1-2)"
+            $lang = "EN"
+            if ($langChoice -eq "1") { $lang = "VI" }
+            $S = $Msg[$lang]
+        }
+        'e' {
             Write-Host "`n$($S.Exit)" -ForegroundColor Cyan
             Start-Sleep -Seconds 1
             return
