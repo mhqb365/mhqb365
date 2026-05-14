@@ -43,8 +43,8 @@ const { lang } = useLang();
 
 const translations = {
   title: {
-    vi: "Mời tui một ly cà phê",
-    en: "Buy me a coffee",
+    vi: "mời tui một ly cà phê",
+    en: "buy me a coffee",
   },
   intro: {
     vi: "Nếu bạn thấy các dự án hoặc nội dung của tui hữu ích, bạn có thể ủng hộ tui một ly cà phê nhé. Cảm ơn bạn rất nhiều!",
