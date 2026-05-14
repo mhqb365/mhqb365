@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="home">
     <section id="home" class="hero section-padding">
       <div class="container">
@@ -29,19 +29,21 @@
       <div class="container">
         <SectionTitle :title="sectionTitles.projects" />
         <div class="projects-list">
-          <a
+          <component
             v-for="project in featuredProjects"
-            :key="project.liveUrl"
+            :key="project.liveUrl || project.route"
             class="project-row"
+            :is="project.route ? 'RouterLink' : 'a'"
+            :to="project.route"
             :href="project.liveUrl"
-            target="_blank"
-            rel="noopener noreferrer"
+            :target="project.liveUrl ? '_blank' : undefined"
+            :rel="project.liveUrl ? 'noopener noreferrer' : undefined"
           >
             <div class="project-main">
               <div class="project-title">{{ project.title }}</div>
               <div class="project-desc">{{ project.description }}</div>
             </div>
-          </a>
+          </component>
         </div>
       </div>
     </section>
@@ -151,14 +153,14 @@ const dictionary = {
 const projects = [
   {
     title: {
-      vi: "Link mua đồ nghề trên Shopee",
-      en: "Recommended tools on Shopee",
+      vi: "Đồ nghề hay dùng",
+      en: "Recommended tools",
     },
     description: {
-      vi: "Tổng hợp các món đồ mà tui hay dùng trên Shopee",
-      en: "A bundle of items I frequently use on Shopee",
+      vi: "Tổng hợp các món đồ mà tui hay dùng để sửa laptop và thiết bị điện tử",
+      en: "A bundle of items I frequently use for electronics repair",
     },
-    liveUrl: "https://collshp.com/mhqb365",
+    route: "/shopee.html",
   },
   {
     title: { vi: "Computer Test", en: "Computer Test" },
@@ -279,6 +281,7 @@ const skillsView = computed(() =>
 }
 
 .project-row {
+  cursor: pointer;
   display: grid;
   grid-template-columns: 1fr;
   gap: 6px;
