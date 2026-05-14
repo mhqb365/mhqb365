@@ -72,8 +72,8 @@ const { lang } = useLang();
 
 const copy = {
   tagline: {
-    vi: "sửa laptop nhưng thích vibe coding",
-    en: "laptop repair but loves vibe coding",
+    vi: "sửa laptop, thích vibe coding",
+    en: "laptop repair, likes vibe coding",
   },
   social: { vi: "Mạng xã hội", en: "Social" },
   coffee: { vi: "Ủng hộ", en: "Donation" },
