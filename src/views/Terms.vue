@@ -18,11 +18,11 @@
           <div class="lead-card border-box">
             <p class="lang lang-en">
               By using mhqb365.com you agree to these Terms and the Privacy
-              Policy.
+              Policy
             </p>
             <p class="muted lang lang-vi">
               Khi sử dụng mhqb365.com bạn đồng ý với Điều khoản này và Chính
-              sách quyền riêng tư.
+              sách quyền riêng tư
             </p>
           </div>
         </header>
@@ -34,14 +34,14 @@
               <h2>Service Description</h2>
               <p>
                 mhqb365.com is a web application that lets you sign in with
-                Google and use the features published on our site.
+                Google and use the features published on our site
               </p>
             </article>
             <article class="card border-box">
               <h2>Acceptance</h2>
               <p>
                 Using the service means you accept these Terms. If you do not
-                agree, stop using it.
+                agree, stop using it
               </p>
             </article>
             <article class="card border-box">
@@ -49,9 +49,9 @@
               <ul class="list">
                 <li>
                   You are responsible for your account and for keeping login
-                  information safe.
+                  information safe
                 </li>
-                <li>Notify us immediately of unauthorized use.</li>
+                <li>Notify us immediately of unauthorized use</li>
               </ul>
             </article>
             <article class="card border-box">
@@ -59,16 +59,16 @@
               <ul class="list">
                 <li>
                   Do not misuse Google APIs, attempt to break security, or
-                  interfere with the service.
+                  interfere with the service
                 </li>
-                <li>Do not upload illegal, harmful, or infringing content.</li>
+                <li>Do not upload illegal, harmful, or infringing content</li>
               </ul>
             </article>
             <article class="card border-box">
               <h2>Fees</h2>
               <p>
                 The service is currently free; if pricing is introduced, we will
-                notify you before it takes effect.
+                notify you before it takes effect
               </p>
             </article>
             <article class="card border-box">
@@ -76,11 +76,11 @@
               <ul class="list">
                 <li>
                   Site code, design, and branding belong to mhqb365.com or
-                  licensors.
+                  licensors
                 </li>
                 <li>
                   You keep ownership of content you submit but grant us a
-                  limited license to operate the service.
+                  limited license to operate the service
                 </li>
               </ul>
             </article>
@@ -88,7 +88,7 @@
               <h2>Third-Party Services</h2>
               <p>
                 We rely on Google OAuth and other vendors. Their terms may apply
-                in addition to ours.
+                in addition to ours
               </p>
             </article>
             <article class="card border-box">
@@ -96,21 +96,21 @@
               <p>
                 We may suspend or terminate access for breaches of these Terms,
                 security risks, or legal reasons. You may stop using the service
-                anytime and can request data deletion.
+                anytime and can request data deletion
               </p>
             </article>
             <article class="card border-box">
               <h2>Availability & Changes</h2>
               <p>
                 The service may change, be updated, or be discontinued. We aim
-                to give notice of major changes.
+                to give notice of major changes
               </p>
             </article>
             <article class="card border-box">
               <h2>Disclaimers</h2>
               <p>
                 The service is provided “as is” without warranties. We do not
-                guarantee uninterrupted or error-free operation.
+                guarantee uninterrupted or error-free operation
               </p>
             </article>
             <article class="card border-box">
@@ -118,7 +118,7 @@
               <p>
                 To the maximum extent allowed by law, we are not liable for
                 indirect, incidental, or consequential damages arising from the
-                service.
+                service
               </p>
             </article>
             <article class="card border-box">
@@ -127,20 +127,20 @@
                 These Terms are governed by the laws of Viet Nam (update to your
                 registered jurisdiction). Disputes will first be resolved
                 amicably; if unresolved, they may be brought to competent courts
-                or arbitration in that jurisdiction.
+                or arbitration in that jurisdiction
               </p>
             </article>
             <article class="card border-box">
               <h2>Updates</h2>
               <p>
                 When Terms change, we will post the new version here with a new
-                effective date. Continued use after that date means acceptance.
+                effective date. Continued use after that date means acceptance
               </p>
             </article>
             <article class="card border-box">
               <h2>Contact</h2>
               <p>
-                Email: <a href="mailto:mhqb365@gmail.com">mhqb365@gmail.com</a>.
+                Email: <a href="mailto:mhqb365@gmail.com">mhqb365@gmail.com</a>
               </p>
             </article>
           </section>
@@ -153,14 +153,14 @@
               <h2>Mô tả dịch vụ</h2>
               <p>
                 mhqb365.com là ứng dụng web cho phép bạn đăng nhập bằng Google
-                và sử dụng các tính năng được công bố trên trang.
+                và sử dụng các tính năng được công bố trên trang
               </p>
             </article>
             <article class="card border-box">
               <h2>Chấp nhận</h2>
               <p>
                 Việc sử dụng dịch vụ đồng nghĩa bạn chấp nhận Điều khoản này;
-                nếu không đồng ý, vui lòng ngừng sử dụng.
+                nếu không đồng ý, vui lòng ngừng sử dụng
               </p>
             </article>
             <article class="card border-box">
@@ -168,9 +168,9 @@
               <ul class="list">
                 <li>
                   Bạn chịu trách nhiệm về tài khoản và bảo vệ thông tin đăng
-                  nhập.
+                  nhập
                 </li>
-                <li>Báo ngay cho chúng tôi nếu phát hiện sử dụng trái phép.</li>
+                <li>Báo ngay cho chúng tôi nếu phát hiện sử dụng trái phép</li>
               </ul>
             </article>
             <article class="card border-box">
@@ -178,11 +178,11 @@
               <ul class="list">
                 <li>
                   Không lạm dụng API của Google, không xâm phạm bảo mật, không
-                  gây gián đoạn dịch vụ.
+                  gây gián đoạn dịch vụ
                 </li>
                 <li>
                   Không tải lên nội dung vi phạm pháp luật, độc hại hoặc xâm
-                  phạm quyền.
+                  phạm quyền
                 </li>
               </ul>
             </article>
@@ -190,7 +190,7 @@
               <h2>Phí</h2>
               <p>
                 Hiện dịch vụ miễn phí; nếu áp dụng phí, chúng tôi sẽ thông báo
-                trước khi hiệu lực.
+                trước khi hiệu lực
               </p>
             </article>
             <article class="card border-box">
@@ -198,11 +198,11 @@
               <ul class="list">
                 <li>
                   Mã nguồn, thiết kế, thương hiệu thuộc mhqb365.com hoặc bên cấp
-                  phép.
+                  phép
                 </li>
                 <li>
                   Bạn giữ quyền sở hữu nội dung gửi lên, cấp cho chúng tôi quyền
-                  sử dụng hạn chế để vận hành dịch vụ.
+                  sử dụng hạn chế để vận hành dịch vụ
                 </li>
               </ul>
             </article>
@@ -210,7 +210,7 @@
               <h2>Dịch vụ bên thứ ba</h2>
               <p>
                 Chúng tôi sử dụng Google OAuth và các nhà cung cấp khác; điều
-                khoản của họ có thể áp dụng song song.
+                khoản của họ có thể áp dụng song song
               </p>
             </article>
             <article class="card border-box">
@@ -218,21 +218,21 @@
               <p>
                 Chúng tôi có thể tạm ngưng hoặc chấm dứt truy cập khi vi phạm
                 Điều khoản, rủi ro bảo mật, hoặc lý do pháp lý. Bạn có thể dừng
-                sử dụng bất kỳ lúc nào và yêu cầu xóa dữ liệu.
+                sử dụng bất kỳ lúc nào và yêu cầu xóa dữ liệu
               </p>
             </article>
             <article class="card border-box">
               <h2>Khả dụng & thay đổi</h2>
               <p>
                 Dịch vụ có thể thay đổi, cập nhật hoặc dừng cung cấp; chúng tôi
-                cố gắng thông báo khi có thay đổi lớn.
+                cố gắng thông báo khi có thay đổi lớn
               </p>
             </article>
             <article class="card border-box">
               <h2>Tuyên bố miễn trừ</h2>
               <p>
                 Dịch vụ được cung cấp “nguyên trạng”, không bảo đảm không gián
-                đoạn hoặc không lỗi.
+                đoạn hoặc không lỗi
               </p>
             </article>
             <article class="card border-box">
@@ -240,7 +240,7 @@
               <p>
                 Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách
                 nhiệm cho thiệt hại gián tiếp, ngẫu nhiên hoặc hệ quả từ việc sử
-                dụng dịch vụ.
+                dụng dịch vụ
               </p>
             </article>
             <article class="card border-box">
@@ -249,20 +249,20 @@
                 Điều khoản chịu sự điều chỉnh của luật Việt Nam (hãy cập nhật
                 theo nơi đăng ký của bạn). Tranh chấp ưu tiên giải quyết thương
                 lượng; nếu không thành, đưa ra tòa án/trọng tài có thẩm quyền
-                tại đó.
+                tại đó
               </p>
             </article>
             <article class="card border-box">
               <h2>Cập nhật</h2>
               <p>
                 Khi Điều khoản thay đổi, chúng tôi đăng bản mới kèm ngày hiệu
-                lực; tiếp tục sử dụng sau ngày đó đồng nghĩa bạn chấp nhận.
+                lực; tiếp tục sử dụng sau ngày đó đồng nghĩa bạn chấp nhận
               </p>
             </article>
             <article class="card border-box">
               <h2>Liên hệ</h2>
               <p>
-                Email: <a href="mailto:mhqb365@gmail.com">mhqb365@gmail.com</a>.
+                Email: <a href="mailto:mhqb365@gmail.com">mhqb365@gmail.com</a>
               </p>
             </article>
           </section>
