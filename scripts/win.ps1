@@ -14,20 +14,17 @@ if ($langChoice -eq "1") { $lang = "VI" }
 # --- Translation Dictionary ---
 $Msg = @{
     VI = @{
-        Menu1 = "Kich hoat Windows - MAS HWID"
-        Menu2 = "Kich hoat Office - MAS Ohook"
-        Menu3 = "Kiem tra Do Chai Pin"
+        Menu1 = "Kiem tra Do Chai Pin"
+        Menu2 = "Don dep RAM"
+        Menu3 = "Don dep Disk"
         Menu4 = "Quan ly Windows Update"
-        Menu5 = "Chay MAS Full (Kich hoat Windows/Office & bla bla)"
-        Menu7 = "Office Tool Plus (Tai/Cai dat Office)"
-        Menu8 = "Don dep RAM"
-        Menu9 = "Don dep Disk"
+        Menu5 = "Quan ly Bitlocker"
+        Menu6 = "Office Tool Plus"
+        Menu7 = "Microsoft Activation Scripts (MAS)"
         MenuL = "Thay doi ngon ngu"
         Menu0 = "Thoat"
-        Prompt = ">>> Vui long chon (1-9, L, E)"
+        Prompt = ">>> Vui long chon (1-7, L, E)"
         SubPrompt = ">>> Vui long chon (1-2, B)"
-        MAS_Win = "[*] Dang tai MAS Windows Activation..."
-        MAS_Off = "[*] Dang tai MAS Office Activation..."
         MAS_AIO = "[*] Dang tai MAS Full..."
         OTP_Loading = "[*] Dang tai Office Tool Plus..."
         Battery = "[*] Dang tai script kiem tra do chai pin..."
@@ -63,20 +60,17 @@ $Msg = @{
         Invalid = "[!] Lua chon khong hop le. Vui long thu lai."
     }
     EN = @{
-        Menu1 = "Active Windows - MAS HWID"
-        Menu2 = "Active Office - MAS Ohook"
-        Menu3 = "Check Battery Wear"
+        Menu1 = "Check Battery Wear"
+        Menu2 = "Clean RAM"
+        Menu3 = "Clean Disk"
         Menu4 = "Windows Update Manager"
-        Menu5 = "Run MAS Full (Active Windows/Office & more)"
-        Menu7 = "Office Tool Plus (Download/Install Office)"
-        Menu8 = "Clean RAM"
-        Menu9 = "Clean Disk"
+        Menu5 = "Bitlocker Manager"
+        Menu6 = "Office Tool Plus"
+        Menu7 = "Microsoft Activation Scripts (MAS)"
         MenuL = "Change Language"
         Menu0 = "Exit"
-        Prompt = ">>> Please choose (1-9, L, E)"
+        Prompt = ">>> Please choose (1-7, L, E)"
         SubPrompt = ">>> Please choose (1-2, B)"
-        MAS_Win = "[*] Loading MAS Windows Activation..."
-        MAS_Off = "[*] Loading MAS Office Activation..."
         MAS_AIO = "[*] Loading MAS Full..."
         OTP_Loading = "[*] Loading Office Tool Plus..."
         Battery = "[*] Loading Battery Check script..."
@@ -138,25 +132,21 @@ function Show-Menu {
     Write-Host "$($S.Menu2)" -ForegroundColor White
 
     Write-Host " [3] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu5)" -ForegroundColor White
+    Write-Host "$($S.Menu3)" -ForegroundColor White
     
     Write-Host " [4] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu7)" -ForegroundColor White
-
-    Write-Host " [5] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu3)" -ForegroundColor White
-
-    Write-Host " [6] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu8)" -ForegroundColor White
-
-    Write-Host " [7] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu9)" -ForegroundColor White
-
-    Write-Host " [8] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu4)" -ForegroundColor White
 
-    Write-Host " [9] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Bit_Menu)" -ForegroundColor White
+    Write-Host " [5] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu5)" -ForegroundColor White
+
+    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
+
+    Write-Host " [6] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu6)" -ForegroundColor White
+
+    Write-Host " [7] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu7)" -ForegroundColor White
 
     Write-Host "-----------------------------------------------------" -ForegroundColor Gray
     
@@ -176,52 +166,6 @@ while ($true) {
     
     switch ($choice) {
         '1' {
-            Write-Host "`n$($S.MAS_Win)" -ForegroundColor Yellow
-            try {
-                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
-                $SB = [scriptblock]::Create($MAS)
-                & $SB /HWID
-            } catch {
-                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
-            }
-            Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        }
-        '2' {
-            Write-Host "`n$($S.MAS_Off)" -ForegroundColor Yellow
-            try {
-                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
-                $SB = [scriptblock]::Create($MAS)
-                & $SB /Ohook
-            } catch {
-                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
-            }
-            Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        }
-        '3' {
-            Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
-            try {
-                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
-                $SB = [scriptblock]::Create($MAS)
-                & $SB
-            } catch {
-                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
-            }
-            Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        }
-        '4' {
-            Write-Host "`n$($S.OTP_Loading)" -ForegroundColor Yellow
-            try {
-                powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm https://officetool.plus)"
-            } catch {
-                Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
-            }
-            Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        }
-        '5' {
             Write-Host "`n$($S.Battery)" -ForegroundColor Yellow
             try {
                 $BatteryScript = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/mhqb365/bBattery/refs/heads/master/bBattery.ps1"
@@ -233,11 +177,43 @@ while ($true) {
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
-        '6' {
-            Write-Host "`n$($S.Clean_RAM_Wait)" -ForegroundColor Yellow
+        '2' {
+            Write-Host "`n$($S.Clean_RAM_Wait) " -NoNewline -ForegroundColor Yellow
             $before = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory
-            [System.GC]::Collect()
-            [System.GC]::WaitForPendingFinalizers()
+
+            $arch = $env:PROCESSOR_ARCHITECTURE
+            $rammapExe = "RAMMap.exe"
+            if ($arch -eq "AMD64") { $rammapExe = "RAMMap64.exe" }
+            elseif ($arch -eq "ARM64") { $rammapExe = "RAMMap64a.exe" }
+
+            $rammapPath = Join-Path $env:TEMP $rammapExe
+            if (-not (Test-Path $rammapPath)) {
+                try {
+                    Invoke-WebRequest -Uri "https://live.sysinternals.com/$rammapExe" -OutFile $rammapPath -UseBasicParsing
+                } catch {
+                    Write-Host "`n[!] Cannot download $rammapExe. Fallback to GC..." -ForegroundColor Red
+                }
+            }
+
+            if (Test-Path $rammapPath) {
+                $argsList = @("-Ew", "-Es", "-Em", "-Et", "-E0")
+                $spinner = @('-', '\', '|', '/')
+                $counter = 0
+                foreach ($arg in $argsList) {
+                    $p = Start-Process -FilePath $rammapPath -ArgumentList "-AcceptEula $arg" -WindowStyle Hidden -PassThru
+                    while (-not $p.HasExited) {
+                        Write-Host "`b$($spinner[$counter % 4])" -NoNewline -ForegroundColor Cyan
+                        $counter++
+                        Start-Sleep -Milliseconds 100
+                    }
+                }
+                Write-Host "`b*" -ForegroundColor Green
+            } else {
+                [System.GC]::Collect()
+                [System.GC]::WaitForPendingFinalizers()
+                Write-Host "Done" -ForegroundColor Green
+            }
+
             $after = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory
             $freed = [Math]::Max(0, [Math]::Round(($after - $before) / 1024, 2))
             
@@ -246,13 +222,17 @@ while ($true) {
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
-        '7' {
+        '3' {
             Write-Host "`n$($S.Clean_Disk_Wait)" -ForegroundColor Yellow
+
             $targets = @{
                 "Windows Temp" = "C:\Windows\Temp"
                 "User Temp" = $env:TEMP
                 "Prefetch" = "C:\Windows\Prefetch"
                 "Windows Update Cache" = "C:\Windows\SoftwareDistribution\Download"
+                "Windows Logs" = "C:\Windows\Logs"
+                "System32 LogFiles" = "C:\Windows\System32\LogFiles"
+                "Windows Error Reporting" = "C:\ProgramData\Microsoft\Windows\WER"
             }
             $total = 0
             Write-Host "`n$($S.Clean_Result)" -ForegroundColor Cyan
@@ -260,8 +240,16 @@ while ($true) {
                 $path = $targets[$key]
                 $size = 0
                 if (Test-Path $path) {
+                    Write-Progress -Activity "Scanning Disk" -Status "Scanning $key..."
                     $items = Get-ChildItem -Path $path -Recurse -ErrorAction SilentlyContinue
+                    $totalItems = @($items).Count
+                    $current = 0
                     foreach ($item in $items) {
+                        $current++
+                        if (($current % 20 -eq 0) -or ($current -eq $totalItems)) {
+                            $percent = if ($totalItems -gt 0) { [Math]::Min(100, [Math]::Round(($current / $totalItems) * 100)) } else { 0 }
+                            Write-Progress -Activity "Cleaning Disk ($key)" -Status "Processing: $($item.Name)" -PercentComplete $percent
+                        }
                         if ($item.PSIsContainer -eq $false) {
                             try {
                                 Remove-Item $item.FullName -Force -ErrorAction Stop
@@ -271,6 +259,7 @@ while ($true) {
                             }
                         }
                     }
+                    Write-Progress -Activity "Cleaning Disk ($key)" -Completed
                 }
                 $mb = [Math]::Round($size / 1MB, 2)
                 Write-Host " - $($key): " -NoNewline
@@ -284,7 +273,7 @@ while ($true) {
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
-        '8' {
+        '4' {
             while ($true) {
                 Show-Header
                 Write-Host "         $($S.Update_Header)" -ForegroundColor Cyan
@@ -344,7 +333,7 @@ while ($true) {
                 }
             }
         }
-        '9' {
+        '5' {
             while ($true) {
                 Show-Header
                 Write-Host "           $($S.Bit_Header)" -ForegroundColor Cyan
@@ -419,6 +408,28 @@ while ($true) {
                     break
                 }
             }
+        }
+        '6' {
+            Write-Host "`n$($S.OTP_Loading)" -ForegroundColor Yellow
+            try {
+                powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm https://officetool.plus)"
+            } catch {
+                Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
+            }
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        }
+        '7' {
+            Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
+            try {
+                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
+                $SB = [scriptblock]::Create($MAS)
+                & $SB
+            } catch {
+                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
+            }
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
         'l' {
             Clear-Host
