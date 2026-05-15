@@ -15,15 +15,16 @@ if ($langChoice -eq "1") { $lang = "VI" }
 $Msg = @{
     VI = @{
         Menu1 = "Kiem tra Do Chai Pin"
-        Menu2 = "Don dep RAM"
-        Menu3 = "Don dep Disk"
-        Menu4 = "Quan ly Windows Update"
-        Menu5 = "Quan ly Bitlocker"
-        Menu6 = "Office Tool Plus"
-        Menu7 = "Microsoft Activation Scripts (MAS)"
-        MenuL = "Thay doi ngon ngu"
+        Menu2 = "Kiem tra Ban quyen"
+        Menu3 = "Don dep RAM"
+        Menu4 = "Don dep Disk"
+        Menu5 = "Quan ly Windows Update"
+        Menu6 = "Quan ly Bitlocker"
+        Menu7 = "Office Tool Plus"
+        Menu8 = "Microsoft Activation Scripts (MAS)"
+        MenuL = "Thay doi Ngon ngu"
         Menu0 = "Thoat"
-        Prompt = ">>> Vui long chon (1-7, L, E)"
+        Prompt = ">>> Vui long chon (1-8, L, E)"
         SubPrompt = ">>> Vui long chon (1-2, B)"
         MAS_AIO = "[*] Dang tai MAS Full..."
         OTP_Loading = "[*] Dang tai Office Tool Plus..."
@@ -40,7 +41,7 @@ $Msg = @{
         Update_Back = "Quay lai"
         Update_Enabling = "[*] Dang bat dich vu Windows Update..."
         Update_Disabling = "[*] Dang tat dich vu Windows Update..."
-        Done = "[*] Hoan tat. Nhan phim bat ky de quay lai menu..."
+        Done = "[*] Hoan tat. Nhan Enter de quay lai menu..."
         Update_Header = "--- QUAN LY WINDOWS UPDATE ---"
         Bit_Header = "--- BITLOCKER MANAGER ---"
         Bit_Menu = "Quan ly Bitlocker"
@@ -61,15 +62,16 @@ $Msg = @{
     }
     EN = @{
         Menu1 = "Check Battery Wear"
-        Menu2 = "Clean RAM"
-        Menu3 = "Clean Disk"
-        Menu4 = "Windows Update Manager"
-        Menu5 = "Bitlocker Manager"
-        Menu6 = "Office Tool Plus"
-        Menu7 = "Microsoft Activation Scripts (MAS)"
+        Menu2 = "Check License"
+        Menu3 = "Clean RAM"
+        Menu4 = "Clean Disk"
+        Menu5 = "Windows Update Manager"
+        Menu6 = "Bitlocker Manager"
+        Menu7 = "Office Tool Plus"
+        Menu8 = "Microsoft Activation Scripts (MAS)"
         MenuL = "Change Language"
         Menu0 = "Exit"
-        Prompt = ">>> Please choose (1-7, L, E)"
+        Prompt = ">>> Please choose (1-8, L, E)"
         SubPrompt = ">>> Please choose (1-2, B)"
         MAS_AIO = "[*] Loading MAS Full..."
         OTP_Loading = "[*] Loading Office Tool Plus..."
@@ -86,7 +88,7 @@ $Msg = @{
         Update_Back = "Back"
         Update_Enabling = "[*] Enabling Windows Update services..."
         Update_Disabling = "[*] Disabling Windows Update services..."
-        Done = "[*] Done. Press any key to return to menu..."
+        Done = "[*] Done. Press Enter to return to menu..."
         Update_Header = "--- WINDOWS UPDATE MANAGER ---"
         Bit_Header = "--- BITLOCKER MANAGER ---"
         Bit_Menu = "Bitlocker Manager"
@@ -140,13 +142,16 @@ function Show-Menu {
     Write-Host " [5] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu5)" -ForegroundColor White
 
-    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
-
     Write-Host " [6] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu6)" -ForegroundColor White
 
+    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
+
     Write-Host " [7] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu7)" -ForegroundColor White
+    
+    Write-Host " [8] " -NoNewline -ForegroundColor Green
+    Write-Host "$($S.Menu8)" -ForegroundColor White
 
     Write-Host "-----------------------------------------------------" -ForegroundColor Gray
     
@@ -175,9 +180,17 @@ while ($true) {
                 Write-Host "$($S.Error_Bat)$($_.Exception.Message)" -ForegroundColor Red
             }
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+            $null = Read-Host
         }
         '2' {
+            Write-Host "`n[*] Dang kiem tra chi tiet ban quyen..." -ForegroundColor Yellow
+            cscript //nologo $env:windir\system32\slmgr.vbs /dlv
+            Write-Host "`n[*] Dang kiem tra thoi han ban quyen..." -ForegroundColor Yellow
+            cscript //nologo $env:windir\system32\slmgr.vbs /xpr
+            Write-Host "`n$($S.Done)" -ForegroundColor Gray
+            $null = Read-Host
+        }
+        '3' {
             Write-Host "`n$($S.Clean_RAM_Wait) " -NoNewline -ForegroundColor Yellow
             $before = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory
 
@@ -220,9 +233,9 @@ while ($true) {
             Write-Host "`n$($S.Clean_Result)" -ForegroundColor Cyan
             Write-Host " - System RAM: +$freed MB free" -ForegroundColor Green
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+            $null = Read-Host
         }
-        '3' {
+        '4' {
             Write-Host "`n$($S.Clean_Disk_Wait)" -ForegroundColor Yellow
 
             $targets = @{
@@ -271,9 +284,9 @@ while ($true) {
             Write-Host "$($S.Clean_Total) " -NoNewline
             Write-Host "$totalMB MB" -ForegroundColor Cyan
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+            $null = Read-Host
         }
-        '4' {
+        '5' {
             while ($true) {
                 Show-Header
                 Write-Host "         $($S.Update_Header)" -ForegroundColor Cyan
@@ -313,7 +326,7 @@ while ($true) {
                         Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
                     }
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
-                    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+                    $null = Read-Host
                 }
                 elseif ($upChoice -eq '2') {
                     Write-Host "`n$($S.Update_Enabling)" -ForegroundColor Yellow
@@ -326,14 +339,14 @@ while ($true) {
                         Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
                     }
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
-                    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+                    $null = Read-Host
                 }
                 elseif ($upChoice -eq 'b') {
                     break
                 }
             }
         }
-        '5' {
+        '6' {
             while ($true) {
                 Show-Header
                 Write-Host "           $($S.Bit_Header)" -ForegroundColor Cyan
@@ -402,14 +415,14 @@ while ($true) {
                         }
                     }
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
-                    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+                    $null = Read-Host
                 }
                 elseif ($bitChoice -eq 'b') {
                     break
                 }
             }
         }
-        '6' {
+        '7' {
             Write-Host "`n$($S.OTP_Loading)" -ForegroundColor Yellow
             try {
                 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm https://officetool.plus)"
@@ -417,9 +430,9 @@ while ($true) {
                 Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
             }
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+            $null = Read-Host
         }
-        '7' {
+        '8' {
             Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
             try {
                 $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
@@ -429,7 +442,7 @@ while ($true) {
                 Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
             }
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+            $null = Read-Host
         }
         'l' {
             Clear-Host
