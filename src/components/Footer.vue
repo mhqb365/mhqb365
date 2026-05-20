@@ -21,14 +21,6 @@
                 <TikTokIcon :size="20" />
               </a>
               <a
-                href="https://www.youtube.com/@mhqb365"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="YouTube"
-              >
-                <Youtube :size="20" />
-              </a>
-              <a
                 href="https://github.com/mhqb365"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,7 +69,7 @@ const copy = {
   },
   social: { vi: "Mạng xã hội", en: "Social" },
   coffee: { vi: "Ủng hộ", en: "Donation" },
-  buyMeACoffee: { vi: "Mời tui cà phê", en: "Buy me a coffee" },
+  buyMeACoffee: { vi: "Mời tui Cà phê", en: "Buy me a Coffee" },
   legal: { vi: "Pháp lý", en: "Legal" },
   privacy: { vi: "Quyền riêng tư", en: "Privacy policy" },
   terms: { vi: "Điều khoản dịch vụ", en: "Terms of service" },

@@ -6,10 +6,6 @@
         title="TikTok">
         <TikTokIcon :size="24" />
       </a>
-      <a href="https://www.youtube.com/@mhqb365" target="_blank" rel="noopener noreferrer" class="social-link"
-        title="YouTube">
-        <Youtube :size="24" />
-      </a>
       <a href="https://github.com/mhqb365" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
         <Github :size="24" />
       </a>
@@ -18,7 +14,7 @@
 </template>
 
 <script setup>
-import { Github, Youtube } from 'lucide-vue-next'
+import { Github } from 'lucide-vue-next'
 import TikTokIcon from './TikTokIcon.vue'
 </script>
 
