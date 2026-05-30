@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Privacy from "../views/Privacy.vue";
 import Terms from "../views/Terms.vue";
-import BuyMeCoffee from "../views/BuyMeCoffee.vue";
 import ShopeeProducts from "../views/ShopeeProducts.vue";
 
 const routes = [
@@ -20,11 +19,6 @@ const routes = [
     path: "/terms.html",
     name: "Terms",
     component: Terms,
-  },
-  {
-    path: "/buymeacoffee.html",
-    name: "BuyMeCoffee",
-    component: BuyMeCoffee,
   },
   {
     path: "/shopee.html",

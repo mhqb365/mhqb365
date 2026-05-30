@@ -31,14 +31,6 @@
             </div>
           </div>
           <div class="footer-block">
-            <h3>{{ t("coffee") }}</h3>
-            <div class="legal-links">
-              <RouterLink to="/buymeacoffee.html">{{
-                t("buyMeACoffee")
-              }}</RouterLink>
-            </div>
-          </div>
-          <div class="footer-block">
             <h3>{{ t("legal") }}</h3>
             <div class="legal-links">
               <RouterLink to="/privacy.html">{{ t("privacy") }}</RouterLink>
@@ -68,8 +60,6 @@ const copy = {
     en: "laptop repair, likes vibe coding",
   },
   social: { vi: "Mạng xã hội", en: "Social" },
-  coffee: { vi: "Ủng hộ", en: "Donation" },
-  buyMeACoffee: { vi: "Mời tui Cà phê", en: "Buy me a Coffee" },
   legal: { vi: "Pháp lý", en: "Legal" },
   privacy: { vi: "Quyền riêng tư", en: "Privacy policy" },
   terms: { vi: "Điều khoản dịch vụ", en: "Terms of service" },
