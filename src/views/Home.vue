@@ -189,6 +189,17 @@ const projects = [
     },
     liveUrl: "https://github.com/mhqb365/mhqb365/blob/master/scripts/README.md",
   },
+  {
+    title: {
+      vi: "Chổi Lông Gà Bot",
+      en: "ChoiLongGaBot",
+    },
+    description: {
+      vi: "Bot Telegram hỗ trợ quản trị group/supergroup",
+      en: "Telegram bot for group/supergroup management",
+    },
+    liveUrl: "https://github.com/mhqb365/ChoiLongGaBot",
+  },
 ];
 
 const t = (key) => dictionary[key][lang.value];

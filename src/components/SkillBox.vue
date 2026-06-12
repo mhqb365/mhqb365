@@ -1,7 +1,7 @@
 <template>
   <div class="skill-box">
     <div class="skill-header">{{ category }}</div>
-    <div class="skill-list">{{ skills.join(' ') }}</div>
+    <div class="skill-list">{{ skills.join(" ") }}</div>
   </div>
 </template>
 
@@ -9,13 +9,13 @@
 defineProps({
   category: {
     type: String,
-    required: true
+    required: true,
   },
   skills: {
     type: Array,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <style scoped>

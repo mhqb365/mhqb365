@@ -1,58 +1,72 @@
 <template>
-    <Transition name="splash-fade">
-        <div v-if="visible" class="splash-screen">
-            <div class="splash-content">
-                <!-- Logo -->
-                <div class="splash-logo">
-                    <div class="logo-wrapper">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="4"
-                                class="logo-circle" />
-                            <path d="M70 100 L90 120 L130 80" fill="none" stroke="currentColor" stroke-width="6"
-                                stroke-linecap="round" stroke-linejoin="round" class="logo-check" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
+  <Transition name="splash-fade">
+    <div v-if="visible" class="splash-screen">
+      <div class="splash-content">
+        <!-- Logo -->
+        <div class="splash-logo">
+          <div class="logo-wrapper">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle
+                cx="100"
+                cy="100"
+                r="80"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                class="logo-circle"
+              />
+              <path
+                d="M70 100 L90 120 L130 80"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="logo-check"
+              />
+            </svg>
+          </div>
         </div>
-    </Transition>
+      </div>
+    </div>
+  </Transition>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
-const visible = ref(true)
-const emit = defineEmits(['loaded'])
+const visible = ref(true);
+const emit = defineEmits(["loaded"]);
 
 onMounted(() => {
-    // Simulate loading time (minimum 1.5 seconds)
-    const minLoadTime = 1500
-    const startTime = Date.now()
+  // Simulate loading time (minimum 1.5 seconds)
+  const minLoadTime = 1500;
+  const startTime = Date.now();
 
-    // Wait for all resources to load
-    Promise.all([
-        // Wait for DOM content to be loaded
-        new Promise((resolve) => {
-            if (document.readyState === 'complete') {
-                resolve()
-            } else {
-                window.addEventListener('load', resolve)
-            }
-        }),
-        // Minimum loading time
-        new Promise((resolve) => setTimeout(resolve, minLoadTime)),
-    ]).then(() => {
-        const elapsedTime = Date.now() - startTime
-        const remainingTime = Math.max(0, minLoadTime - elapsedTime)
+  // Wait for all resources to load
+  Promise.all([
+    // Wait for DOM content to be loaded
+    new Promise((resolve) => {
+      if (document.readyState === "complete") {
+        resolve();
+      } else {
+        window.addEventListener("load", resolve);
+      }
+    }),
+    // Minimum loading time
+    new Promise((resolve) => setTimeout(resolve, minLoadTime)),
+  ]).then(() => {
+    const elapsedTime = Date.now() - startTime;
+    const remainingTime = Math.max(0, minLoadTime - elapsedTime);
 
-        setTimeout(() => {
-            visible.value = false
-            setTimeout(() => {
-                emit('loaded')
-            }, 500) // Wait for fade out animation
-        }, remainingTime)
-    })
-})
+    setTimeout(() => {
+      visible.value = false;
+      setTimeout(() => {
+        emit("loaded");
+      }, 500); // Wait for fade out animation
+    }, remainingTime);
+  });
+});
 </script>
 
 <style scoped lang="scss">
@@ -91,7 +105,7 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(10px);
-    
+
     svg {
       width: 60px;
       height: 60px;

@@ -1,8 +1,6 @@
 <template>
   <div class="section-title">
-    <h2>
-      <span class="text-accent">#</span>{{ title }}
-    </h2>
+    <h2><span class="text-accent">#</span>{{ title }}</h2>
     <div class="line"></div>
   </div>
 </template>
@@ -11,9 +9,9 @@
 defineProps({
   title: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <style scoped>

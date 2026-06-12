@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import { Github, Youtube } from "lucide-vue-next";
+import { Github } from "lucide-vue-next";
 import TikTokIcon from "./TikTokIcon.vue";
 import { computed } from "vue";
 import { useLang } from "../composables/useLang";

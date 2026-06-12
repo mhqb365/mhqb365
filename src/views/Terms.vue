@@ -275,7 +275,7 @@
 <script setup>
 import { useLang } from "../composables/useLang";
 
-const { lang, setLang } = useLang();
+const { lang } = useLang();
 </script>
 
 <style scoped>

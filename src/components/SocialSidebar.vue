@@ -2,11 +2,22 @@
   <div class="social-sidebar">
     <div class="line"></div>
     <div class="social-icons">
-      <a href="https://www.tiktok.com/@mhqb365" target="_blank" rel="noopener noreferrer" class="social-link"
-        title="TikTok">
+      <a
+        href="https://www.tiktok.com/@mhqb365"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        title="TikTok"
+      >
         <TikTokIcon :size="24" />
       </a>
-      <a href="https://github.com/mhqb365" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+      <a
+        href="https://github.com/mhqb365"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        title="GitHub"
+      >
         <Github :size="24" />
       </a>
     </div>
@@ -14,8 +25,8 @@
 </template>
 
 <script setup>
-import { Github } from 'lucide-vue-next'
-import TikTokIcon from './TikTokIcon.vue'
+import { Github } from "lucide-vue-next";
+import TikTokIcon from "./TikTokIcon.vue";
 </script>
 
 <style scoped>
