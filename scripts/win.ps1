@@ -1,7 +1,7 @@
 # --- Initial Language Selection ---
 Clear-Host
 Write-Host "=====================================================" -ForegroundColor Cyan
-Write-Host "          SELECT LANGUAGE / CHON NGON NGU" -ForegroundColor White
+Write-Host "          CHON NGON NGU / SELECT LANGUAGE" -ForegroundColor White
 Write-Host "=====================================================" -ForegroundColor Cyan
 Write-Host " [1] Tieng Viet"
 Write-Host " [2] English"
@@ -14,98 +14,92 @@ if ($langChoice -eq "1") { $lang = "VI" }
 # --- Translation Dictionary ---
 $Msg = @{
     VI = @{
-        Menu1 = "Kiem tra Do Chai Pin"
-        Menu2 = "Kiem tra Ban quyen"
-        Menu3 = "Don dep RAM"
-        Menu4 = "Don dep Disk"
-        Menu5 = "Quan ly Windows Update"
-        Menu6 = "Quan ly Bitlocker"
-        Menu7 = "Office Tool Plus"
-        Menu8 = "Microsoft Activation Scripts (MAS)"
-        MenuL = "Thay doi Ngon ngu"
-        Menu0 = "Thoat"
-        Prompt = ">>> Vui long chon (1-8, L, E)"
-        SubPrompt = ">>> Vui long chon (1-2, B)"
-        MAS_AIO = "[*] Dang tai MAS Full..."
-        OTP_Loading = "[*] Dang tai Office Tool Plus..."
-        Battery = "[*] Dang tai script kiem tra do chai pin..."
-        Clean_RAM_Wait = "[*] Dang toi uu hoa bo nho RAM..."
-        Clean_Disk_Wait = "[*] Dang quet va don dep o cung..."
-        Clean_Result = "--- KET QUA DON DEP ---"
-        Clean_Total = "TONG DUNG LUONG DA DON DEP: "
-        Update_Status = "Trang thai hien tai: "
-        Update_On = "DANG BAT"
-        Update_Off = "DANG TAT"
-        Update_Menu1 = "Tat Update Windows"
-        Update_Menu2 = "Bat Update Windows"
-        Update_Back = "Quay lai"
-        Update_Enabling = "[*] Dang bat dich vu Windows Update..."
+        Menu1            = "Kiem tra Do Chai Pin"
+        Menu2            = "Kiem tra Ban quyen"
+        Menu3            = "Don dep RAM"
+        Menu4            = "Don dep Disk"
+        Menu5            = "Quan ly Windows Update"
+        Menu6            = "Quan ly Bitlocker"
+        Menu7            = "Office Tool Plus"
+        MenuL            = "Thay doi Ngon ngu"
+        Menu0            = "Thoat"
+        Prompt           = ">>> Vui long chon (1-7, L, E)"
+        SubPrompt        = ">>> Vui long chon (1-2, B)"
+        OTP_Loading      = "[*] Dang tai Office Tool Plus..."
+        Battery          = "[*] Dang tai script kiem tra do chai pin..."
+        Clean_RAM_Wait   = "[*] Dang toi uu hoa bo nho RAM..."
+        Clean_Disk_Wait  = "[*] Dang quet va don dep o cung..."
+        Clean_Result     = "--- KET QUA DON DEP ---"
+        Clean_Total      = "TONG DUNG LUONG DA DON DEP: "
+        Update_Status    = "Trang thai hien tai: "
+        Update_On        = "DANG BAT"
+        Update_Off       = "DANG TAT"
+        Update_Menu1     = "Tat Update Windows"
+        Update_Menu2     = "Bat Update Windows"
+        Update_Back      = "Quay lai"
+        Update_Enabling  = "[*] Dang bat dich vu Windows Update..."
         Update_Disabling = "[*] Dang tat dich vu Windows Update..."
-        Done = "[*] Hoan tat. Nhan Enter de quay lai menu..."
-        Update_Header = "--- QUAN LY WINDOWS UPDATE ---"
-        Bit_Header = "--- BITLOCKER MANAGER ---"
-        Bit_Menu = "Quan ly Bitlocker"
-        Bit_Status = "Trang thai"
-        Bit_Prot = "Bao ve"
-        Bit_Lock = "Khoa"
-        Bit_Menu_On = "Bat Bitlocker"
-        Bit_Menu_Off = "Tat Bitlocker"
-        Bit_EnterDrive = "Nhap ky tu o dia de thay doi (vd: C): "
-        Bit_Enabling = "[*] Dang bat Bitlocker cho o "
-        Bit_Disabling = "[*] Dang tat Bitlocker cho o "
-        Bit_NotFound = "[!] Khong tim thay o dia hoac khong ho tro Bitlocker."
-        Bit_Warning = "[!] CANH BAO: Bat Bitlocker co the yeu cau khoi dong lai va ton thoi gian."
-        Error_MAS = "[!] Loi khi tai MAS: "
-        Error_Bat = "[!] Loi khi chay Battery Check: "
-        Exit = "[!] Dang thoat... Chao tam biet!"
-        Invalid = "[!] Lua chon khong hop le. Vui long thu lai."
+        Done             = "[*] Hoan tat. Nhan Enter de quay lai menu..."
+        Update_Header    = "--- QUAN LY WINDOWS UPDATE ---"
+        Bit_Header       = "--- BITLOCKER MANAGER ---"
+        Bit_Menu         = "Quan ly Bitlocker"
+        Bit_Status       = "Trang thai"
+        Bit_Prot         = "Bao ve"
+        Bit_Lock         = "Khoa"
+        Bit_Menu_On      = "Bat Bitlocker"
+        Bit_Menu_Off     = "Tat Bitlocker"
+        Bit_EnterDrive   = "Nhap ky tu o dia de thay doi (vd: C): "
+        Bit_Enabling     = "[*] Dang bat Bitlocker cho o "
+        Bit_Disabling    = "[*] Dang tat Bitlocker cho o "
+        Bit_NotFound     = "[!] Khong tim thay o dia hoac khong ho tro Bitlocker."
+        Bit_Warning      = "[!] CANH BAO: Bat Bitlocker co the yeu cau khoi dong lai va ton thoi gian."
+        Error_Bat        = "[!] Loi khi chay Battery Check: "
+        Exit             = "[!] Dang thoat... Chao tam biet!"
+        Invalid          = "[!] Lua chon khong hop le. Vui long thu lai."
     }
     EN = @{
-        Menu1 = "Check Battery Wear"
-        Menu2 = "Check License"
-        Menu3 = "Clean RAM"
-        Menu4 = "Clean Disk"
-        Menu5 = "Windows Update Manager"
-        Menu6 = "Bitlocker Manager"
-        Menu7 = "Office Tool Plus"
-        Menu8 = "Microsoft Activation Scripts (MAS)"
-        MenuL = "Change Language"
-        Menu0 = "Exit"
-        Prompt = ">>> Please choose (1-8, L, E)"
-        SubPrompt = ">>> Please choose (1-2, B)"
-        MAS_AIO = "[*] Loading MAS Full..."
-        OTP_Loading = "[*] Loading Office Tool Plus..."
-        Battery = "[*] Loading Battery Check script..."
-        Clean_RAM_Wait = "[*] Optimizing RAM memory..."
-        Clean_Disk_Wait = "[*] Scanning and cleaning disk..."
-        Clean_Result = "--- CLEANUP RESULT ---"
-        Clean_Total = "TOTAL SPACE FREE: "
-        Update_Status = "Current Status: "
-        Update_On = "ENABLED"
-        Update_Off = "DISABLED"
-        Update_Menu1 = "Disable Windows Update"
-        Update_Menu2 = "Enable Windows Update"
-        Update_Back = "Back"
-        Update_Enabling = "[*] Enabling Windows Update services..."
+        Menu1            = "Check Battery Wear"
+        Menu2            = "Check License"
+        Menu3            = "Clean RAM"
+        Menu4            = "Clean Disk"
+        Menu5            = "Windows Update Manager"
+        Menu6            = "Bitlocker Manager"
+        Menu7            = "Office Tool Plus"
+        MenuL            = "Change Language"
+        Menu0            = "Exit"
+        Prompt           = ">>> Please choose (1-7, L, E)"
+        SubPrompt        = ">>> Please choose (1-2, B)"
+        OTP_Loading      = "[*] Loading Office Tool Plus..."
+        Battery          = "[*] Loading Battery Check script..."
+        Clean_RAM_Wait   = "[*] Optimizing RAM memory..."
+        Clean_Disk_Wait  = "[*] Scanning and cleaning disk..."
+        Clean_Result     = "--- CLEANUP RESULT ---"
+        Clean_Total      = "TOTAL SPACE FREE: "
+        Update_Status    = "Current Status: "
+        Update_On        = "ENABLED"
+        Update_Off       = "DISABLED"
+        Update_Menu1     = "Disable Windows Update"
+        Update_Menu2     = "Enable Windows Update"
+        Update_Back      = "Back"
+        Update_Enabling  = "[*] Enabling Windows Update services..."
         Update_Disabling = "[*] Disabling Windows Update services..."
-        Done = "[*] Done. Press Enter to return to menu..."
-        Update_Header = "--- WINDOWS UPDATE MANAGER ---"
-        Bit_Header = "--- BITLOCKER MANAGER ---"
-        Bit_Menu = "Bitlocker Manager"
-        Bit_Status = "Status"
-        Bit_Prot = "Protection"
-        Bit_Lock = "Lock Status"
-        Bit_Menu_On = "Turn On Bitlocker"
-        Bit_Menu_Off = "Turn Off Bitlocker"
-        Bit_EnterDrive = "Enter Drive Letter to toggle (e.g. C): "
-        Bit_Enabling = "[*] Enabling Bitlocker for drive "
-        Bit_Disabling = "[*] Disabling Bitlocker for drive "
-        Bit_NotFound = "[!] Drive not found or Bitlocker not supported."
-        Bit_Warning = "[!] WARNING: Enabling Bitlocker will require a restart and might take time."
-        Error_MAS = "[!] Error loading MAS: "
-        Error_Bat = "[!] Error running Battery Check: "
-        Exit = "[!] Exiting... Goodbye!"
-        Invalid = "[!] Invalid choice. Please try again."
+        Done             = "[*] Done. Press Enter to return to menu..."
+        Update_Header    = "--- WINDOWS UPDATE MANAGER ---"
+        Bit_Header       = "--- BITLOCKER MANAGER ---"
+        Bit_Menu         = "Bitlocker Manager"
+        Bit_Status       = "Status"
+        Bit_Prot         = "Protection"
+        Bit_Lock         = "Lock Status"
+        Bit_Menu_On      = "Turn On Bitlocker"
+        Bit_Menu_Off     = "Turn Off Bitlocker"
+        Bit_EnterDrive   = "Enter Drive Letter to toggle (e.g. C): "
+        Bit_Enabling     = "[*] Enabling Bitlocker for drive "
+        Bit_Disabling    = "[*] Disabling Bitlocker for drive "
+        Bit_NotFound     = "[!] Drive not found or Bitlocker not supported."
+        Bit_Warning      = "[!] WARNING: Enabling Bitlocker will require a restart and might take time."
+        Error_Bat        = "[!] Error running Battery Check: "
+        Exit             = "[!] Exiting... Goodbye!"
+        Invalid          = "[!] Invalid choice. Please try again."
     }
 }
 
@@ -114,13 +108,13 @@ $S = $Msg[$lang]
 function Show-Header {
     Clear-Host
     $Ascii = @'
-        .__           __                .__   
-__  _  _|__| ____   _/  |_  ____   ____ |  |  
-\ \/ \/ /  |/    \  \   __\/  _ \ /  _ \|  |  
- \     /|  |   |  \  |  | (  <_> |  <_> )  |__
-  \/\_/ |__|___|  /  |__|  \____/ \____/|____/
-                \/                            
-        >>> cook by mhqb365.com <<<
+ _       ___      ______            __
+| |     / (_)___ /_  __/___  ____  / /
+| | /| / / / __ \ / / / __ \/ __ \/ / 
+| |/ |/ / / / / // / / /_/ / /_/ / /  
+|__/|__/_/_/ /_//_/  \____/\____/_/   
+
+    irm mhqb365.com/win | iex
 '@
     Write-Host $Ascii -ForegroundColor Yellow
     Write-Host "-----------------------------------------------------" -ForegroundColor Gray
@@ -144,14 +138,9 @@ function Show-Menu {
 
     Write-Host " [6] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu6)" -ForegroundColor White
-
-    Write-Host "-----------------------------------------------------" -ForegroundColor Gray
-
+    
     Write-Host " [7] " -NoNewline -ForegroundColor Green
     Write-Host "$($S.Menu7)" -ForegroundColor White
-    
-    Write-Host " [8] " -NoNewline -ForegroundColor Green
-    Write-Host "$($S.Menu8)" -ForegroundColor White
 
     Write-Host "-----------------------------------------------------" -ForegroundColor Gray
     
@@ -176,7 +165,8 @@ while ($true) {
                 $BatteryScript = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/mhqb365/bBattery/refs/heads/master/bBattery.ps1"
                 $SB = [scriptblock]::Create($BatteryScript)
                 & $SB
-            } catch {
+            }
+            catch {
                 Write-Host "$($S.Error_Bat)$($_.Exception.Message)" -ForegroundColor Red
             }
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
@@ -203,7 +193,8 @@ while ($true) {
             if (-not (Test-Path $rammapPath)) {
                 try {
                     Invoke-WebRequest -Uri "https://live.sysinternals.com/$rammapExe" -OutFile $rammapPath -UseBasicParsing
-                } catch {
+                }
+                catch {
                     Write-Host "`n[!] Cannot download $rammapExe. Fallback to GC..." -ForegroundColor Red
                 }
             }
@@ -221,7 +212,8 @@ while ($true) {
                     }
                 }
                 Write-Host "`b*" -ForegroundColor Green
-            } else {
+            }
+            else {
                 [System.GC]::Collect()
                 [System.GC]::WaitForPendingFinalizers()
                 Write-Host "Done" -ForegroundColor Green
@@ -239,12 +231,12 @@ while ($true) {
             Write-Host "`n$($S.Clean_Disk_Wait)" -ForegroundColor Yellow
 
             $targets = @{
-                "Windows Temp" = "C:\Windows\Temp"
-                "User Temp" = $env:TEMP
-                "Prefetch" = "C:\Windows\Prefetch"
-                "Windows Update Cache" = "C:\Windows\SoftwareDistribution\Download"
-                "Windows Logs" = "C:\Windows\Logs"
-                "System32 LogFiles" = "C:\Windows\System32\LogFiles"
+                "Windows Temp"            = "C:\Windows\Temp"
+                "User Temp"               = $env:TEMP
+                "Prefetch"                = "C:\Windows\Prefetch"
+                "Windows Update Cache"    = "C:\Windows\SoftwareDistribution\Download"
+                "Windows Logs"            = "C:\Windows\Logs"
+                "System32 LogFiles"       = "C:\Windows\System32\LogFiles"
                 "Windows Error Reporting" = "C:\ProgramData\Microsoft\Windows\WER"
             }
             $total = 0
@@ -267,7 +259,8 @@ while ($true) {
                             try {
                                 Remove-Item $item.FullName -Force -ErrorAction Stop
                                 $size += $item.Length
-                            } catch {
+                            }
+                            catch {
                                 # File đang bận, bỏ qua không cộng vào dung lượng đã dọn
                             }
                         }
@@ -322,7 +315,8 @@ while ($true) {
                         Set-Service bits -StartupType Disabled
                         Stop-Service dosvc -Force -ErrorAction SilentlyContinue
                         Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\dosvc' -Name "Start" -Value 4 -ErrorAction SilentlyContinue
-                    } catch {
+                    }
+                    catch {
                         Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
                     }
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
@@ -335,7 +329,8 @@ while ($true) {
                         Set-Service bits -StartupType Manual
                         Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\dosvc' -Name "Start" -Value 3 -ErrorAction SilentlyContinue
                         Start-Service wuauserv -ErrorAction SilentlyContinue
-                    } catch {
+                    }
+                    catch {
                         Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
                     }
                     Write-Host "`n$($S.Done)" -ForegroundColor Gray
@@ -356,7 +351,8 @@ while ($true) {
                     $volumes = Get-BitLockerVolume
                     if ($null -eq $volumes) {
                         Write-Host " $($S.Bit_NotFound)" -ForegroundColor Red
-                    } else {
+                    }
+                    else {
                         Write-Host (" {0,-7} {1,-15} {2,-15}" -f "Drive", "Protection", "LockStatus")
                         Write-Host " ------- --------------- ---------------"
                         foreach ($vol in $volumes) {
@@ -368,7 +364,8 @@ while ($true) {
                             Write-Host ("{0,-15}" -f $vol.LockStatus) -ForegroundColor $lColor
                         }
                     }
-                } catch {
+                }
+                catch {
                     Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
                 }
 
@@ -391,18 +388,22 @@ while ($true) {
                     
                     if ($null -eq $target) {
                         Write-Host "$($S.Bit_NotFound)" -ForegroundColor Red
-                    } else {
+                    }
+                    else {
                         if ($bitChoice -eq '1') {
                             if ($target.ProtectionStatus -eq 'Off') {
                                 Write-Host "[!] Bitlocker is already OFF for drive $($drive):" -ForegroundColor Yellow
-                            } else {
+                            }
+                            else {
                                 Write-Host "`n$($S.Bit_Disabling) $($drive):..." -ForegroundColor Yellow
                                 manage-bde -off "$($drive):"
                             }
-                        } else {
+                        }
+                        else {
                             if ($target.ProtectionStatus -eq 'On') {
                                 Write-Host "[!] Bitlocker is already ON for drive $($drive):" -ForegroundColor Yellow
-                            } else {
+                            }
+                            else {
                                 Write-Host "`n$($S.Bit_Warning)" -ForegroundColor Cyan
                                 Write-Host "$($S.Bit_Enabling) $($drive):..." -ForegroundColor Yellow
                                 manage-bde -protectors -add "$($drive):" -tpm | Out-Null
@@ -426,20 +427,9 @@ while ($true) {
             Write-Host "`n$($S.OTP_Loading)" -ForegroundColor Yellow
             try {
                 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm https://officetool.plus)"
-            } catch {
-                Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
             }
-            Write-Host "`n$($S.Done)" -ForegroundColor Gray
-            $null = Read-Host
-        }
-        '8' {
-            Write-Host "`n$($S.MAS_AIO)" -ForegroundColor Yellow
-            try {
-                $MAS = Invoke-RestMethod -Uri "https://get.activated.win"
-                $SB = [scriptblock]::Create($MAS)
-                & $SB
-            } catch {
-                Write-Host "$($S.Error_MAS)$($_.Exception.Message)" -ForegroundColor Red
+            catch {
+                Write-Host "[!] Error: $($_.Exception.Message)" -ForegroundColor Red
             }
             Write-Host "`n$($S.Done)" -ForegroundColor Gray
             $null = Read-Host
