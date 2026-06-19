@@ -138,8 +138,8 @@ const dictionary = {
   ],
   contactIntro: {
     text1: {
-      vi: "Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa laptop thì lên Google tìm Doctor Laptop",
-      en: "I work full-time at Doctor Laptop. If you need repair your laptop, just search for Doctor Laptop on Google",
+      vi: "Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa laptop, mua linh kiện laptop, thì liên hệ Doctor Laptop",
+      en: "I work full-time at Doctor Laptop. If you need repair your laptop, buy parts components, please contact Doctor Laptop",
     },
     text2: {
       vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì:",
@@ -376,7 +376,7 @@ const skillsView = computed(() =>
 }
 
 .contacts-content > p {
-  color: var(--gray);
+  color: var(--white);
   line-height: 1.6;
 }
 
