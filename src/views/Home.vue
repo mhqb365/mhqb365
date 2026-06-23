@@ -163,12 +163,12 @@ const projects = [
     route: "/shopee.html",
   },
   {
-    title: { vi: "Computer Test", en: "Computer Test" },
+    title: { vi: "Computer Test App", en: "Computer Test App" },
     description: {
-      vi: "Công cụ kiểm tra phần cứng máy tính trực tuyến",
-      en: "Online computer hardware testing tool",
+      vi: "Công cụ kiểm tra các chức năng cơ bản của máy tính",
+      en: "Tool for testing basic computer functions",
     },
-    liveUrl: "https://vibe.j2team.org/computer-test",
+    liveUrl: "https://github.com/mhqb365/ComputerTestApp",
   },
   {
     title: { vi: "Multi BoardViewer", en: "Multi BoardViewer" },
