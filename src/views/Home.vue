@@ -78,20 +78,37 @@
         <SectionTitle :title="sectionTitles.contacts" />
         <div class="contacts-content">
           <p>
-            {{ contactIntro.text1 }}
+            {{ contactIntro.text1.beforeLink }}
+            <a
+              class="doctor-laptop-link"
+              :href="doctorLaptopUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="doctor-word">Doctor</span>
+              <span class="laptop-word">Laptop</span></a
+            >{{ contactIntro.text1.afterLink }}
           </p>
           <div class="contact-box">
             <p>
               {{ contactIntro.text2 }}
             </p>
             <div class="contact-links">
-              <a href="https://t.me/mhqb365" target="_blank">
+              <a
+                href="https://t.me/mhqb365"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MessageCircle :size="20" />
                 t.me/mhqb365
               </a>
-              <a href="https://zalo.me/+84777180098" target="_blank">
+              <a
+                href="https://zalo.me/0777180098"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MessageCircle :size="20" />
-                zalo.me/+84777180098
+                zalo.me/0777180098
               </a>
             </div>
           </div>
@@ -110,6 +127,7 @@ import SkillBox from "../components/SkillBox.vue";
 import { useLang } from "../composables/useLang";
 
 const { lang } = useLang();
+const doctorLaptopUrl = "https://doctorlaptop.vn";
 
 const dictionary = {
   sectionTitles: {
@@ -138,8 +156,16 @@ const dictionary = {
   ],
   contactIntro: {
     text1: {
-      vi: "Tui đang làm việc toàn thời gian ở Doctor Laptop, bạn cần sửa chữa laptop, mua linh kiện laptop, thì liên hệ Doctor Laptop",
-      en: "I work full-time at Doctor Laptop. If you need repair your laptop, buy parts components, please contact Doctor Laptop",
+      vi: {
+        beforeLink:
+          "Bạn cần sửa chữa laptop, mua linh kiện laptop, thì liên hệ: ",
+        afterLink: "",
+      },
+      en: {
+        beforeLink:
+          "You need to repair your laptop or buy replacement parts, please contact: ",
+        afterLink: "",
+      },
     },
     text2: {
       vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì:",
@@ -163,20 +189,20 @@ const projects = [
     route: "/shopee.html",
   },
   {
-    title: { vi: "Computer Test App", en: "Computer Test App" },
-    description: {
-      vi: "Công cụ kiểm tra các chức năng cơ bản của máy tính",
-      en: "Tool for testing basic computer functions",
-    },
-    liveUrl: "https://github.com/mhqb365/ComputerTestApp",
-  },
-  {
     title: { vi: "Multi BoardViewer", en: "Multi BoardViewer" },
     description: {
       vi: "Xem nhiều boardview & schematic trong một ứng dụng",
       en: "View multiple boardviews & schematics in one app",
     },
     liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
+  },
+  {
+    title: { vi: "Auto Clear ME", en: "Auto Clear ME" },
+    description: {
+      vi: "Công cụ hỗ trợ clear ME BIOS 11+",
+      en: "A tool to help clear ME BIOS 11+",
+    },
+    liveUrl: "https://github.com/mhqb365/AutoClearME",
   },
   {
     title: {
@@ -188,6 +214,14 @@ const projects = [
       en: "Windows tool",
     },
     liveUrl: "https://github.com/mhqb365/mhqb365/blob/master/scripts/README.md",
+  },
+  {
+    title: { vi: "Computer Test App", en: "Computer Test App" },
+    description: {
+      vi: "Công cụ kiểm tra các chức năng cơ bản của máy tính",
+      en: "Tool for testing basic computer functions",
+    },
+    liveUrl: "https://github.com/mhqb365/ComputerTestApp",
   },
   {
     title: {
@@ -378,6 +412,24 @@ const skillsView = computed(() =>
 .contacts-content > p {
   color: var(--white);
   line-height: 1.6;
+}
+
+.doctor-laptop-link {
+  display: inline-flex;
+  gap: 4px;
+  align-items: baseline;
+  padding: 0 4px;
+  background: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.doctor-laptop-link .doctor-word {
+  color: #e0433b;
+}
+
+.doctor-laptop-link .laptop-word {
+  color: #34349a;
 }
 
 .contact-box {

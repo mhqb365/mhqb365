@@ -26,5 +26,8 @@ dist-ssr
 .pnpm-store
 
 .agent
+.agents
+.codex
+AGENTS_CODEX.md
+AGENTS.md
 GEMINI.md
-ERRORS.md
