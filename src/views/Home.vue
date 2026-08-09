@@ -194,7 +194,7 @@ const projects = [
       vi: "Xem nhiều boardview & schematic trong một ứng dụng",
       en: "View multiple boardviews & schematics in one app",
     },
-    liveUrl: "https://github.com/mhqb365/Multi-BoardViewer",
+    liveUrl: "https://github.com/mhqb365/MultiBoardViewer",
   },
   {
     title: { vi: "Auto Clear ME", en: "Auto Clear ME" },
