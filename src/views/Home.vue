@@ -85,15 +85,34 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="doctor-word">Doctor</span>
-              <span class="laptop-word">Laptop</span></a
+              zalo.me/0908350179</a
             >{{ contactIntro.text1.afterLink }}
           </p>
           <div class="contact-box">
-            <p>
-              {{ contactIntro.text2 }}
-            </p>
-            <div class="contact-links">
+            <div class="contact-box-header">
+              <p>
+                {{ contactIntro.text2 }}
+                <button
+                  class="contact-toggle"
+                  type="button"
+                  :aria-expanded="showContactLinks"
+                  :aria-label="contactToggleLabel"
+                  aria-controls="contact-links"
+                  @click="showContactLinks = !showContactLinks"
+                >
+                  <ChevronDown
+                    :size="20"
+                    :class="{ 'is-open': showContactLinks }"
+                    aria-hidden="true"
+                  />
+                </button>
+              </p>
+            </div>
+            <div
+              v-show="showContactLinks"
+              id="contact-links"
+              class="contact-links"
+            >
               <a
                 href="https://t.me/mhqb365"
                 target="_blank"
@@ -119,15 +138,16 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { MessageCircle } from "lucide-vue-next";
+import { computed, ref } from "vue";
+import { ChevronDown, MessageCircle } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
 import SectionTitle from "../components/SectionTitle.vue";
 import SkillBox from "../components/SkillBox.vue";
 import { useLang } from "../composables/useLang";
 
 const { lang } = useLang();
-const doctorLaptopUrl = "https://doctorlaptop.vn";
+const doctorLaptopUrl = "https://zalo.me/0908350179";
+const showContactLinks = ref(false);
 
 const dictionary = {
   sectionTitles: {
@@ -158,18 +178,18 @@ const dictionary = {
     text1: {
       vi: {
         beforeLink:
-          "Bạn cần sửa chữa laptop, mua linh kiện laptop, thì liên hệ: ",
+          "Nếu bạn cần sửa chữa laptop, mua linh kiện laptop, thì liên hệ",
         afterLink: "",
       },
       en: {
         beforeLink:
-          "You need to repair your laptop or buy replacement parts, please contact: ",
+          "If you need to repair your laptop or buy replacement parts, please contact",
         afterLink: "",
       },
     },
     text2: {
-      vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ mà không gấp thì:",
-      en: "If you want to research or fix compact mining rigs or small electronic circuits and it is not urgent:",
+      vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ và dư dả thời gian",
+      en: "If you want to research or fix compact mining rigs or small electronic circuits and you have time available",
     },
   },
   privacyPolicy: { vi: "Chính sách bảo mật", en: "Privacy Policy" },
@@ -203,6 +223,14 @@ const projects = [
       en: "A tool to help clear ME BIOS 11+",
     },
     liveUrl: "https://github.com/mhqb365/AutoClearME",
+  },
+  {
+    title: { vi: "Nexus Programmer", en: "Nexus Programmer" },
+    description: {
+      vi: "Công cụ nạp BIOS cho CH341/CH347 và XGecu T48",
+      en: "Flashing BIOS application for CH341/CH347 and XGecu T48",
+    },
+    liveUrl: "https://github.com/mhqb365/NexusProgrammer",
   },
   {
     title: {
@@ -253,6 +281,16 @@ const contactIntro = computed(() => ({
   text1: dictionary.contactIntro.text1[lang.value],
   text2: dictionary.contactIntro.text2[lang.value],
 }));
+
+const contactToggleLabel = computed(() => {
+  if (lang.value === "vi") {
+    return showContactLinks.value
+      ? "Ẩn thông tin liên hệ"
+      : "Hiện thông tin liên hệ";
+  }
+
+  return showContactLinks.value ? "Hide contact links" : "Show contact links";
+});
 
 const featuredProjects = computed(() =>
   projects.map((p) => ({
@@ -415,26 +453,57 @@ const skillsView = computed(() =>
 }
 
 .doctor-laptop-link {
-  display: inline-flex;
-  gap: 4px;
-  align-items: baseline;
-  padding: 0 4px;
-  background: #fff;
-  border-radius: 4px;
+  color: var(--white);
   text-decoration: none;
 }
 
-.doctor-laptop-link .doctor-word {
-  color: #e0433b;
-}
-
-.doctor-laptop-link .laptop-word {
-  color: #34349a;
+.doctor-laptop-link:hover {
+  color: var(--accent);
 }
 
 .contact-box {
   border: 1px solid var(--gray);
   padding: 16px;
+}
+
+.contact-box-header {
+  display: block;
+}
+
+.contact-box-header p {
+  margin: 0;
+}
+
+.contact-toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 2px;
+  border: 0;
+  color: var(--white);
+  background: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.contact-toggle:hover,
+.contact-toggle:focus-visible {
+  color: var(--accent);
+}
+
+.contact-toggle:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.contact-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.contact-toggle svg.is-open {
+  transform: rotate(180deg);
 }
 
 .contact-box h3 {
@@ -447,6 +516,7 @@ const skillsView = computed(() =>
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 16px;
 }
 
 .contact-links a {
