@@ -78,59 +78,16 @@
         <SectionTitle :title="sectionTitles.contacts" />
         <div class="contacts-content">
           <p>
-            {{ contactIntro.text1.beforeLink }}
+            {{ contactIntro.text1 }}
             <a
               class="doctor-laptop-link"
-              :href="doctorLaptopUrl"
+              href="https://zalo.me/0908350179"
               target="_blank"
               rel="noopener noreferrer"
             >
-              zalo.me/0908350179</a
-            >{{ contactIntro.text1.afterLink }}
+              Zalo Doctor Laptop
+            </a>
           </p>
-          <div class="contact-box">
-            <div class="contact-box-header">
-              <p>
-                {{ contactIntro.text2 }}
-                <button
-                  class="contact-toggle"
-                  type="button"
-                  :aria-expanded="showContactLinks"
-                  :aria-label="contactToggleLabel"
-                  aria-controls="contact-links"
-                  @click="showContactLinks = !showContactLinks"
-                >
-                  <ChevronDown
-                    :size="20"
-                    :class="{ 'is-open': showContactLinks }"
-                    aria-hidden="true"
-                  />
-                </button>
-              </p>
-            </div>
-            <div
-              v-show="showContactLinks"
-              id="contact-links"
-              class="contact-links"
-            >
-              <a
-                href="https://t.me/mhqb365"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle :size="20" />
-                t.me/mhqb365
-              </a>
-              <a
-                href="https://zalo.me/0777180098"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle :size="20" />
-                zalo.me/0777180098
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -138,16 +95,13 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
-import { ChevronDown, MessageCircle } from "lucide-vue-next";
+import { computed } from "vue";
 import { RouterLink } from "vue-router";
 import SectionTitle from "../components/SectionTitle.vue";
 import SkillBox from "../components/SkillBox.vue";
 import { useLang } from "../composables/useLang";
 
 const { lang } = useLang();
-const doctorLaptopUrl = "https://zalo.me/0908350179";
-const showContactLinks = ref(false);
 
 const dictionary = {
   sectionTitles: {
@@ -176,20 +130,8 @@ const dictionary = {
   ],
   contactIntro: {
     text1: {
-      vi: {
-        beforeLink:
-          "Nếu bạn cần sửa chữa laptop, mua linh kiện laptop, thì liên hệ",
-        afterLink: "",
-      },
-      en: {
-        beforeLink:
-          "If you need to repair your laptop or buy replacement parts, please contact",
-        afterLink: "",
-      },
-    },
-    text2: {
-      vi: "Nếu bạn có nhu cầu nghiên cứu, sửa chữa máy đào công suất nhỏ hoặc các mạch điện nhỏ và dư dả thời gian",
-      en: "If you want to research or fix compact mining rigs or small electronic circuits and you have time available",
+      vi: "Cần sửa laptop? Liên hệ:",
+      en: "Need laptop repair? Contact:",
     },
   },
   privacyPolicy: { vi: "Chính sách bảo mật", en: "Privacy Policy" },
@@ -203,8 +145,8 @@ const projects = [
       en: "Recommended tools",
     },
     description: {
-      vi: "Tổng hợp các món đồ mà tui hay dùng để sửa laptop và thiết bị điện tử",
-      en: "A bundle of items I frequently use for electronics repair",
+      vi: "Tổng hợp các công cụ mà tui hay dùng để sửa laptop và các thiết bị điện tử",
+      en: "A collection of tools and components I frequently use for electronics repair",
     },
     route: "/shopee.html",
   },
@@ -227,29 +169,10 @@ const projects = [
   {
     title: { vi: "Nexus Programmer", en: "Nexus Programmer" },
     description: {
-      vi: "Công cụ nạp BIOS cho CH341/CH347 và XGecu T48",
-      en: "Flashing BIOS application for CH341/CH347 and XGecu T48",
+      vi: "Phần mềm nạp BIOS cho CH341, CH347, XGecu T48 và RT809F",
+      en: "Flashing BIOS application for CH341, CH347, XGecu T48 and RT809F",
     },
     liveUrl: "https://github.com/mhqb365/NexusProgrammer",
-  },
-  {
-    title: {
-      vi: "Win Tool",
-      en: "Win Tool",
-    },
-    description: {
-      vi: "Công cụ Windows",
-      en: "Windows tool",
-    },
-    liveUrl: "https://github.com/mhqb365/mhqb365/blob/master/scripts/README.md",
-  },
-  {
-    title: { vi: "Computer Test App", en: "Computer Test App" },
-    description: {
-      vi: "Công cụ kiểm tra các chức năng cơ bản của máy tính",
-      en: "Tool for testing basic computer functions",
-    },
-    liveUrl: "https://github.com/mhqb365/ComputerTestApp",
   },
   {
     title: {
@@ -279,18 +202,7 @@ const aboutLines = computed(() =>
 
 const contactIntro = computed(() => ({
   text1: dictionary.contactIntro.text1[lang.value],
-  text2: dictionary.contactIntro.text2[lang.value],
 }));
-
-const contactToggleLabel = computed(() => {
-  if (lang.value === "vi") {
-    return showContactLinks.value
-      ? "Ẩn thông tin liên hệ"
-      : "Hiện thông tin liên hệ";
-  }
-
-  return showContactLinks.value ? "Hide contact links" : "Show contact links";
-});
 
 const featuredProjects = computed(() =>
   projects.map((p) => ({
@@ -318,7 +230,12 @@ const skillsSource = [
   },
   {
     category: { vi: "Code", en: "Code" },
-    items: [{ vi: "Vibe Coding", en: "Vibe Coding" }],
+    items: [
+      {
+        vi: "Vibe Coding, thuần AI, hết quota = cụt tay",
+        en: "Vibe Coding, pure AI, out of quota = lost hands",
+      },
+    ],
   },
 ];
 
@@ -442,93 +359,20 @@ const skillsView = computed(() =>
 }
 
 .contacts-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  max-width: 520px;
 }
 
 .contacts-content > p {
-  color: var(--white);
+  color: var(--gray);
   line-height: 1.6;
 }
 
 .doctor-laptop-link {
-  color: var(--white);
+  color: var(--gray);
   text-decoration: none;
 }
 
 .doctor-laptop-link:hover {
-  color: var(--accent);
-}
-
-.contact-box {
-  border: 1px solid var(--gray);
-  padding: 16px;
-}
-
-.contact-box-header {
-  display: block;
-}
-
-.contact-box-header p {
-  margin: 0;
-}
-
-.contact-toggle {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  margin-left: 4px;
-  padding: 2px;
-  border: 0;
-  color: var(--white);
-  background: transparent;
-  cursor: pointer;
-  vertical-align: middle;
-}
-
-.contact-toggle:hover,
-.contact-toggle:focus-visible {
-  color: var(--accent);
-}
-
-.contact-toggle:focus-visible {
-  outline: 1px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.contact-toggle svg {
-  transition: transform 0.2s ease;
-}
-
-.contact-toggle svg.is-open {
-  transform: rotate(180deg);
-}
-
-.contact-box h3 {
-  margin: 0 0 16px 0;
-  font-size: 16px;
-  color: var(--white);
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.contact-links a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--gray);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-links a:hover {
   color: var(--accent);
 }
 
@@ -538,8 +382,7 @@ const skillsView = computed(() =>
   }
 
   .hero-content,
-  .about-content,
-  .contacts-content {
+  .about-content {
     grid-template-columns: 1fr;
     gap: 32px;
   }

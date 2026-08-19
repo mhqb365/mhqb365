@@ -28,6 +28,22 @@
               >
                 <Github :size="20" />
               </a>
+              <a
+                href="https://t.me/mhqb365"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Telegram"
+              >
+                <TelegramIcon :size="20" />
+              </a>
+              <a
+                href="https://zalo.me/0908350179"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Zalo"
+              >
+                <ZaloIcon :size="20" />
+              </a>
             </div>
           </div>
           <div class="footer-block">
@@ -48,7 +64,9 @@
 
 <script setup>
 import { Github } from "lucide-vue-next";
+import TelegramIcon from "./TelegramIcon.vue";
 import TikTokIcon from "./TikTokIcon.vue";
+import ZaloIcon from "./ZaloIcon.vue";
 import { computed } from "vue";
 import { useLang } from "../composables/useLang";
 
