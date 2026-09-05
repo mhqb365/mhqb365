@@ -130,8 +130,8 @@ const dictionary = {
   ],
   contactIntro: {
     text1: {
-      vi: "Cần sửa laptop? Liên hệ:",
-      en: "Need laptop repair? Contact:",
+      vi: "Bạn cần sửa laptop? Liên hệ",
+      en: "Need repair your laptop? Contact",
     },
   },
   privacyPolicy: { vi: "Chính sách bảo mật", en: "Privacy Policy" },
@@ -161,23 +161,23 @@ const projects = [
   {
     title: { vi: "Auto Clear ME", en: "Auto Clear ME" },
     description: {
-      vi: "Công cụ hỗ trợ clear ME BIOS 11+",
-      en: "A tool to help clear ME BIOS 11+",
+      vi: "A tool to help Clear ME BIOS and more!",
+      en: "Công cụ hỗ trợ Clear ME BIOS và hơn thế nữa!",
     },
     liveUrl: "https://github.com/mhqb365/AutoClearME",
   },
   {
     title: { vi: "Nexus Programmer", en: "Nexus Programmer" },
     description: {
-      vi: "Phần mềm nạp BIOS cho CH341, CH347, XGecu T48 và RT809F",
-      en: "Flashing BIOS application for CH341, CH347, XGecu T48 and RT809F",
+      vi: "Phần mềm nạp BIOS hiện đại cho CH341, CH347, XGecu T48, RT809F và RT809H",
+      en: "Modern BIOS flashing application for CH341, CH347, XGecu T48, RT809F and RT809H",
     },
     liveUrl: "https://github.com/mhqb365/NexusProgrammer",
   },
   {
     title: {
-      vi: "Chổi Lông Gà Bot",
-      en: "ChoiLongGaBot",
+      vi: "Chổi Lông Gà",
+      en: "Chổi Lông Gà",
     },
     description: {
       vi: "Bot Telegram hỗ trợ quản trị group/supergroup",
@@ -232,8 +232,8 @@ const skillsSource = [
     category: { vi: "Code", en: "Code" },
     items: [
       {
-        vi: "Vibe Coding, thuần AI, hết quota = cụt tay",
-        en: "Vibe Coding, pure AI, out of quota = lost hands",
+        vi: "Vibe Coding",
+        en: "Vibe Coding",
       },
     ],
   },
