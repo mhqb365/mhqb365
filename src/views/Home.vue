@@ -159,20 +159,20 @@ const projects = [
     liveUrl: "https://github.com/mhqb365/MultiBoardViewer",
   },
   {
-    title: { vi: "Auto Clear ME", en: "Auto Clear ME" },
-    description: {
-      vi: "A tool to help Clear ME BIOS and more!",
-      en: "Công cụ hỗ trợ Clear ME BIOS và hơn thế nữa!",
-    },
-    liveUrl: "https://github.com/mhqb365/AutoClearME",
-  },
-  {
     title: { vi: "Nexus Programmer", en: "Nexus Programmer" },
     description: {
       vi: "Phần mềm nạp BIOS hiện đại cho CH341, CH347, XGecu T48, RT809F và RT809H",
       en: "Modern BIOS flashing application for CH341, CH347, XGecu T48, RT809F and RT809H",
     },
     liveUrl: "https://github.com/mhqb365/NexusProgrammer",
+  },
+  {
+    title: { vi: "Auto Clear ME", en: "Auto Clear ME" },
+    description: {
+      vi: "A tool to help Clear ME BIOS and more!",
+      en: "Công cụ hỗ trợ Clear ME BIOS và hơn thế nữa!",
+    },
+    liveUrl: "https://github.com/mhqb365/AutoClearME",
   },
   {
     title: {

@@ -3,6 +3,7 @@
   <div class="app-wrapper">
     <Navbar />
     <SocialSidebar />
+    <BuyMeCoffeeCat />
     <main class="main-content">
       <router-view />
     </main>
@@ -14,6 +15,7 @@
 import SplashScreen from "./components/SplashScreen.vue";
 import Navbar from "./components/Navbar.vue";
 import SocialSidebar from "./components/SocialSidebar.vue";
+import BuyMeCoffeeCat from "./components/BuyMeCoffeeCat.vue";
 import Footer from "./components/Footer.vue";
 import { ref } from "vue";
 
