@@ -65,7 +65,10 @@ const selectedId = ref(donationOptions[0].id);
 const { lang } = useLang();
 
 const dictionary = {
-  title: { vi: "Mời Tui Ly Cafe", en: "Buy Me A Coffee" },
+  title: {
+    vi: "Nếu thấy các đóng góp của tui hữu ích, thì mời tui ly cafe đi!",
+    en: "If you find my contributions useful, please buy me a coffee!",
+  },
   close: { vi: "Đóng mã QR donation", en: "Close donation QR" },
 };
 
@@ -85,7 +88,7 @@ watch(qrSrc, () => {
 .coffee-cat {
   position: fixed;
   right: 0;
-  bottom: 92px;
+  bottom: 32px;
   z-index: 120;
 }
 
