@@ -37,21 +37,30 @@
         </button>
       </div>
 
-      <img
-        class="qr-image"
-        :src="qrSrc"
-        :alt="`QR donation ${selected.label}`"
-      />
+      <div class="qr-frame" :class="{ loading: isQrLoading }">
+        <div v-if="isQrLoading" class="qr-loading" aria-hidden="true">
+          <span></span>
+        </div>
+        <img
+          class="qr-image"
+          :class="{ loaded: !isQrLoading }"
+          :src="qrSrc"
+          :alt="`QR donation ${selected.label}`"
+          @load="isQrLoading = false"
+          @error="isQrLoading = false"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { donationOptions, getDonationOption } from "../data/donationOptions";
 import { useLang } from "../composables/useLang";
 
 const isOpen = ref(false);
+const isQrLoading = ref(true);
 const selectedId = ref(donationOptions[0].id);
 const { lang } = useLang();
 
@@ -66,6 +75,10 @@ const qrSrc = computed(
     `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=12&data=${encodeURIComponent(selected.value.value)}`,
 );
 const t = (key) => dictionary[key][lang.value];
+
+watch(qrSrc, () => {
+  isQrLoading.value = true;
+});
 </script>
 
 <style scoped>
@@ -205,14 +218,71 @@ const t = (key) => dictionary[key][lang.value];
   color: var(--white);
 }
 
-.qr-image {
-  display: block;
+.qr-frame {
+  position: relative;
   width: 220px;
   max-width: 100%;
-  height: auto;
+  aspect-ratio: 1;
   margin: 0 auto;
   padding: 10px;
+  overflow: hidden;
   background: var(--white);
+}
+
+.qr-loading {
+  position: absolute;
+  inset: 10px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(90deg, transparent, rgba(199, 120, 221, 0.18), transparent),
+    repeating-linear-gradient(0deg, #f4f5f8 0 10px, #ffffff 10px 20px);
+  background-size:
+    160% 100%,
+    100% 100%;
+  animation: qr-shimmer 1.15s ease-in-out infinite;
+}
+
+.qr-loading span {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(40, 44, 51, 0.16);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: qr-spin 0.75s linear infinite;
+}
+
+.qr-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+.qr-image.loaded {
+  opacity: 1;
+}
+
+@keyframes qr-shimmer {
+  0% {
+    background-position:
+      120% 0,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      -120% 0,
+      0 0;
+  }
+}
+
+@keyframes qr-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes peek-cat {
