@@ -88,6 +88,17 @@
               Zalo Doctor Laptop
             </a>
           </p>
+          <p>
+            {{ contactIntro.text2 }}
+            <a
+              class="doctor-laptop-link"
+              href="https://t.me/mhqb365"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Telegram Group
+            </a>
+          </p>
         </div>
       </div>
     </section>
@@ -130,8 +141,12 @@ const dictionary = {
   ],
   contactIntro: {
     text1: {
-      vi: "Bạn cần sửa laptop? Liên hệ",
-      en: "Need repair your laptop? Contact",
+      vi: "Bạn cần sửa laptop? 👉",
+      en: "Need repair your laptop? 👉",
+    },
+    text2: {
+      vi: "Trao đổi về các dự án? 👉",
+      en: "Discuss projects? 👉",
     },
   },
   privacyPolicy: { vi: "Chính sách bảo mật", en: "Privacy Policy" },
@@ -202,6 +217,7 @@ const aboutLines = computed(() =>
 
 const contactIntro = computed(() => ({
   text1: dictionary.contactIntro.text1[lang.value],
+  text2: dictionary.contactIntro.text2[lang.value],
 }));
 
 const featuredProjects = computed(() =>

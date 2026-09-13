@@ -51,6 +51,9 @@
         >
           <span class="text-accent">#</span>{{ t("contact") }}
         </a>
+        <RouterLink to="/buymeacoffee.html" class="nav-link" @click="closeMenu">
+          <span class="text-accent">#</span>{{ t("coffee") }}
+        </RouterLink>
 
         <div class="language-switcher">
           <button
@@ -97,6 +100,7 @@ const copy = computed(() => ({
   skills: { vi: "kỹ năng", en: "skills" },
   about: { vi: "thông tin", en: "about" },
   contact: { vi: "liên hệ", en: "contact" },
+  coffee: { vi: "mời tui ly cafe", en: "buy me a coffee" },
 }));
 
 const t = (key) => copy.value[key][lang.value];

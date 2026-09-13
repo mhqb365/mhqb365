@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Privacy from "../views/Privacy.vue";
 import Terms from "../views/Terms.vue";
 import ShopeeProducts from "../views/ShopeeProducts.vue";
+import BuyMeACoffee from "../views/BuyMeACoffee.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/shopee.html",
     name: "ShopeeProducts",
     component: ShopeeProducts,
+  },
+  {
+    path: "/buymeacoffee.html",
+    name: "BuyMeACoffee",
+    component: BuyMeACoffee,
   },
 ];
 

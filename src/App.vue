@@ -3,7 +3,7 @@
   <div class="app-wrapper">
     <Navbar />
     <SocialSidebar />
-    <BuyMeCoffeeCat />
+    <BuyMeCoffeeCat v-if="showCoffeeWidget" />
     <main class="main-content">
       <router-view />
     </main>
@@ -17,9 +17,12 @@ import Navbar from "./components/Navbar.vue";
 import SocialSidebar from "./components/SocialSidebar.vue";
 import BuyMeCoffeeCat from "./components/BuyMeCoffeeCat.vue";
 import Footer from "./components/Footer.vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
 
 const isLoading = ref(true);
+const route = useRoute();
+const showCoffeeWidget = computed(() => route.name !== "BuyMeACoffee");
 
 const handleSplashLoaded = () => {
   isLoading.value = false;

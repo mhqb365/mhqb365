@@ -1,6 +1,13 @@
 ﻿<template>
   <div class="policy-page" :data-lang="lang">
     <div class="container">
+      <div class="header-nav">
+        <RouterLink to="/" class="back-link">
+          <ArrowLeft :size="20" />
+          {{ t("backToHome") }}
+        </RouterLink>
+      </div>
+
       <div class="policy-surface">
         <header class="page-header">
           <h1 class="lang-en">Privacy Policy</h1>
@@ -293,9 +300,16 @@
 </template>
 
 <script setup>
+import { ArrowLeft } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 import { useLang } from "../composables/useLang";
 
 const { lang } = useLang();
+const copy = {
+  backToHome: { vi: "Quay lại", en: "Back" },
+};
+
+const t = (key) => copy[key][lang.value];
 </script>
 
 <style scoped>
@@ -303,6 +317,26 @@ const { lang } = useLang();
   padding: 64px 0 96px;
   color: #111827;
   font-family: var(--font-sans);
+}
+
+.header-nav {
+  margin-bottom: 32px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover,
+.back-link:focus {
+  color: var(--accent);
 }
 
 .policy-surface {
@@ -410,13 +444,13 @@ const { lang } = useLang();
   line-height: 1.6;
 }
 
-.policy-page a {
+.policy-surface a {
   color: #0b57d0;
   text-decoration: underline;
 }
 
-.policy-page a:hover,
-.policy-page a:focus {
+.policy-surface a:hover,
+.policy-surface a:focus {
   color: #063b8f;
 }
 

@@ -82,14 +82,17 @@ const copy = {
   privacy: { vi: "Quyền riêng tư", en: "Privacy policy" },
   terms: { vi: "Điều khoản dịch vụ", en: "Terms of service" },
   copyright: {
-    vi: "© 2026. Tạo bởi Antigravity & tui. Mẫu bởi EliasDevis",
-    en: "© 2026. Created by Antigravity & me. Template by EliasDevis",
+    vi: "© 2021 - {year}. All rights reserved.",
+    en: "© 2021 - {year}. All rights reserved.",
   },
 };
 
 const t = (key) => copy[key][lang.value];
+const currentYear = new Date().getFullYear();
 const tagline = computed(() => t("tagline"));
-const copyright = computed(() => t("copyright"));
+const copyright = computed(() =>
+  t("copyright").replace("{year}", currentYear),
+);
 </script>
 
 <style scoped>
