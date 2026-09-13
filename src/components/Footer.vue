@@ -37,7 +37,7 @@
                 <TelegramIcon :size="20" />
               </a>
               <a
-                href="https://zalo.me/0908350179"
+                href="https://zalo.me/0907908365"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Zalo"
@@ -82,17 +82,15 @@ const copy = {
   privacy: { vi: "Quyền riêng tư", en: "Privacy policy" },
   terms: { vi: "Điều khoản dịch vụ", en: "Terms of service" },
   copyright: {
-    vi: "© 2021 - {year}. All rights reserved.",
-    en: "© 2021 - {year}. All rights reserved.",
+    vi: "© 2021 - {year} mhqb365. All rights reserved.",
+    en: "© 2021 - {year} mhqb365. All rights reserved.",
   },
 };
 
 const t = (key) => copy[key][lang.value];
 const currentYear = new Date().getFullYear();
 const tagline = computed(() => t("tagline"));
-const copyright = computed(() =>
-  t("copyright").replace("{year}", currentYear),
-);
+const copyright = computed(() => t("copyright").replace("{year}", currentYear));
 </script>
 
 <style scoped>

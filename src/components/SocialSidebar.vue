@@ -30,7 +30,7 @@
         <TelegramIcon :size="24" />
       </a>
       <a
-        href="https://zalo.me/0908350179"
+        href="https://zalo.me/0907908365"
         target="_blank"
         rel="noopener noreferrer"
         class="social-link"
